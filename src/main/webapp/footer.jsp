@@ -1,25 +1,27 @@
-<div id="footer">
-    <!-- page_footer slot -->
-    <table width="80%" align="center">
-        <tr align="center" >
-            <td colspan="2">
-                <a href="demo.htm">Video Demo</a>
-            </td>
-        </tr>
-        <tr>
-            <td align="right">
-                <a href="http://isa-tools.org"> <img src="images/ncri_logo.gif" alt="NCRI Informatics Initiative" width="158" height="57" /></a>
-            </td>
-            <td align="left">
-                <a href="http://isa-tools.github.io/stato"> <img src="images/icl_logo.gif" alt="Imperial College London" width="158" height="42" /></a>
-            </td>
-    </table>
+<hr>
 
-    <div id="hr">
-        <hr class="no" />
-    </div>
+<div class="footer">
+    <p>&copy; ISA-tools 2014</p>
 </div>
 
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap-transition.js"></script>
+<script src="../assets/js/bootstrap-alert.js"></script>
+<script src="../assets/js/bootstrap-modal.js"></script>
+<script src="../assets/js/bootstrap-dropdown.js"></script>
+<script src="../assets/js/bootstrap-scrollspy.js"></script>
+<script src="../assets/js/bootstrap-tab.js"></script>
+<script src="../assets/js/bootstrap-tooltip.js"></script>
+<script src="../assets/js/bootstrap-popover.js"></script>
+<script src="../assets/js/bootstrap-button.js"></script>
+<script src="../assets/js/bootstrap-collapse.js"></script>
+<script src="../assets/js/bootstrap-carousel.js"></script>
+<script src="../assets/js/bootstrap-typeahead.js"></script>
 
 </body>
 </html>
