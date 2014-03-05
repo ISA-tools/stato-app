@@ -12,12 +12,10 @@ package org.isatools.stato;
 public class STATOQuery
 {
 
-
-
-
+    private STATOclassified statoClassified = null;
 
     public STATOQuery(){
-
+        statoClassified = new STATOclassified();
     }
 
 
