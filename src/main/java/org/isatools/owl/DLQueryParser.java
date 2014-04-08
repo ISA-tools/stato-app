@@ -1,4 +1,4 @@
-package org.isatools.stato;
+package org.isatools.owl;
 
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxClassExpressionParser;
 import org.semanticweb.owlapi.expression.ParserException;
@@ -26,6 +26,10 @@ public class DLQueryParser {
     private OWLClassExpression description = null;
 
 
+    public DLQueryParser(OWLOntologyManager m){
+        manager = m;
+        dataFactory = manager.getOWLDataFactory();
+    }
 
     public OWLClassExpression parse(String dlQuery) {
         try{

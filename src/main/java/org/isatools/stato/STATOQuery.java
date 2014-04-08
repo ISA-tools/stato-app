@@ -1,6 +1,12 @@
 package org.isatools.stato;
 
 
+import org.isatools.owl.DLQueryParser;
+import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+
 /**
  * Created by the ISATeam.
  * User: agbeltran
@@ -13,17 +19,26 @@ public class STATOQuery
 {
 
     private STATOclassified statoClassified = null;
+    private DLQueryParser dlQueryParser = null;
 
+    /**
+     * Constructor
+     */
     public STATOQuery(){
         statoClassified = new STATOclassified();
+        dlQueryParser = new DLQueryParser(statoClassified.getManager());
     }
 
 
+    public void runDLQuery(String dlQueryString){
 
-    public void runDLQuery(){
+        OWLClassExpression expression = dlQueryParser.parse(dlQueryString);
 
+        OWLReasoner reasoner = statoClassified.getReasoner();
 
+        NodeSet<OWLClass> set = reasoner.getSubClasses(expression, true);
 
+        System.out.println("Set =>" + set);
     }
 
     public void runSPARQLQuery(){
@@ -50,6 +65,8 @@ public class STATOQuery
         OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ont);
         // Now we can query the reasoner, suppose we want to determine the
         // properties that instances of Marghertia pizza must have
+
+
         OWLClass margheritaPizza = man.getOWLDataFactory().getOWLClass(
                 IRI.create(prefix + "Margherita"));
         printProperties(man, ont, reasoner, margheritaPizza);

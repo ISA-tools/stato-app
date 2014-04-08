@@ -44,6 +44,8 @@ public class ClassifiedOntology {
 
     protected static OWLReasonerFactory reasonerFactory = null;
 
+    protected static OWLReasoner reasoner = null;
+
     public ClassifiedOntology(){
 
         // Create a reasoner factory.
@@ -55,6 +57,8 @@ public class ClassifiedOntology {
 
         // of the example, we will just load the pizza ontology.
         manager = OWLManager.createOWLOntologyManager();
+
+
     }
 
 
@@ -76,6 +80,14 @@ public class ClassifiedOntology {
     }
 
 
+    public OWLReasoner getReasoner(){
+        return reasoner;
+    }
+
+    public OWLOntologyManager getManager(){
+        return manager;
+    }
+
     public void createClassifiedOntology()
             throws OWLOntologyCreationException, OWLOntologyStorageException {
 
@@ -85,10 +97,8 @@ public class ClassifiedOntology {
         long elapsedTime;
         long startTime = System.currentTimeMillis();
 
-
-
         // Create the reasoner and classify the ontology
-        OWLReasoner reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
+        reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
 
 
 //        System.out.println("Checking consistency...");
