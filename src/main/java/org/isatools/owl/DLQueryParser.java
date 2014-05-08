@@ -85,32 +85,32 @@ public class DLQueryParser {
 
     }
 
-    public OWLClassExpression parse(String dlQuery) {
-        try{
-
-            System.out.println("Ontologies... ");
-            System.out.println(manager.getOntologies());
-
-            BidirectionalShortFormProvider sfp =
-                    new BidirectionalShortFormProviderAdapter(manager.getOntologies(),
-                            shortFormProvider);
-
-            parser = new ManchesterOWLSyntaxClassExpressionParser(dataFactory,
-                    new ShortFormEntityChecker(
-                            sfp));
-
-            description = parser.parse(dlQuery);
-
-
-            return description;
-        }catch(ParserException pEx){
-
-           pEx.printStackTrace();
-
-        }
-
-        return null;
-    }
+//    public OWLClassExpression parse(String dlQuery) {
+//        try{
+//
+//            System.out.println("Ontologies... ");
+//            System.out.println(manager.getOntologies());
+//
+//            BidirectionalShortFormProvider sfp =
+//                    new BidirectionalShortFormProviderAdapter(manager.getOntologies(),
+//                            shortFormProvider);
+//
+//            parser = new ManchesterOWLSyntaxClassExpressionParser(dataFactory,
+//                    new ShortFormEntityChecker(
+//                            sfp));
+//
+//            description = parser.parse(dlQuery);
+//
+//
+//            return description;
+//        }catch(ParserException pEx){
+//
+//           pEx.printStackTrace();
+//
+//        }
+//
+//        return null;
+//    }
 
 
 

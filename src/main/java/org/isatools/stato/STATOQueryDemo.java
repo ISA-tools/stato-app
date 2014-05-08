@@ -47,30 +47,6 @@ public class STATOQueryDemo {
 
             dataFactory = manager.getOWLDataFactory();
 
-//            List<IRI> annotationIRIS = new ArrayList<IRI>();
-//            annotationIRIS.add(IRI.create("http://www.w3.org/2000/01/rdf-schema#label"));
-//
-//            Map<OWLAnnotationProperty, List<String>> propLangMap = new HashMap<OWLAnnotationProperty, List<String>>();
-//
-//            // convert IRI -> lang map into annotation property -> lang map
-//            final List<OWLAnnotationProperty> properties = new ArrayList<OWLAnnotationProperty>();
-//
-//            List<String> annotationLanguages = new ArrayList<String>();
-//
-//            Map<IRI, List<String>> iriLangMap = new HashMap<IRI, List<String>>();
-//            for (IRI iri : annotationIRIS) {
-//                iriLangMap.put(iri, Collections.unmodifiableList(annotationLanguages));
-//            }
-//
-//            for (IRI iri : annotationIRIS){
-//                final OWLAnnotationProperty ap = dataFactory.getOWLAnnotationProperty(iri);
-//                properties.add(ap);
-//                propLangMap.put(ap, iriLangMap.get(iri));
-//            }
-//            ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(properties,
-//                    propLangMap,
-//                    manager);
-
             ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(
                     Arrays.asList(dataFactory.getRDFSLabel()),
                     Collections.<OWLAnnotationProperty, List<String>> emptyMap(),
