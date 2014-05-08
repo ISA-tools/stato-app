@@ -112,15 +112,14 @@ public class OWLClassifier {
         seconds = (int) Math.ceil(elapsedTime / 1000);
         System.out.println("Reasoning took " + seconds + " seconds.");
 
-
         //change IRI
         OWLOntologyURIChanger uriChanger = new OWLOntologyURIChanger(manager);
         List<OWLOntologyChange> list = uriChanger.getChanges(ontology, iri);
         manager.applyChanges(list);
         classifiedOntology = ontology;
 
-//        System.out.println("In OWLClassifier... the ontologies in the manager are... ");
-//        System.out.println(manager.getOntologies());
+        System.out.println("In OWLClassifier... the ontologies in the manager are... ");
+        System.out.println(manager.getOntologies());
 
     }
 

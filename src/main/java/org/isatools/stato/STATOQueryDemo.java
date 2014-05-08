@@ -5,10 +5,13 @@ import org.isatools.owl.OWLClassifier;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.util.AnnotationValueShortFormProvider;
+import org.semanticweb.owlapi.util.ShortFormProvider;
 import owltools.io.CatalogXmlIRIMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.*;
 
 /**
  * Created by the ISATeam.
@@ -22,6 +25,7 @@ public class STATOQueryDemo {
 
     OWLClassifier classifier = null;
     OWLOntologyManager manager = null;
+    OWLDataFactory dataFactory = null;
     OWLOntology stato = null, classifiedOntology;
 
     private DLQueryParser dlQueryParser = null;
@@ -41,8 +45,38 @@ public class STATOQueryDemo {
             classifier.classify(stato, STATO_iri);
             classifiedOntology = classifier.getClassifiedOntology();
 
-            dlQueryParser = //new DLQueryParser(classifier.getManager());
-                    new DLQueryParser(manager);
+            dataFactory = manager.getOWLDataFactory();
+
+//            List<IRI> annotationIRIS = new ArrayList<IRI>();
+//            annotationIRIS.add(IRI.create("http://www.w3.org/2000/01/rdf-schema#label"));
+//
+//            Map<OWLAnnotationProperty, List<String>> propLangMap = new HashMap<OWLAnnotationProperty, List<String>>();
+//
+//            // convert IRI -> lang map into annotation property -> lang map
+//            final List<OWLAnnotationProperty> properties = new ArrayList<OWLAnnotationProperty>();
+//
+//            List<String> annotationLanguages = new ArrayList<String>();
+//
+//            Map<IRI, List<String>> iriLangMap = new HashMap<IRI, List<String>>();
+//            for (IRI iri : annotationIRIS) {
+//                iriLangMap.put(iri, Collections.unmodifiableList(annotationLanguages));
+//            }
+//
+//            for (IRI iri : annotationIRIS){
+//                final OWLAnnotationProperty ap = dataFactory.getOWLAnnotationProperty(iri);
+//                properties.add(ap);
+//                propLangMap.put(ap, iriLangMap.get(iri));
+//            }
+//            ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(properties,
+//                    propLangMap,
+//                    manager);
+
+            ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(
+                    Arrays.asList(dataFactory.getRDFSLabel()),
+                    Collections.<OWLAnnotationProperty, List<String>> emptyMap(),
+                    manager);
+
+            dlQueryParser = new DLQueryParser(classifiedOntology, shortFormProvider);
 
         } catch (IOException e) {
             e.printStackTrace();

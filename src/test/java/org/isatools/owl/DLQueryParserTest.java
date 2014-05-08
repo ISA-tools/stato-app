@@ -18,7 +18,7 @@ public class DLQueryParserTest {
     public void setUp() {
 
 
-        dlQueryParser = new DLQueryParser(manager);
+        //dlQueryParser = new DLQueryParser();
 
 
 

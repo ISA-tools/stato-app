@@ -9,10 +9,9 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
-import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
-import org.semanticweb.owlapi.util.QNameShortFormProvider;
-import org.semanticweb.owlapi.util.SimpleShortFormProvider;
+import org.semanticweb.owlapi.util.*;
+
+import java.util.Set;
 
 /**
  * Created by the ISATeam.
@@ -24,29 +23,55 @@ import org.semanticweb.owlapi.util.SimpleShortFormProvider;
  */
 public class DLQueryParser {
 
+    private final OWLOntology rootOntology;
+    private final ShortFormProvider shortFormProvider;
+
     private OWLOntologyManager manager = null;
     private OWLDataFactory dataFactory = null;
     private ManchesterOWLSyntaxClassExpressionParser parser = null;
     private OWLClassExpression description = null;
 
 
-    public DLQueryParser(OWLOntologyManager m){
-        manager = m;
+    /**
+     * Constructs a DLQueryParser using the specified ontology and short form
+     * provider to map entity IRIs to short names.
+     *
+     * @param rootOntology
+     *        The root ontology. This essentially provides the domain vocabulary
+     *        for the query.
+     * @param shortFormProvider
+     *        A short form provider to be used for mapping back and forth
+     *        between entities and their short names (renderings).
+     */
+    public DLQueryParser(OWLOntology rootOntology, ShortFormProvider shortFormProvider){
+        this.rootOntology = rootOntology;
+        this.shortFormProvider = shortFormProvider;
+
+        System.out.println("Classes in signature");
+        System.out.println(rootOntology.getClassesInSignature());
+
+        manager = rootOntology.getOWLOntologyManager();
         dataFactory = manager.getOWLDataFactory();
     }
 
     public OWLClassExpression parseString(String classExpressionString){
 
+        System.out.println("ontologies...");
         System.out.println(manager.getOntologies());
 
         // Set up the real parser
         ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(
                 dataFactory, classExpressionString);
-        //parser.setDefaultOntology(rootOntology);
+        parser.setDefaultOntology(rootOntology);
+
+        Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();
+
+        System.out.println("imports closure");
+        System.out.println(importsClosure);
 
         BidirectionalShortFormProvider bidiShortFormProvider =
-                new BidirectionalShortFormProviderAdapter(manager.getOntologies(),
-                        new SimpleShortFormProvider());
+                 new BidirectionalShortFormProviderAdapter(
+                        manager, importsClosure, shortFormProvider);
 
         // Specify an entity checker that wil be used to check a class
         // expression contains the correct names.
@@ -68,8 +93,7 @@ public class DLQueryParser {
 
             BidirectionalShortFormProvider sfp =
                     new BidirectionalShortFormProviderAdapter(manager.getOntologies(),
-                            new SimpleShortFormProvider());
-                            //new QNameShortFormProvider());
+                            shortFormProvider);
 
             parser = new ManchesterOWLSyntaxClassExpressionParser(dataFactory,
                     new ShortFormEntityChecker(
