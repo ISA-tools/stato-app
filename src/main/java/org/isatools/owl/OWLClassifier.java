@@ -119,6 +119,9 @@ public class OWLClassifier {
         manager.applyChanges(list);
         classifiedOntology = ontology;
 
+//        System.out.println("In OWLClassifier... the ontologies in the manager are... ");
+//        System.out.println(manager.getOntologies());
+
     }
 
     public OWLOntology getClassifiedOntology(){

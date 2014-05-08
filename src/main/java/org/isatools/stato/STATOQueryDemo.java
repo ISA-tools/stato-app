@@ -2,7 +2,6 @@ package org.isatools.stato;
 
 import org.isatools.owl.DLQueryParser;
 import org.isatools.owl.OWLClassifier;
-import org.isatools.owl.OWLUtil;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -19,11 +18,11 @@ import java.io.IOException;
  *
  * @author <a href="mailto:alejandra.gonzalez.beltran@gmail.com">Alejandra Gonzalez-Beltran</a>
  */
-public class STATOclassified  {
+public class STATOQueryDemo {
 
     OWLClassifier classifier = null;
     OWLOntologyManager manager = null;
-    OWLOntology stato = null;
+    OWLOntology stato = null, classifiedOntology;
 
     private DLQueryParser dlQueryParser = null;
 
@@ -33,14 +32,17 @@ public class STATOclassified  {
     private IRI STATO_iri = IRI.create("http://purl.obolibrary.org/obo/stato.owl");
 
 
-    public STATOclassified(){
+    public STATOQueryDemo(){
 
         try {
 
             stato = loadLocalOntology(STATO_file);
             classifier = new OWLClassifier();
             classifier.classify(stato, STATO_iri);
-            dlQueryParser = new DLQueryParser(classifier.getManager());
+            classifiedOntology = classifier.getClassifiedOntology();
+
+            dlQueryParser = //new DLQueryParser(classifier.getManager());
+                    new DLQueryParser(manager);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,7 +66,7 @@ public class STATOclassified  {
 
     private void runDLQuery(String dlQueryString){
 
-        OWLClassExpression classExpression = dlQueryParser.parse(dlQueryString);
+        OWLClassExpression classExpression = dlQueryParser.parseString(dlQueryString);
 
         NodeSet<OWLClass> set =classifier.getDescendants(classExpression);
 
@@ -85,7 +87,7 @@ public class STATOclassified  {
 
     public static void main(String[] args) {
 
-        STATOclassified statoClassified = new STATOclassified();
+        STATOQueryDemo statoClassified = new STATOQueryDemo();
         statoClassified.runQueries();
     }
 
