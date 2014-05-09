@@ -30,13 +30,14 @@ public class STATOQueryDemo {
     private OWLClassifier classifier = null;
     private OWLOntologyManager manager = null;
     private OWLDataFactory dataFactory = null;
-    private OWLOntology stato = null, classifiedOntology;
+    private OWLOntology stato = null;//, classifiedOntology;
 
     private DLQueryParser dlQueryParser = null;
     private DLQueryEngine dlQueryEngine = null;
 
-    private String STATO_file = "/Users/agbeltran/workspace/stato/src/ontology/stato.owl";
-    private String classifiedSTATO_file =  "/Users/agbeltran/workspace/src/ontology/stato/classified-stato.owl";
+    private String STATO_file = "/Users/agbeltran/workspace/stato-agb/releases/1.1/stato.owl";
+                                //"/Users/agbeltran/workspace/stato/src/ontology/stato.owl";
+    //private String classifiedSTATO_file =  "/Users/agbeltran/workspace/src/ontology/stato/classified-stato.owl";
     private IRI STATO_iri = IRI.create("http://purl.obolibrary.org/obo/stato.owl");
 
 
@@ -45,10 +46,6 @@ public class STATOQueryDemo {
         try {
 
             stato = loadLocalOntology(STATO_file);
-            classifier = new OWLClassifier();
-            classifier.classify(stato, STATO_iri);
-            classifiedOntology = classifier.getClassifiedOntology();
-
             dataFactory = manager.getOWLDataFactory();
 
             ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(
@@ -56,10 +53,7 @@ public class STATOQueryDemo {
                     Collections.<OWLAnnotationProperty, List<String>> emptyMap(),
                     manager);
 
-            dlQueryParser = new DLQueryParser(classifiedOntology, shortFormProvider);
-            //dlQueryEngine = new DLQueryEngine(classifier.getReasoner(), shortFormProvider);
-
-            dlQueryEngine = new DLQueryEngine(createReasoner(classifiedOntology), shortFormProvider);
+            dlQueryEngine = new DLQueryEngine(createReasoner(stato), shortFormProvider);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -84,22 +78,16 @@ public class STATOQueryDemo {
             throws IOException, OWLOntologyCreationException {
         File file = new File(fileString);
         String path = file.getParent();
-        String catalogPath = path + "/catalog-v001.xml";
+        //String catalogPath = path + "/catalog-v001.xml";
         manager = OWLManager.createOWLOntologyManager();
-        manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
+        //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
         return manager.loadOntologyFromOntologyDocument(file);
     }
 
 
     private void runDLQuery(String dlQueryString){
-
-//        OWLClassExpression classExpression = dlQueryParser.parseClassExpression(dlQueryString);
-//
-//        NodeSet<OWLClass> set =classifier.getDescendants(classExpression);
-//
-//        System.out.println("Set =>" + set);
-
-        System.out.println(dlQueryEngine.getSubClasses(dlQueryString, true));
+        Set<OWLClass> set = dlQueryEngine.getSubClasses(dlQueryString, true);
+        System.out.println("query result = " + set);
     }
 
 

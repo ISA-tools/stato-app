@@ -49,8 +49,7 @@ public class DLQueryEngine {
         if (classExpressionString.trim().length() == 0) {
             return Collections.emptySet();
         }
-        OWLClassExpression classExpression = parser
-                .parseClassExpression(classExpressionString);
+        OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
         NodeSet<OWLClass> superClasses = reasoner.getSuperClasses(
                 classExpression, direct);
         return superClasses.getFlattened();
@@ -68,8 +67,7 @@ public class DLQueryEngine {
         if (classExpressionString.trim().length() == 0) {
             return Collections.emptySet();
         }
-        OWLClassExpression classExpression = parser
-                .parseClassExpression(classExpressionString);
+        OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
         Node<OWLClass> equivalentClasses = reasoner
                 .getEquivalentClasses(classExpression);
         Set<OWLClass> result;
@@ -97,8 +95,7 @@ public class DLQueryEngine {
         if (classExpressionString.trim().length() == 0) {
             return Collections.emptySet();
         }
-        OWLClassExpression classExpression = parser
-                .parseClassExpression(classExpressionString);
+        OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
         NodeSet<OWLClass> subClasses = reasoner.getSubClasses(classExpression,
                 direct);
         return subClasses.getFlattened();
@@ -119,8 +116,7 @@ public class DLQueryEngine {
         if (classExpressionString.trim().length() == 0) {
             return Collections.emptySet();
         }
-        OWLClassExpression classExpression = parser
-                .parseClassExpression(classExpressionString);
+        OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
         NodeSet<OWLNamedIndividual> individuals = reasoner.getInstances(
                 classExpression, direct);
         return individuals.getFlattened();

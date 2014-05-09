@@ -45,13 +45,14 @@ public class DLQueryParser {
         this.rootOntology = rootOntology;
         this.shortFormProvider = shortFormProvider;
 
-
         //debugging
         System.out.println("Classes in signature");
         Set<OWLClass> classes = rootOntology.getClassesInSignature();
         for(OWLClass clazz : classes){
-            System.out.println(clazz.getIRI());
-            System.out.println(clazz.getAnnotations(rootOntology));
+            if (clazz.getIRI().equals(IRI.create("http://purl.obolibrary.org/obo/OBI_0000673"))){
+                System.out.println(clazz.getIRI());
+                System.out.println(clazz.getAnnotations(rootOntology));
+            }
         }
         //debugging
 
@@ -66,11 +67,16 @@ public class DLQueryParser {
         System.out.println(importsClosure);
         //end debugging
 
+        System.out.println("ontologies");
+        System.out.println(manager.getOntologies());
+
         // Create a bidirectional short form provider to do the actual mapping.
         // It will generate names using the input
         // short form provider.
+        //bidiShortFormProvider = new BidirectionalShortFormProviderAdapter(
+        //        manager, importsClosure, shortFormProvider);
         bidiShortFormProvider = new BidirectionalShortFormProviderAdapter(
-                manager, importsClosure, shortFormProvider);
+                manager.getOntologies(), shortFormProvider);
     }
 
 
@@ -88,8 +94,7 @@ public class DLQueryParser {
         System.out.println(manager.getOntologies());
 
         // Set up the real parser
-        ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(
-                dataFactory, classExpressionString);
+        ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(dataFactory, classExpressionString);
         parser.setDefaultOntology(rootOntology);
 
         // Specify an entity checker that wil be used to check a class
@@ -101,36 +106,6 @@ public class DLQueryParser {
         // Do the actual parsing
         return parser.parseClassExpression();
     }
-
-//    public OWLClassExpression parse(String dlQuery) {
-//        try{
-//
-//            System.out.println("Ontologies... ");
-//            System.out.println(manager.getOntologies());
-//
-//            BidirectionalShortFormProvider sfp =
-//                    new BidirectionalShortFormProviderAdapter(manager.getOntologies(),
-//                            shortFormProvider);
-//
-//            parser = new ManchesterOWLSyntaxClassExpressionParser(dataFactory,
-//                    new ShortFormEntityChecker(
-//                            sfp));
-//
-//            description = parser.parse(dlQuery);
-//
-//
-//            return description;
-//        }catch(ParserException pEx){
-//
-//           pEx.printStackTrace();
-//
-//        }
-//
-//        return null;
-//    }
-
-
-
 
 
 }
