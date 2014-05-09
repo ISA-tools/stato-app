@@ -5,10 +5,7 @@ import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ParserException;
 import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.*;
 
 import java.util.Set;
@@ -48,8 +45,16 @@ public class DLQueryParser {
         this.rootOntology = rootOntology;
         this.shortFormProvider = shortFormProvider;
 
+
+        //debugging
         System.out.println("Classes in signature");
-        System.out.println(rootOntology.getClassesInSignature());
+        Set<OWLClass> classes = rootOntology.getClassesInSignature();
+        for(OWLClass clazz : classes){
+            System.out.println(clazz.getIRI());
+            System.out.println(clazz.getAnnotations(rootOntology));
+        }
+        //debugging
+
 
         manager = rootOntology.getOWLOntologyManager();
         dataFactory = manager.getOWLDataFactory();

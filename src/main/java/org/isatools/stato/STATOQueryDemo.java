@@ -6,6 +6,9 @@ import org.isatools.owl.OWLClassifier;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
+import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
 import org.semanticweb.owlapi.util.AnnotationValueShortFormProvider;
 import org.semanticweb.owlapi.util.ShortFormProvider;
 import owltools.io.CatalogXmlIRIMapper;
@@ -54,7 +57,9 @@ public class STATOQueryDemo {
                     manager);
 
             dlQueryParser = new DLQueryParser(classifiedOntology, shortFormProvider);
-            dlQueryEngine = new DLQueryEngine(classifier.getReasoner(), shortFormProvider);
+            //dlQueryEngine = new DLQueryEngine(classifier.getReasoner(), shortFormProvider);
+
+            dlQueryEngine = new DLQueryEngine(createReasoner(classifiedOntology), shortFormProvider);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,6 +67,16 @@ public class STATOQueryDemo {
             e.printStackTrace();
         }
 
+    }
+
+    private OWLReasoner createReasoner(final OWLOntology rootOntology) {
+        // We need to create an instance of OWLReasoner. An OWLReasoner provides
+        // the basic query functionality that we need, for example the ability
+        // obtain the subclasses of a class etc. To do this we use a reasoner
+        // factory.
+        // Create a reasoner factory.
+        OWLReasonerFactory reasonerFactory = new StructuralReasonerFactory();
+        return reasonerFactory.createReasoner(rootOntology);
     }
 
 
