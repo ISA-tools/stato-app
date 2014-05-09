@@ -80,7 +80,15 @@
             border-radius: 0 3px 3px 0;
         }
     </style>
-    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <!--<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">--
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="../assets/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Bootstrap theme -->
+    <!--<link href="../assets/css/bootstrap-theme.min.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <!--<link href="../assets/css/theme.css" rel="stylesheet"> -->
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>

@@ -96,6 +96,10 @@ public class DLQueryEngine {
             return Collections.emptySet();
         }
         OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
+
+        System.out.println("ClassExpression");
+        System.out.println(classExpression);
+
         NodeSet<OWLClass> subClasses = reasoner.getSubClasses(classExpression,
                 direct);
         return subClasses.getFlattened();

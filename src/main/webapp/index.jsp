@@ -24,7 +24,7 @@
     <div class="jumbotron">
         <!--<h1>Marketing stuff!</h1>-->
         <a href="http://isa-tools.github.io/stato/"> <img src="https://raw.github.com/ISA-tools/stato/dev/images/stato-logo-1.png" alt="STATO Logo" /></a>
-        <p class="lead">TSTATO is a <strong>general-purpose STATistics Ontology</strong> processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics. STATO also covers aspects of experimental design and description of plots and graphical representations commonly used to provide visual cues of data distribution or layout and to assist review of the results..</p>
+        <p class="lead">STATO is a <strong>general-purpose STATistics Ontology</strong> processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics. STATO also covers aspects of experimental design and description of plots and graphical representations commonly used to provide visual cues of data distribution or layout and to assist review of the results..</p>
         <a class="btn btn-large btn-success" href="queries.jsp">Check the STATO queries demo</a>
     </div>
 

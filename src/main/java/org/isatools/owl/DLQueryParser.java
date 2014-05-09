@@ -90,8 +90,8 @@ public class DLQueryParser {
      */
     public OWLClassExpression parseClassExpression(String classExpressionString){
 
-        System.out.println("ontologies...");
-        System.out.println(manager.getOntologies());
+//        System.out.println("ontologies...");
+//        System.out.println(manager.getOntologies());
 
         // Set up the real parser
         ManchesterOWLSyntaxEditorParser parser = new ManchesterOWLSyntaxEditorParser(dataFactory, classExpressionString);

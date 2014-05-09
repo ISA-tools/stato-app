@@ -104,7 +104,7 @@ public class STATOQueryDemo {
 
 
     private void runDLQuery(String dlQueryString){
-        Set<OWLClass> set = dlQueryEngine.getSubClasses(dlQueryString, true);
+        Set<OWLClass> set = dlQueryEngine.getSubClasses(dlQueryString, false);
         System.out.println("query result = " + set);
     }
 

@@ -21,4 +21,11 @@
     </div>
 
 
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1>STATO Query Demo</h1>
+        <p class="lead">The STATO Query Demo was developed to demonstrate how the STATistics Ontology can be used to answer queries about commmon knowledge on statistics.</p>
+        <a class="btn btn-large btn-success" href="queries.jsp">Check the STATO queries demo</a>
+    </div>
+
 <%@include file="footer.jsp"%>
