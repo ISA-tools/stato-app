@@ -30,6 +30,10 @@ public class OWLClassifier {
         return manager;
     }
 
+    public OWLReasoner getReasoner(){
+        return reasoner;
+    }
+
     public void classify(OWLOntology onto, IRI iri) {
         ontology = onto;
         //manager = onto.getOWLOntologyManager();
@@ -45,7 +49,7 @@ public class OWLClassifier {
 
         // Create the reasoner and classify the ontology
         //reasoner = reasonerFactory.createNonBufferingReasoner(ontology);
-        reasoner=new Reasoner.ReasonerFactory().createReasoner(ontology);
+        reasoner = new Reasoner.ReasonerFactory().createReasoner(ontology);
 
 
         System.out.println("Checking consistency...");
@@ -96,15 +100,12 @@ public class OWLClassifier {
         // we want to use and the inferred axiom generators that we want to use.
         InferredOntologyGenerator iog = new InferredOntologyGenerator(reasoner, gens);
 
-
         System.out.println("Using these axiom generators:");
         for(InferredAxiomGenerator inf: iog.getAxiomGenerators()) {
             System.out.println("    "+ inf);
         }
 
-
         startTime = System.currentTimeMillis();
-
 
         iog.fillOntology(manager, ontology);
 

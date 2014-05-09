@@ -26,6 +26,7 @@ public class DLQueryParser {
     private final OWLOntology rootOntology;
     private final ShortFormProvider shortFormProvider;
 
+    private BidirectionalShortFormProvider bidiShortFormProvider = null;
     private OWLOntologyManager manager = null;
     private OWLDataFactory dataFactory = null;
     private ManchesterOWLSyntaxClassExpressionParser parser = null;
@@ -52,9 +53,31 @@ public class DLQueryParser {
 
         manager = rootOntology.getOWLOntologyManager();
         dataFactory = manager.getOWLDataFactory();
+
+        Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();
+
+        //debugging
+        System.out.println("imports closure");
+        System.out.println(importsClosure);
+        //end debugging
+
+        // Create a bidirectional short form provider to do the actual mapping.
+        // It will generate names using the input
+        // short form provider.
+        bidiShortFormProvider = new BidirectionalShortFormProviderAdapter(
+                manager, importsClosure, shortFormProvider);
     }
 
-    public OWLClassExpression parseString(String classExpressionString){
+
+    /**
+     * Parses a class expression string to obtain a class expression.
+     *
+     * @param classExpressionString
+     *        The class expression string
+     * @return The corresponding class expression if the class expression string
+     *         is malformed or contains unknown entity names.
+     */
+    public OWLClassExpression parseClassExpression(String classExpressionString){
 
         System.out.println("ontologies...");
         System.out.println(manager.getOntologies());
@@ -64,25 +87,14 @@ public class DLQueryParser {
                 dataFactory, classExpressionString);
         parser.setDefaultOntology(rootOntology);
 
-        Set<OWLOntology> importsClosure = rootOntology.getImportsClosure();
-
-        System.out.println("imports closure");
-        System.out.println(importsClosure);
-
-        BidirectionalShortFormProvider bidiShortFormProvider =
-                 new BidirectionalShortFormProviderAdapter(
-                        manager, importsClosure, shortFormProvider);
-
         // Specify an entity checker that wil be used to check a class
         // expression contains the correct names.
         OWLEntityChecker entityChecker = new ShortFormEntityChecker(
                 bidiShortFormProvider);
         parser.setOWLEntityChecker(entityChecker);
+
         // Do the actual parsing
-
         return parser.parseClassExpression();
-
-
     }
 
 //    public OWLClassExpression parse(String dlQuery) {

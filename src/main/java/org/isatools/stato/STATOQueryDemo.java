@@ -1,5 +1,6 @@
 package org.isatools.stato;
 
+import org.isatools.owl.DLQueryEngine;
 import org.isatools.owl.DLQueryParser;
 import org.isatools.owl.OWLClassifier;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -23,13 +24,13 @@ import java.util.*;
  */
 public class STATOQueryDemo {
 
-    OWLClassifier classifier = null;
-    OWLOntologyManager manager = null;
-    OWLDataFactory dataFactory = null;
-    OWLOntology stato = null, classifiedOntology;
+    private OWLClassifier classifier = null;
+    private OWLOntologyManager manager = null;
+    private OWLDataFactory dataFactory = null;
+    private OWLOntology stato = null, classifiedOntology;
 
     private DLQueryParser dlQueryParser = null;
-
+    private DLQueryEngine dlQueryEngine = null;
 
     private String STATO_file = "/Users/agbeltran/workspace/stato/src/ontology/stato.owl";
     private String classifiedSTATO_file =  "/Users/agbeltran/workspace/src/ontology/stato/classified-stato.owl";
@@ -53,6 +54,7 @@ public class STATOQueryDemo {
                     manager);
 
             dlQueryParser = new DLQueryParser(classifiedOntology, shortFormProvider);
+            dlQueryEngine = new DLQueryEngine(classifier.getReasoner(), shortFormProvider);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -76,11 +78,13 @@ public class STATOQueryDemo {
 
     private void runDLQuery(String dlQueryString){
 
-        OWLClassExpression classExpression = dlQueryParser.parseString(dlQueryString);
+//        OWLClassExpression classExpression = dlQueryParser.parseClassExpression(dlQueryString);
+//
+//        NodeSet<OWLClass> set =classifier.getDescendants(classExpression);
+//
+//        System.out.println("Set =>" + set);
 
-        NodeSet<OWLClass> set =classifier.getDescendants(classExpression);
-
-        System.out.println("Set =>" + set);
+        System.out.println(dlQueryEngine.getSubClasses(dlQueryString, true));
     }
 
 
