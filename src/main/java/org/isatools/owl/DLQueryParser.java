@@ -99,7 +99,7 @@ public class DLQueryParser {
 
         // Specify an entity checker that wil be used to check a class
         // expression contains the correct names.
-        OWLEntityChecker entityChecker = new ShortFormEntityChecker(
+        OWLEntityChecker entityChecker = new ShortFormEntityQuoteChecker(
                 bidiShortFormProvider);
         parser.setOWLEntityChecker(entityChecker);
 

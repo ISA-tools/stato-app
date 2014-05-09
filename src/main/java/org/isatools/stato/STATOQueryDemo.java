@@ -48,8 +48,26 @@ public class STATOQueryDemo {
             stato = loadLocalOntology(STATO_file);
             dataFactory = manager.getOWLDataFactory();
 
+            List<OWLAnnotationProperty> annotationProperties = new ArrayList();//Arrays.asList(dataFactory.getRDFSLabel());
+
+            Map<OWLAnnotationProperty, List<String>> langMap = new HashMap<OWLAnnotationProperty, List<String>>();
+
+            Map<IRI, List<String>> annotMap = new HashMap<IRI, List<String>>();
+            List<String> langList = new ArrayList();
+
+            String en = Locale.ENGLISH.getLanguage();
+            langList.add(en);
+            annotMap.put(dataFactory.getRDFSLabel().getIRI(), langList);
+
+            for (IRI iri : annotMap.keySet()){
+                OWLAnnotationProperty p  = manager.getOWLDataFactory().getOWLAnnotationProperty(iri);
+                annotationProperties.add(p);
+                langMap.put(p, annotMap.get(iri));
+            }
+
             ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(
-                    Arrays.asList(dataFactory.getRDFSLabel()),
+                    annotationProperties,
+                    //langMap,
                     Collections.<OWLAnnotationProperty, List<String>> emptyMap(),
                     manager);
 
@@ -92,13 +110,10 @@ public class STATOQueryDemo {
 
 
     public void runQueries(){
-
         for(String dlQuery: STATOQueries.QUERY_DL){
-
             System.out.println("DL Query = "+dlQuery);
             runDLQuery(dlQuery);
         }
-
     }
 
 
