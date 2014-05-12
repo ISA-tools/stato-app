@@ -3,6 +3,7 @@ package org.isatools.stato;
 import org.isatools.owl.DLQueryEngine;
 import org.isatools.owl.DLQueryParser;
 import org.isatools.owl.OWLClassifier;
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -87,8 +88,11 @@ public class STATOQueryDemo {
         // obtain the subclasses of a class etc. To do this we use a reasoner
         // factory.
         // Create a reasoner factory.
-        OWLReasonerFactory reasonerFactory = new StructuralReasonerFactory();
-        return reasonerFactory.createReasoner(rootOntology);
+        //OWLReasonerFactory reasonerFactory = new StructuralReasonerFactory();
+        //return reasonerFactory.createReasoner(rootOntology);
+
+        OWLReasoner reasoner = new Reasoner.ReasonerFactory().createReasoner(rootOntology);
+        return reasoner;
     }
 
 

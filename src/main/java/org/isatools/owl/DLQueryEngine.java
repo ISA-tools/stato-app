@@ -1,21 +1,25 @@
 package org.isatools.owl;
 
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
-import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.HermiT.Reasoner;
+import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.util.ShortFormProvider;
+import org.semanticweb.owlapi.util.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 public class DLQueryEngine {
 
     private final OWLReasoner reasoner;
-    private final DLQueryParser parser;
+    private DLQueryParser parser;
+    private OWLOntologyManager manager;
+    private OWLDataFactory factory;
+    private OWLOntology rootOntology;
 
     /**
      * Constructs a DLQueryEngine. This will answer "DL queries" using the
@@ -30,7 +34,40 @@ public class DLQueryEngine {
     public DLQueryEngine(OWLReasoner reasoner,
                          ShortFormProvider shortFormProvider) {
         this.reasoner = reasoner;
-        OWLOntology rootOntology = reasoner.getRootOntology();
+        rootOntology = reasoner.getRootOntology();
+
+
+        manager = rootOntology.getOWLOntologyManager();
+        factory = manager.getOWLDataFactory();
+
+//        System.out.println("Checking consistency...");
+//        if(!reasoner.isConsistent()) {
+//            System.out.println("Ontology is not consistent!");
+//            return;
+//        }
+//        System.out.println("End of checking consistency...");
+//
+//        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
+//
+//        List<InferredAxiomGenerator<? extends OWLAxiom>> gens = new ArrayList<InferredAxiomGenerator<? extends OWLAxiom>>();
+//        gens.add(new InferredSubClassAxiomGenerator());
+//        gens.add(new InferredClassAssertionAxiomGenerator());
+//
+//        InferredOntologyGenerator iog = new InferredOntologyGenerator(reasoner, gens);
+//
+//        System.out.println("Using these axiom generators:");
+//        for(InferredAxiomGenerator inf: iog.getAxiomGenerators()) {
+//            System.out.println("    "+ inf);
+//        }
+//
+//
+//        iog.fillOntology(manager, rootOntology);
+//
+//        //change IRI
+//        OWLOntologyURIChanger uriChanger = new OWLOntologyURIChanger(manager);
+//        List<OWLOntologyChange> list = uriChanger.getChanges(rootOntology, IRI.create("http://purl.obolibrary.org/obo/stato.owl"));
+//        manager.applyChanges(list);
+
         parser = new DLQueryParser(rootOntology, shortFormProvider);
     }
 
@@ -97,11 +134,21 @@ public class DLQueryEngine {
         }
         OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
 
+//        OWLClass query = factory.getOWLClass(IRI.create("http://example.org/query"));
+//
+//        OWLEquivalentClassesAxiom equivalentClassesAxiom = factory.getOWLEquivalentClassesAxiom(query, classExpression);
+//
+//        manager.addAxiom(rootOntology, equivalentClassesAxiom);
+
         System.out.println("ClassExpression");
         System.out.println(classExpression);
 
+        //NodeSet<OWLClass> subClasses = reasoner.getSubClasses(query,
+        //        direct);
+
         NodeSet<OWLClass> subClasses = reasoner.getSubClasses(classExpression,
                 direct);
+
         return subClasses.getFlattened();
     }
 

@@ -46,14 +46,14 @@ public class DLQueryParser {
         this.shortFormProvider = shortFormProvider;
 
         //debugging
-        System.out.println("Classes in signature");
-        Set<OWLClass> classes = rootOntology.getClassesInSignature();
-        for(OWLClass clazz : classes){
-            if (clazz.getIRI().equals(IRI.create("http://purl.obolibrary.org/obo/OBI_0000673"))){
-                System.out.println(clazz.getIRI());
-                System.out.println(clazz.getAnnotations(rootOntology));
-            }
-        }
+//        System.out.println("Classes in signature");
+//        Set<OWLClass> classes = rootOntology.getClassesInSignature();
+//        for(OWLClass clazz : classes){
+//            if (clazz.getIRI().equals(IRI.create("http://purl.obolibrary.org/obo/OBI_0000673"))){
+//                System.out.println(clazz.getIRI());
+//                System.out.println(clazz.getAnnotations(rootOntology));
+//            }
+//        }
         //debugging
 
 
