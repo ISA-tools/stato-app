@@ -8,8 +8,43 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
+   <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet">-->
+   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .carousel {
+            height: 500px;
+            margin-bottom: 60px;
+        }
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+            z-index: 10;
+        }
+        /* Declare heights because of positioning of img element */
+        .carousel .item {
+            width: 100%;
+            height: 500px;
+            background-color: #777;
+        }
+        .carousel-inner > .item > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 500px;
+        }
+        @media (min-width: 768px) {
+            .carousel-caption p {
+                margin-bottom: 20px;
+                font-size: 21px;
+                line-height: 1.4;
+            }
+        }
+        img {
+            background: #f1f2f1;
+        }
+    </style>
+    <!--  <style type="text/css">
         body {
             padding-top: 20px;
             padding-bottom: 60px;
@@ -80,6 +115,7 @@
             border-radius: 0 3px 3px 0;
         }
     </style>
+    -->
     <!--<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">--
 
     <!-- Bootstrap core CSS -->
