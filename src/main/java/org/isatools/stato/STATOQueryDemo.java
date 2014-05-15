@@ -37,13 +37,14 @@ public class STATOQueryDemo {
     private DLQueryEngine dlQueryEngine = null;
 
     private String STATO_file = "/Users/agbeltran/workspace/stato-agb/releases/1.1/stato.owl";
-                                //"/Users/agbeltran/workspace/stato/src/ontology/stato.owl";
-    //private String classifiedSTATO_file =  "/Users/agbeltran/workspace/src/ontology/stato/classified-stato.owl";
     private IRI STATO_iri = IRI.create("http://purl.obolibrary.org/obo/stato.owl");
+
+    private List<String> result;
 
 
     public STATOQueryDemo(){
 
+        result = new ArrayList<String>();
         try {
 
             stato = loadLocalOntology(STATO_file);
@@ -107,16 +108,32 @@ public class STATOQueryDemo {
     }
 
 
-    private void runDLQuery(String dlQueryString){
+    public String runDLQuery(String dlQueryString){
         Set<OWLClass> set = dlQueryEngine.getSubClasses(dlQueryString, false);
-        System.out.println("query result = " + set);
+        return processResults(set);
+    }
+
+    public String processResults(Set<OWLClass> set){
+
+        StringBuffer buffer = new StringBuffer();
+        for(OWLClass cls: set){
+            // Get the annotations on the class that use the label property (rdfs:label)
+            for (OWLAnnotation annotation : cls.getAnnotations(stato, dataFactory.getRDFSLabel())) {
+                if (annotation.getValue() instanceof OWLLiteral) {
+                    OWLLiteral val = (OWLLiteral) annotation.getValue();
+                        //Get your String here
+                        buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
+                }
+            }
+        }
+        return buffer.toString();
     }
 
 
     public void runQueries(){
         for(String dlQuery: STATOQueries.QUERY_DL){
-            System.out.println("DL Query = "+dlQuery);
-            runDLQuery(dlQuery);
+            String processedResult = runDLQuery(dlQuery);
+            result.add(processedResult);
         }
     }
 
@@ -124,7 +141,9 @@ public class STATOQueryDemo {
     public static void main(String[] args) {
 
         STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
-        statoQueryDemo.runQueries();
+        String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
+        System.out.println(result);
+        //statoQueryDemo.runQueries();
     }
 
 }

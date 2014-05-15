@@ -2,14 +2,10 @@
 
 <%@ page import="java.util.*" %>
 <%@ page import="org.isatools.stato.STATOQueries" %>
+<%@ page import="org.isatools.stato.STATOQueryDemo" %>
 
 <%!
-    Date theDate = new Date();
-    Date getDate()
-    {
-        System.out.println( "In getDate() method" );
-        return theDate;
-    }
+    STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
 %>
 
 <div class="container">
@@ -59,8 +55,15 @@
 <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <%
+            int i=0;
+            for(String queryString: STATOQueries.QUERY_STRING){
+        %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" <%= (i==0)? "class=\"active\"": "" %> ></li>
+        <%
+                i++;
+            }
+        %>
     </ol>
 
 
@@ -68,13 +71,15 @@
     <div class="carousel-inner">
 
         <%
-            int i=0;
+            i=0;
             for(String queryString: STATOQueries.QUERY_STRING){
         %>
-
               <div class="item <%= (i==0)? "active": "" %> ">
-                    <%= queryString %>
-                    <!-- <img src="img1.jpg" class="img-responsive" />-->
+                  <div class="carousel-caption">
+                      <h3><%= queryString %></h3>
+                      <p>Description Logics Query: <%= STATOQueries.QUERY_DL[i] %></p>
+                      <p>Results: <%= statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[i]) %></p>
+                  </div>
               </div>
         <%
             i++;

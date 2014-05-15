@@ -35,7 +35,7 @@
         }
         @media (min-width: 768px) {
             .carousel-caption p {
-                margin-bottom: 20px;
+                margin-bottom: 280px;
                 font-size: 21px;
                 line-height: 1.4;
             }
