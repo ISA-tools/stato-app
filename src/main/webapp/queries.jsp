@@ -1,5 +1,16 @@
 <%@include file="header.jsp" %>
 
+<%@ page import="java.util.*" %>
+<%@ page import="org.isatools.stato.STATOQueries" %>
+
+<%!
+    Date theDate = new Date();
+    Date getDate()
+    {
+        System.out.println( "In getDate() method" );
+        return theDate;
+    }
+%>
 
 <div class="container">
     <div class="navbar-wrapper">
@@ -52,14 +63,24 @@
         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     </ol>
 
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="img1.jpg" class="img-responsive" />
-        </div>
-        <div class="item">
-            <img src="img2.jpg" class="img-responsive" />
-        </div>
+
+        <%
+            int i=0;
+            for(String queryString: STATOQueries.QUERY_STRING){
+        %>
+
+              <div class="item <%= (i==0)? "active": "" %> ">
+                    <%= queryString %>
+                    <!-- <img src="img1.jpg" class="img-responsive" />-->
+              </div>
+        <%
+            i++;
+            }
+        %>
+
     </div>
 
     <!-- Controls -->

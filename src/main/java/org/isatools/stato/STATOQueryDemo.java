@@ -123,8 +123,8 @@ public class STATOQueryDemo {
 
     public static void main(String[] args) {
 
-        STATOQueryDemo statoClassified = new STATOQueryDemo();
-        statoClassified.runQueries();
+        STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
+        statoQueryDemo.runQueries();
     }
 
 }
