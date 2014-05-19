@@ -80,7 +80,6 @@ public class STATOQueryDemoServlet extends HttpServlet {
 
             runQuery(queryNumber, response);
 
-        //}
         }catch(OWLOntologyCreationException ocex){
             ocex.printStackTrace();
         }

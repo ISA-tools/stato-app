@@ -10,7 +10,7 @@
                 <div class="container">
                     <ul class="nav">
                         <li><a href="index.jsp">Home</a></li>
-                        <li><a href="queries.jsp">STATO Queries</a></li>
+                        <li><a href="queryForm.jsp">STATO Queries</a></li>
                         <li class="active"><a href="downloads.jsp">Downloads</a></li>
                         <li><a href="about.jsp">About</a></li>
                         <li><a href="contact.jsp">Contact</a></li>

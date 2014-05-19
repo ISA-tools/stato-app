@@ -4,9 +4,10 @@
 <%@ page import="org.isatools.stato.STATOQueries" %>
 <%@ page import="org.isatools.stato.STATOQueryDemoServlet" %>
 
+<form method=post action="queryResult.jsp" name=queryForm>
 <%!
 
-   STATOQueryDemoServlet statoQueryDemo = new STATOQueryDemoServlet();
+   //STATOQueryDemoServlet statoQueryDemo = new STATOQueryDemoServlet();
    // statoQueryDemo.runQueries();
    //List<String> result = statoQueryDemo.getResult();
 
@@ -45,7 +46,7 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li> -->
-                            <li><a href="queries.jsp">Demo Queries</a></li>
+                            <li><a href="queryForm.jsp">Demo Queries</a></li>
 
                         </ul>
                     </div>
@@ -81,8 +82,10 @@
               <div class="item <%= (i==0)? "active": "" %> ">
                   <div class="carousel-caption">
                       <h3><%= queryString %></h3>
-                      <p>Description Logics Query: <%= STATOQueries.QUERY_DL[i] %></p>
-                      <p>Results: <%= statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[i]) %></p>
+
+                      <% request.setAttribute("queryNumber", i); %>
+                      <jsp:include page="STATOQueryDemoServlet" flush="true"/>
+
                   </div>
               </div>
         <%
@@ -117,7 +120,7 @@
             <p>STATO maintains information about statistical tests and their conditions of application. We show some
                 query examples about statistical tests.</p>
             <!--<p><a class="btn btn-default" href="#" role="button">ASK STATO &raquo;</a></p>-->
-            <a class="btn btn-large btn-success" href="queries.jsp">ASK STATO</a>
+            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -128,7 +131,7 @@
             <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
                 applications</p>
             <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-            <a class="btn btn-large btn-success" href="queries.jsp">ASK STATO</a>
+            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -138,7 +141,7 @@
 
             <p>STATO and statistical measures</p>
             <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-            <a class="btn btn-large btn-success" href="queries.jsp">ASK STATO</a>
+            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -148,7 +151,7 @@
 
             <p>STATO and study designs</p>
             <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-            <a class="btn btn-large btn-success" href="queries.jsp">ASK STATO</a>
+            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
         </div>
         <!-- /.col-lg-4 -->
     </div>
