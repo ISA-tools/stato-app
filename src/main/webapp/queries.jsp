@@ -19,8 +19,8 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
-                            <li class="active"><a href="queries.jsp">Contact</a></li>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li class="active"><a href="queries.jsp">Demo Queries</a></li>
                             <!--
                             <li class="dropdown">
                                <a href="queryForm.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
@@ -56,7 +56,7 @@
 
                 <p>STATO helps answer queries about tests, plots, measures and designs.</p>
                 <!--<p><a class="btn btn-default" href="#" role="button">ASK STATO &raquo;</a></p>-->
-                <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=all">ASK STATO</a>
             </div>
             <!-- /.col-lg-4 -->
 
@@ -68,7 +68,7 @@
                 <p>STATO maintains information about statistical tests and their conditions of application. We show some
                     query examples about statistical tests.</p>
                 <!--<p><a class="btn btn-default" href="#" role="button">ASK STATO &raquo;</a></p>-->
-                <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=tests">ASK STATO</a>
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
@@ -79,7 +79,7 @@
                 <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
                     applications</p>
                 <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-                <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=plots">ASK STATO</a>
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
@@ -99,7 +99,7 @@
 
                 <p>STATO and study designs</p>
                 <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-                <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=designs">ASK STATO</a>
             </div>
             <!-- /.col-lg-4 -->
         </div>

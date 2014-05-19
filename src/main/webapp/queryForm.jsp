@@ -22,17 +22,20 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="#">Home</a></li>
+                            <li><a href="index.jsp">Home</a></li>
+                            <li class="active"><a href="queries.jsp">Demo Queries</a></li>
+                            <!--
                             <li class="dropdown">
-                                <a href="queryForm.jsp" class="active" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">All demo queries</a></li>
-                                    <li><a href="#">Statistical tests demo queries</a></li>
-                                    <li><a href="#">Statistical plots demo queries</a></li>
-                                    <li><a href="#">Statistical measures demo queries</a></li>
-                                    <li><a href="#">Study designs demo queries</a></li>
-                                </ul>
-                            </li>
+                               <a href="queryForm.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
+                               <ul class="dropdown-menu">
+                                   <li><a href="#">All demo queries</a></li>
+                                   <li><a href="#">Statistical tests demo queries</a></li>
+                                   <li><a href="#">Statistical plots demo queries</a></li>
+                                   <li><a href="#">Statistical measures demo queries</a></li>
+                                   <li><a href="#">Study designs demo queries</a></li>
+                               </ul>
+                           </li>
+                           -->
                             <li><a href="contact.jsp">Contact</a></li>
                             <li><a href="about.jsp">About</a></li>
                         </ul>
@@ -42,6 +45,14 @@
 
         </div>
     </div>
+
+
+<%
+String queryType = request.getParameter("queryType");
+
+%>
+
+<%=queryType%>
 
 <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
     <!-- Indicators -->
@@ -70,7 +81,7 @@
                       <h3><%= queryString %></h3>
 
                       <% request.setAttribute("queryNumber", i); %>
-                      <jsp:include page="STATOQueryDemoServlet" flush="true"/>
+
 
                   </div>
               </div>
@@ -91,6 +102,7 @@
 
 </div>
 
+</form>
 <!-- /.carousel -->
 
 <%@include file="footer.jsp" %>
