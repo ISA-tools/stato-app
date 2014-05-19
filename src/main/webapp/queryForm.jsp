@@ -13,15 +13,13 @@
 
 %>
 
-<div class="container">
     <div class="navbar-wrapper">
         <div class="container">
 
             <div class="navbar navbar-inverse navbar-static-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -31,23 +29,19 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <!--<li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <li><a href="#">Home</a></li>
+                            <li class="dropdown">
+                                <a href="queryForm.jsp" class="active" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <li><a href="#">All demo queries</a></li>
+                                    <li><a href="#">Statistical tests demo queries</a></li>
+                                    <li><a href="#">Statistical plots demo queries</a></li>
+                                    <li><a href="#">Statistical measures demo queries</a></li>
+                                    <li><a href="#">Study designs demo queries</a></li>
                                 </ul>
-                            </li> -->
-                            <li><a href="queryForm.jsp">Demo Queries</a></li>
-
+                            </li>
+                            <li><a href="contact.jsp">Contact</a></li>
+                            <li><a href="about.jsp">About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +49,6 @@
 
         </div>
     </div>
-</div>
 
 <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
     <!-- Indicators -->
