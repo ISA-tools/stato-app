@@ -5,13 +5,6 @@
 <%@ page import="org.isatools.stato.STATOQueryDemoServlet" %>
 
 <form method=post action="queryResult.jsp" name=queryForm>
-<%!
-
-   //STATOQueryDemoServlet statoQueryDemo = new STATOQueryDemoServlet();
-   // statoQueryDemo.runQueries();
-   //List<String> result = statoQueryDemo.getResult();
-
-%>
 
     <div class="navbar-wrapper">
         <div class="container">
@@ -99,57 +92,5 @@
 </div>
 
 <!-- /.carousel -->
-
-
-<div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-        <div class="col-lg-4">
-            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
-            <h2>Statistical Tests</h2>
-
-            <p>STATO maintains information about statistical tests and their conditions of application. We show some
-                query examples about statistical tests.</p>
-            <!--<p><a class="btn btn-default" href="#" role="button">ASK STATO &raquo;</a></p>-->
-            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
-            <h2>Statistical Plots</h2>
-
-            <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
-                applications</p>
-            <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
-            <h2>Statistical Measures</h2>
-
-            <p>STATO and statistical measures</p>
-            <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
-            <h2>Study Designs</h2>
-
-            <p>STATO and study designs</p>
-            <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-            <a class="btn btn-large btn-success" href="queryForm.jsp">ASK STATO</a>
-        </div>
-        <!-- /.col-lg-4 -->
-    </div>
-    <!-- /.row -->
-</div>
-
 
 <%@include file="footer.jsp" %>

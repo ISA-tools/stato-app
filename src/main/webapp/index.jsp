@@ -17,6 +17,8 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#">Home</a></li>
+                                <li><a href="queries.jsp">Demo Queries</a></li>
+                                <!--
                                 <li class="dropdown">
                                    <a href="queryForm.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
                                    <ul class="dropdown-menu">
@@ -27,6 +29,7 @@
                                        <li><a href="#">Study designs demo queries</a></li>
                                    </ul>
                                </li>
+                               -->
                                 <li><a href="contact.jsp">Contact</a></li>
                                 <li><a href="about.jsp">About</a></li>
                             </ul>

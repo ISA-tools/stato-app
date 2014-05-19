@@ -20,16 +20,19 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a href="#">Home</a></li>
+                            <li><a href="queries.jsp">Contact</a></li>
+                            <!--
                             <li class="dropdown">
-                                <a href="queryForm.jsp"  class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">All demo queries</a></li>
-                                    <li><a href="#">Statistical tests demo queries</a></li>
-                                    <li><a href="#">Statistical plots demo queries</a></li>
-                                    <li><a href="#">Statistical measures demo queries</a></li>
-                                    <li><a href="#">Study designs demo queries</a></li>
-                                </ul>
-                            </li>
+                               <a href="queryForm.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
+                               <ul class="dropdown-menu">
+                                   <li><a href="#">All demo queries</a></li>
+                                   <li><a href="#">Statistical tests demo queries</a></li>
+                                   <li><a href="#">Statistical plots demo queries</a></li>
+                                   <li><a href="#">Statistical measures demo queries</a></li>
+                                   <li><a href="#">Study designs demo queries</a></li>
+                               </ul>
+                           </li>
+                           -->
                             <li class="active"><a href="contact.jsp">Contact</a></li>
                             <li><a href="about.jsp">About</a></li>
                         </ul>
