@@ -1,38 +1,26 @@
 package org.isatools.stato;
-
 import org.isatools.owl.DLQueryEngine;
 import org.isatools.owl.DLQueryParser;
-import org.isatools.owl.OWLClassifier;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
-import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
-import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
-import org.semanticweb.owlapi.reasoner.structural.StructuralReasonerFactory;
 import org.semanticweb.owlapi.util.AnnotationValueShortFormProvider;
 import org.semanticweb.owlapi.util.ShortFormProvider;
-import owltools.io.CatalogXmlIRIMapper;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServlet;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 
 /**
- * Created by the ISATeam.
- * User: agbeltran
- * Date: 04/03/2014
- * Time: 15:41
- *
- * @author <a href="mailto:alejandra.gonzalez.beltran@gmail.com">Alejandra Gonzalez-Beltran</a>
+ * Created by agbeltran on 19/05/2014.
  */
-public class STATOQueryDemo extends HttpServlet {
 
-    private OWLClassifier classifier = null;
+public class STATOQueryDemoServlet extends HttpServlet {
+
+
     private OWLOntologyManager manager = null;
     private OWLDataFactory dataFactory = null;
     private OWLOntology stato = null;
@@ -46,18 +34,23 @@ public class STATOQueryDemo extends HttpServlet {
     private List<String> result;
 
 
-    public STATOQueryDemo() {
+    public void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws ServletException, IOException {
 
-        result = new ArrayList<String>();
-        try {
-            //STATO_url = getClass().getResource("stato/releases/1.1/stato.owl");
-            //stato = loadLocalOntology(STATO_url.getFile());
-            //InputStream is = getClass().getResourceAsStream("/WEB-INF/stato/releases/1.1/stato.owl");
 
-            ServletContext context = getServletContext();
-            String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
+        //response format
+        response.setContentType("text/html");
 
-            stato = loadLocalOntology(fullPath);
+        String queryNumber = request.getParameter("queryNumber");
+
+        String filename = "/WEB-INF/stato/releases/1.1/stato.owl";
+
+        ServletContext context = getServletContext();
+
+        InputStream is = context.getResourceAsStream(filename);
+
+        try{
+            stato = loadLocalOntologyIS(is);
             dataFactory = manager.getOWLDataFactory();
 
             List<OWLAnnotationProperty> annotationProperties = new ArrayList();//Arrays.asList(dataFactory.getRDFSLabel());
@@ -85,11 +78,13 @@ public class STATOQueryDemo extends HttpServlet {
 
             dlQueryEngine = new DLQueryEngine(createReasoner(stato), shortFormProvider);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (OWLOntologyCreationException e) {
-            e.printStackTrace();
+            runQuery(queryNumber, response);
+
+        //}
+        }catch(OWLOntologyCreationException ocex){
+            ocex.printStackTrace();
         }
+
     }
 
     private OWLReasoner createReasoner(final OWLOntology rootOntology) {
@@ -105,6 +100,7 @@ public class STATOQueryDemo extends HttpServlet {
         return reasoner;
     }
 
+
     private OWLOntology loadLocalOntologyIS(InputStream inputStream)
             throws IOException, OWLOntologyCreationException {
         //String catalogPath = path + "/catalog-v001.xml";
@@ -113,19 +109,23 @@ public class STATOQueryDemo extends HttpServlet {
         return manager.loadOntologyFromOntologyDocument(inputStream);
     }
 
+    public void runQuery(String queryNumber, HttpServletResponse response) throws IOException {
+        int queryNumberInt = (new Integer(queryNumber)).intValue();
 
-    private OWLOntology loadLocalOntology(String fileString)
-            throws IOException, OWLOntologyCreationException {
-        System.out.println("In loadLocalOntology... fileString="+fileString);
-        File file = new File(fileString);
-        String path = file.getParent();
-        System.out.println("path="+path);
-        //String catalogPath = path + "/catalog-v001.xml";
-        manager = OWLManager.createOWLOntologyManager();
-        //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
-        return manager.loadOntologyFromOntologyDocument(file);
+        String dlQueryString = STATOQueries.QUERY_DL[queryNumberInt];
+        String result = runDLQuery(dlQueryString);
+
+        PrintWriter out = response.getWriter();
+        out.println(result);
+
     }
 
+    public void runQueries(){
+        for(String dlQuery: STATOQueries.QUERY_DL){
+            String processedResult = runDLQuery(dlQuery);
+            result.add(processedResult);
+        }
+    }
 
     public String runDLQuery(String dlQueryString){
         Set<OWLClass> set = dlQueryEngine.getSubClasses(dlQueryString, false);
@@ -140,8 +140,8 @@ public class STATOQueryDemo extends HttpServlet {
             for (OWLAnnotation annotation : cls.getAnnotations(stato, dataFactory.getRDFSLabel())) {
                 if (annotation.getValue() instanceof OWLLiteral) {
                     OWLLiteral val = (OWLLiteral) annotation.getValue();
-                        //Get your String here
-                        buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
+                    //Get your String here
+                    buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
                 }
             }
         }
@@ -149,26 +149,7 @@ public class STATOQueryDemo extends HttpServlet {
     }
 
 
-    public void runQueries(){
-        for(String dlQuery: STATOQueries.QUERY_DL){
-            String processedResult = runDLQuery(dlQuery);
-            result.add(processedResult);
-        }
+    public void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws ServletException, IOException {
     }
-
-    public List<String> getResult(){
-
-        return result;
-    }
-
-
-    public static void main(String[] args) throws Exception {
-
-        STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
-        //String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
-        //System.out.println(result);
-        statoQueryDemo.runQueries();
-        System.out.println(statoQueryDemo.getResult());
-    }
-
 }

@@ -2,10 +2,14 @@
 
 <%@ page import="java.util.*" %>
 <%@ page import="org.isatools.stato.STATOQueries" %>
-<%@ page import="org.isatools.stato.STATOQueryDemo" %>
+<%@ page import="org.isatools.stato.STATOQueryDemoServlet" %>
 
 <%!
-    STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
+
+   STATOQueryDemoServlet statoQueryDemo = new STATOQueryDemoServlet();
+   // statoQueryDemo.runQueries();
+   //List<String> result = statoQueryDemo.getResult();
+
 %>
 
 <div class="container">

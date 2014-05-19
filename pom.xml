@@ -27,8 +27,6 @@
             <url>http://on.cs.unibas.ch/maven/repository</url>
         </repository>
 
-
-
     </repositories>
 
 
@@ -66,8 +64,33 @@
           <version>2.2.0</version>
       </dependency>
 
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+          <scope>provided</scope>
+      </dependency>
+
   </dependencies>
+
   <build>
-    <finalName>stato-ui</finalName>
-  </build>
+         <finalName>stato-ui</finalName>
+          <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <version>2.4</version>
+                  <configuration>
+                      <webResources>
+                          <resource>
+                              <!-- this is relative to the pom.xml directory -->
+                              <directory>src/main/resources/stato/releases/1.1</directory>
+                          </resource>
+                      </webResources>
+                  </configuration>
+              </plugin>
+          </plugins>
+      </build>
+
+
 </project>
