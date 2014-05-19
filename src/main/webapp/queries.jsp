@@ -19,20 +19,19 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.jsp">Home</a></li>
-                            <li class="active"><a href="queries.jsp">Demo Queries</a></li>
-                            <!--
+                            <li class="active"><a href="index.jsp">Home</a></li>
                             <li class="dropdown">
-                               <a href="queryForm.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
-                               <ul class="dropdown-menu">
-                                   <li><a href="#">All demo queries</a></li>
-                                   <li><a href="#">Statistical tests demo queries</a></li>
-                                   <li><a href="#">Statistical plots demo queries</a></li>
-                                   <li><a href="#">Statistical measures demo queries</a></li>
-                                   <li><a href="#">Study designs demo queries</a></li>
-                               </ul>
-                           </li>
-                           -->
+                                <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="queries.jsp">Demo queries by type</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="queryForm.jsp?queryType=all">All demo queries</a></li>
+                                    <li><a href="queryForm.jsp?queryType=tests">Statistical tests demo queries</a></li>
+                                    <li><a href="queryForm.jsp?queryType=plots">Statistical plots demo queries</a></li>
+                                    <li><a href="queryForm.jsp?queryType=measures">Statistical measures demo queries</a></li>
+                                    <li><a href="queryForm.jsp?queryType=designs">Study designs demo queries</a></li>
+                                </ul>
+                            </li>
                             <li><a href="contact.jsp">Contact</a></li>
                             <li><a href="about.jsp">About</a></li>
                         </ul>
