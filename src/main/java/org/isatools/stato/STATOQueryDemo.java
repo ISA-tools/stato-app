@@ -46,7 +46,7 @@ public class STATOQueryDemo{ //extends HttpServlet {
     private List<String> result;
 
 
-    public STATOQueryDemo() {
+    public STATOQueryDemo(String statoFullPath) {
 
         result = new ArrayList<String>();
         try {
@@ -56,9 +56,9 @@ public class STATOQueryDemo{ //extends HttpServlet {
 
             //ServletContext context = getServletContext();
             //String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
-            String fullPath =  getClass().getResource("/WEB-INF/stato/releases/1.1/stato.owl").getPath();
+            //String fullPath =  getClass().getResource("/WEB-INF/stato/releases/1.1/stato.owl").getPath();
 
-            stato = loadLocalOntology(fullPath);
+            stato = loadLocalOntology(statoFullPath);
             dataFactory = manager.getOWLDataFactory();
 
             List<OWLAnnotationProperty> annotationProperties = new ArrayList();//Arrays.asList(dataFactory.getRDFSLabel());
@@ -165,11 +165,11 @@ public class STATOQueryDemo{ //extends HttpServlet {
 
     public static void main(String[] args) throws Exception {
 
-        STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
+        //STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
         //String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
         //System.out.println(result);
-        statoQueryDemo.runQueries();
-        System.out.println(statoQueryDemo.getResult());
+        //statoQueryDemo.runQueries();
+        //System.out.println(statoQueryDemo.getResult());
     }
 
 }
