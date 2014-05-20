@@ -67,28 +67,24 @@
 
                 <p>STATO maintains information about statistical tests and their conditions of application. We show some
                     query examples about statistical tests.</p>
-                <!--<p><a class="btn btn-default" href="#" role="button">ASK STATO &raquo;</a></p>-->
                 <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=tests">Ask STATO about tests</a>
             </div>
             <!-- /.col-lg-4 -->
+
             <div class="col-lg-4">
                 <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
 
                 <h2>Statistical Plots</h2>
-
                 <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
                     applications</p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
                 <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=plots">Ask STATO about plots</a>
             </div>
             <!-- /.col-lg-4 -->
+
             <div class="col-lg-4">
                 <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
                 <h2>Statistical Measures</h2>
-
                 <p>STATO and statistical measures</p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
                 <a class="btn btn-large btn-success" href="queryForm.jsp">Ask STATO about measures</a>
             </div>
             <!-- /.col-lg-4 -->
