@@ -19,6 +19,7 @@
         /* Since positioning the image, we need to help out the caption */
         .carousel-caption {
             z-index: 10;
+            margin-top: 10px;
         }
         /* Declare heights because of positioning of img element */
         .carousel .item {
@@ -35,7 +36,7 @@
         }
         @media (min-width: 768px) {
             .carousel-caption p {
-                margin-bottom: 280px;
+                margin-top: 10px;
                 font-size: 21px;
                 line-height: 1.4;
             }

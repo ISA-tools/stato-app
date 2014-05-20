@@ -22,8 +22,8 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.jsp">Home</a></li>
-                            <li class="dropdown">
+                            <li><a href="index.jsp">Home</a></li>
+                            <li class="active" class="dropdown">
                                 <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="queries.jsp">Demo queries by type</a></li>
@@ -70,6 +70,9 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
     end = STATOQueries.QUERY_MEASURES_END;
 }
 
+} else {
+
+    queryType = STATOQueries.QUERY_ALL;
 }
 
     String queryNumberString = request.getParameter("queryNumber");
@@ -107,14 +110,19 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
         %>
               <div class="item <%= (j==queryNumber)? "active": "" %> ">
                   <div class="carousel-caption">
-                      <h3><%= queryString %></h3>
-
-                      <% request.setAttribute("queryNumber", j); %>
-                      <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a>
+                      <h1><%= queryString %></h1>
+                      <p><a class="btn btn-lg btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a></p>
 
                   </div>
               </div>
         <%
+            }
+
+            //get query results
+            if (queryNumberString!=null){
+
+
+
             }
 
         %>
