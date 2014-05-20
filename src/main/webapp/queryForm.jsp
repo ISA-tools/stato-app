@@ -49,16 +49,35 @@
 <%
 String queryType = request.getParameter("queryType");
 
+int start =0 , end=0;
+
+if (queryType.equals(STATOQueries.QUERY_ALL)){
+    start = STATOQueries.QUERY_ALL_START;
+    end = STATOQueries.QUERY_ALL_END;
+}else if (queryType.equals(STATOQueries.QUERY_TESTS)){
+    start = STATOQueries.QUERY_TESTS_START;
+    end = STATOQueries.QUERY_TESTS_END;
+}else if (queryType.equals(STATOQueries.QUERY_PLOTS)){
+    start = STATOQueries.QUERY_PLOTS_START;
+    end = STATOQueries.QUERY_PLOTS_END;
+}else if (queryType.equals(STATOQueries.QUERY_DESIGN)){
+    start = STATOQueries.QUERY_DESIGN_START;
+    end = STATOQueries.QUERY_DESIGN_END;
+} else if (queryType.equals(STATOQueries.QUERY_MEASURES)){
+    start = STATOQueries.QUERY_MEASURES_START;
+    end = STATOQueries.QUERY_MEASURES_END;
+}
 %>
 
-<%=queryType%>
+
 
 <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <%
             int i=0;
-            for(String queryString: STATOQueries.QUERY_STRING){
+            for(int j = start; j< end; j++){
+                String queryString= STATOQueries.QUERY_STRING[j];
         %>
         <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" <%= (i==0)? "class=\"active\"": "" %> ></li>
         <%

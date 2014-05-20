@@ -8,6 +8,27 @@ public class STATOQueries {
     public static String[] QUERY_STRING = new String[14];
     public static String[] QUERY_DL = new String[14];
 
+    public static String QUERY_ALL = "all";
+    public static int QUERY_ALL_START = 0;
+    public static int QUERY_ALL_END = 13;
+
+    public static String QUERY_TESTS = "tests";
+    public static int QUERY_TESTS_START = 0;
+    public static int QUERY_TESTS_END = 7;
+
+    public static String QUERY_PLOTS = "plots";
+    public static int QUERY_PLOTS_START = 8;
+    public static int QUERY_PLOTS_END = 11;
+
+    public static String QUERY_MEASURES = "measures";
+    public static int QUERY_MEASURES_START = 12;
+    public static int QUERY_MEASURES_END = 12;
+
+    public static String QUERY_DESIGN = "design";
+    public static int QUERY_DESIGN_START = 13;
+    public static int QUERY_DESIGN_END = 13;
+
+
     static{
 
         //initialising query strings and DL expression
@@ -53,13 +74,13 @@ public class STATOQueries {
         QUERY_STRING[11] = "Which plot use effect size estimate?";
         QUERY_DL[11] = "'study design' and declares some 'blocking variable'";
 
-        //STUDY DESIGN
-        QUERY_STRING[12] = "Which study design uses time as blocking variable?";
-        QUERY_DL[12] = "'study design' and declares some ('blocking variable' and 'is about' some 'time sampled measurement data set')";
+        //STATISTICAL MEASURES
+        QUERY_STRING[12] = "Which correlation coefficient can be used with exactly 2 ordinal variable?";
+        QUERY_DL[12] = "'correlation coefficient' and 'is about' exactly 2 'ordinal variable'";
 
-        //STATISTICAL DESCRIPTORS
-        QUERY_STRING[13] = "Which correlation coefficient can be used with exactly 2 ordinal variable?";
-        QUERY_DL[13] = "'correlation coefficient' and 'is about' exactly 2 'ordinal variable'";
+        //STUDY DESIGN
+        QUERY_STRING[13] = "Which study design uses time as blocking variable?";
+        QUERY_DL[13] = "'study design' and declares some ('blocking variable' and 'is about' some 'time sampled measurement data set')";
 
     }
 
