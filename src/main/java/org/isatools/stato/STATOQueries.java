@@ -24,7 +24,7 @@ public class STATOQueries {
     public static int QUERY_MEASURES_START = 12;
     public static int QUERY_MEASURES_END = 12;
 
-    public static String QUERY_DESIGN = "design";
+    public static String QUERY_DESIGN = "designs";
     public static int QUERY_DESIGN_START = 13;
     public static int QUERY_DESIGN_END = 13;
 

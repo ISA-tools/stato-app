@@ -4,7 +4,7 @@
 <%@ page import="org.isatools.stato.STATOQueries" %>
 <%@ page import="org.isatools.stato.STATOQueryDemoServlet" %>
 
-<form method=post action="queryResult.jsp" name=queryForm>
+<form method=post action="queryFrom.jsp" name=queryForm>
 
     <div class="navbar-wrapper">
         <div class="container">
@@ -51,6 +51,8 @@ String queryType = request.getParameter("queryType");
 
 int start =0 , end=0;
 
+if (queryType!=null){
+
 if (queryType.equals(STATOQueries.QUERY_ALL)){
     start = STATOQueries.QUERY_ALL_START;
     end = STATOQueries.QUERY_ALL_END;
@@ -67,21 +69,29 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
     start = STATOQueries.QUERY_MEASURES_START;
     end = STATOQueries.QUERY_MEASURES_END;
 }
+
+}
+
+    String queryNumberString = request.getParameter("queryNumber");
+    int queryNumber = start;
+
+    if (queryNumberString!=null){
+        queryNumber = (new Integer(queryNumberString)).intValue();
+    }
+
+
 %>
-
-
 
 <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <%
-            int i=0;
-            for(int j = start; j< end; j++){
+            for(int j = start; j <= end; j++){
                 String queryString= STATOQueries.QUERY_STRING[j];
         %>
-        <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" <%= (i==0)? "class=\"active\"": "" %> ></li>
+        <li data-target="#carousel-example-generic" data-slide-to="<%=j%>" <%= (j==queryNumber)? "class=\"active\"": "" %> ></li>
         <%
-                i++;
+
             }
         %>
     </ol>
@@ -91,21 +101,22 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
     <div class="carousel-inner">
 
         <%
-            i=0;
-            for(String queryString: STATOQueries.QUERY_STRING){
+
+            for(int j = start; j <= end; j++){
+                String queryString= STATOQueries.QUERY_STRING[j];
         %>
-              <div class="item <%= (i==0)? "active": "" %> ">
+              <div class="item <%= (j==queryNumber)? "active": "" %> ">
                   <div class="carousel-caption">
                       <h3><%= queryString %></h3>
 
-                      <% request.setAttribute("queryNumber", i); %>
-
+                      <% request.setAttribute("queryNumber", j); %>
+                      <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a>
 
                   </div>
               </div>
         <%
-            i++;
             }
+
         %>
 
     </div>
