@@ -30,7 +30,7 @@ import java.util.*;
  *
  * @author <a href="mailto:alejandra.gonzalez.beltran@gmail.com">Alejandra Gonzalez-Beltran</a>
  */
-public class STATOQueryDemo extends HttpServlet {
+public class STATOQueryDemo{ //extends HttpServlet {
 
     private OWLClassifier classifier = null;
     private OWLOntologyManager manager = null;
@@ -54,8 +54,9 @@ public class STATOQueryDemo extends HttpServlet {
             //stato = loadLocalOntology(STATO_url.getFile());
             //InputStream is = getClass().getResourceAsStream("/WEB-INF/stato/releases/1.1/stato.owl");
 
-            ServletContext context = getServletContext();
-            String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
+            //ServletContext context = getServletContext();
+            //String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
+            String fullPath =  getClass().getResource("/WEB-INF/stato/releases/1.1/stato.owl").getPath();
 
             stato = loadLocalOntology(fullPath);
             dataFactory = manager.getOWLDataFactory();

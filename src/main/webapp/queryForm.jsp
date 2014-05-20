@@ -2,7 +2,7 @@
 
 <%@ page import="java.util.*" %>
 <%@ page import="org.isatools.stato.STATOQueries" %>
-<%@ page import="org.isatools.stato.STATOQueryDemoServlet" %>
+<%@ page import="org.isatools.stato.STATOQueryDemo" %>
 
 <form method=post action="queryFrom.jsp" name=queryForm>
 
@@ -113,16 +113,26 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
                       <h1><%= queryString %></h1>
                       <p><a class="btn btn-lg btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a></p>
 
-                  </div>
-              </div>
         <%
-            }
+
 
             //get query results
             if (queryNumberString!=null){
 
+                 STATOQueryDemo queryDemo = new STATOQueryDemo();
+                 String result = queryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
+                %>
+                        <p>result</p>
+                <%
 
+            }
+
+            %>
+                        </div>
+                    </div>
+
+        <%
             }
 
         %>
