@@ -114,7 +114,19 @@ public class STATOQueryDemo{ //extends HttpServlet {
         return manager.loadOntologyFromOntologyDocument(inputStream);
     }
 
-
+    private OWLOntology loadLocalOntology(String fileString)
+            throws IOException, OWLOntologyCreationException {
+        System.out.println("In loadLocalOntology... fileString="+fileString);
+        //File file = new File(fileString);
+        //String path = file.getParent();
+        //System.out.println("path="+path);
+        //String catalogPath = path + "/catalog-v001.xml";
+        manager = OWLManager.createOWLOntologyManager();
+        //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
+        //return manager.loadOntologyFromOntologyDocument(file);
+        return manager.loadOntology(IRI.create("file:"+fileString));
+    }
+    /*
     private OWLOntology loadLocalOntology(String fileString)
             throws IOException, OWLOntologyCreationException {
         System.out.println("In loadLocalOntology... fileString="+fileString);
@@ -126,6 +138,7 @@ public class STATOQueryDemo{ //extends HttpServlet {
         //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
         return manager.loadOntologyFromOntologyDocument(file);
     }
+    */
 
 
     public String runDLQuery(String dlQueryString){

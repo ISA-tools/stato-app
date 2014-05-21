@@ -123,14 +123,16 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
 
                 //String jspPath = session.getServletContext().getRealPath("/WEB-INF/stato/releases/1.1/");
                 String jspPath = session.getServletContext().getRealPath("/");
-                String statoFilePath = jspPath+ "/stato.owl";
-
+                String statoFilePath = jspPath+ "stato.owl";
+                
 
                 STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFilePath);
-                String result = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
+                //String result = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
                 %>
-                        <p><%=result%></p>
+                       <p><%=statoFilePath%></p>
+                        <p><%=STATOQueries.QUERY_DL[j]%></p>
+
                 <%
 
             }
