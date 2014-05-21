@@ -5,6 +5,7 @@
 <%@ page import="org.isatools.stato.STATOQueryDemo" %>
 <%@ page import="java.io.File" %>
 <%@ page import="org.semanticweb.owlapi.model.IRI" %>
+<%@ page import="com.sun.tools.javac.util.Pair" %>
 
 <form method=post action="queryFrom.jsp" name=queryForm>
 
@@ -130,20 +131,21 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
             //get query results
             if (queryNumberString!=null){
 
-
-                String result = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
+                List<Pair<String, String>> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
                 %>
-
                       <p>Description Logics Query: <%=STATOQueries.QUERY_DL[j]%></p>
-                      <p><%=result%></p>
+                <%
+                    for(Pair<String, String> pair: resultList){
+                %>
+                      <p><a href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=pair.fst%>"><%=pair.snd%></a></p>
 
                 <%
 
             }
 
             %>
-                        </div>
+                    </div>
                     </div>
 
         <%

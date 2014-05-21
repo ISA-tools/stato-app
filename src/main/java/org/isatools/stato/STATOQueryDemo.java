@@ -41,12 +41,12 @@ public class STATOQueryDemo{ //extends HttpServlet {
     private final static Logger logger = Logger.getLogger(STATOQueryDemo.class.getName());
 
     //<DLquery, resultMap>
-    private Map<String, String> resultMap;
+    private Map<String, List<Pair<String, String>>> resultMap;
 
 
     public STATOQueryDemo(File statoFile) {
         System.out.println("STATOQueryDemo constructor");
-        resultMap = new HashMap<String, String>();
+        resultMap = new HashMap<String, List<Pair<String, String>>>();
         try {
             manager = OWLManager.createOWLOntologyManager();
             stato = loadLocalOntology(statoFile);
@@ -116,8 +116,8 @@ public class STATOQueryDemo{ //extends HttpServlet {
     }
 
 
-    public String runDLQuery(String dlQueryString){
-        String resultString = resultMap.get(dlQueryString);
+    public List<Pair<String, String>> runDLQuery(String dlQueryString){
+        List<Pair<String, String>> resultString = resultMap.get(dlQueryString);
 
         if (resultString!=null)
             return resultString;
@@ -130,43 +130,48 @@ public class STATOQueryDemo{ //extends HttpServlet {
         return resultString;
     }
 
-    public String processResults(Set<OWLClass> set){
+    public List<Pair<String, String>> processResults(Set<OWLClass> set){
 
-        StringBuffer buffer = new StringBuffer();
+        List<Pair<String, String>> list = new ArrayList<Pair<String, String>>();
+
+        Pair<String, String> pair = null;
         for(OWLClass cls: set){
             // Get the annotations on the class that use the label property (rdfs:label)
             for (OWLAnnotation annotation : cls.getAnnotations(stato, dataFactory.getRDFSLabel())) {
                 if (annotation.getValue() instanceof OWLLiteral) {
                     OWLLiteral val = (OWLLiteral) annotation.getValue();
                         //Get your String here
-                        buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
+                        pair = new Pair(cls, val.getLiteral());
+                        //buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
+                    list.add(pair);
                 }
             }
         }
-        return buffer.toString();
+        //return buffer.toString();
+        return list;
     }
 
 
-    public void runQueries(){
-        for(String dlQuery: STATOQueries.QUERY_DL){
-            String processedResult = runDLQuery(dlQuery);
-            resultMap.put(dlQuery, processedResult);
-        }
-    }
+//    public void runQueries(){
+//        for(String dlQuery: STATOQueries.QUERY_DL){
+//            String processedResult = runDLQuery(dlQuery);
+//            resultMap.put(dlQuery, processedResult);
+//        }
+//    }
 
     public static void main(String[] args) throws Exception {
 
-        URL url = STATOQueryDemo.class.getClass().getResource("/stato/releases/1.1/stato.owl");
-        System.out.println("url = "+url);
-        String jspPath =  url.getPath();
-
-        System.out.println("jspPath="+jspPath);
-        //String statoFilePath = jspPath+ "stato.owl";
-        File statoFile = new File(jspPath);
-
-        STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
-        String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
-        System.out.println(result);
+//        URL url = STATOQueryDemo.class.getClass().getResource("/stato/releases/1.1/stato.owl");
+//        System.out.println("url = "+url);
+//        String jspPath =  url.getPath();
+//
+//        System.out.println("jspPath="+jspPath);
+//        //String statoFilePath = jspPath+ "stato.owl";
+//        File statoFile = new File(jspPath);
+//
+//        STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
+//        String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
+//        System.out.println(result);
 
         //STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
         //String resultMap = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
