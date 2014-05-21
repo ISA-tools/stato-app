@@ -4,6 +4,7 @@
 <%@ page import="org.isatools.stato.STATOQueries" %>
 <%@ page import="org.isatools.stato.STATOQueryDemo" %>
 <%@ page import="java.io.File" %>
+<%@ page import="org.semanticweb.owlapi.model.IRI" %>
 
 <form method=post action="queryFrom.jsp" name=queryForm>
 
@@ -120,18 +121,18 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
             //get query results
             if (queryNumberString!=null){
 
+                    String jspPath = session.getServletContext().getRealPath("/");
+                    String statoFilePath = jspPath+ "stato.owl";
+                    File statoFile = new File(statoFilePath);
+                    STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
 
-                //String jspPath = session.getServletContext().getRealPath("/WEB-INF/stato/releases/1.1/");
-                String jspPath = session.getServletContext().getRealPath("/");
-                String statoFilePath = jspPath+ "stato.owl";
-                
-
-                STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFilePath);
-                //String result = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
+                String result = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
                 %>
-                       <p><%=statoFilePath%></p>
+
+
                         <p><%=STATOQueries.QUERY_DL[j]%></p>
+                      <p><%=result%></p>
 
                 <%
 

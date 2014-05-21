@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by the ISATeam.
@@ -43,8 +45,106 @@ public class STATOQueryDemo{ //extends HttpServlet {
     private URL STATO_url = null;
     private IRI STATO_iri = IRI.create("http://purl.obolibrary.org/obo/stato.owl");
 
+    private final static Logger logger = Logger.getLogger(STATOQueryDemo.class.getName());
+
+
     private List<String> result;
 
+
+    public STATOQueryDemo(IRI ontology_iri) {
+
+        logger.setLevel(Level.FINER);
+        result = new ArrayList<String>();
+
+    try{
+            //STATO_url = getClass().getResource("stato/releases/1.1/stato.owl");
+            //stato = loadLocalOntology(STATO_url.getFile());
+            //InputStream is = getClass().getResourceAsStream("/WEB-INF/stato/releases/1.1/stato.owl");
+
+            //ServletContext context = getServletContext();
+            //String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
+            //String fullPath =  getClass().getResource("/WEB-INF/stato/releases/1.1/stato.owl").getPath();
+            manager = OWLManager.createOWLOntologyManager();
+            stato = loadOntology(ontology_iri);
+            dataFactory = manager.getOWLDataFactory();
+
+            List<OWLAnnotationProperty> annotationProperties = new ArrayList();//Arrays.asList(dataFactory.getRDFSLabel());
+
+            Map<OWLAnnotationProperty, List<String>> langMap = new HashMap<OWLAnnotationProperty, List<String>>();
+
+            Map<IRI, List<String>> annotMap = new HashMap<IRI, List<String>>();
+            List<String> langList = new ArrayList();
+
+            String en = Locale.ENGLISH.getLanguage();
+            langList.add(en);
+            annotMap.put(dataFactory.getRDFSLabel().getIRI(), langList);
+
+            for (IRI iri : annotMap.keySet()){
+                OWLAnnotationProperty p  = manager.getOWLDataFactory().getOWLAnnotationProperty(iri);
+                annotationProperties.add(p);
+                langMap.put(p, annotMap.get(iri));
+            }
+
+            ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(
+                    annotationProperties,
+                    //langMap,
+                    Collections.<OWLAnnotationProperty, List<String>> emptyMap(),
+                    manager);
+
+            dlQueryEngine = new DLQueryEngine(createReasoner(stato), shortFormProvider);
+    }catch(OWLOntologyCreationException ex){
+        ex.printStackTrace();
+    }
+
+
+    }
+
+    public STATOQueryDemo(File statoFile) {
+
+        result = new ArrayList<String>();
+        try {
+            //STATO_url = getClass().getResource("stato/releases/1.1/stato.owl");
+            //stato = loadLocalOntology(STATO_url.getFile());
+            //InputStream is = getClass().getResourceAsStream("/WEB-INF/stato/releases/1.1/stato.owl");
+
+            //ServletContext context = getServletContext();
+            //String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
+            //String fullPath =  getClass().getResource("/WEB-INF/stato/releases/1.1/stato.owl").getPath();
+            manager = OWLManager.createOWLOntologyManager();
+            stato = loadLocalOntology(statoFile);
+            dataFactory = manager.getOWLDataFactory();
+
+            List<OWLAnnotationProperty> annotationProperties = new ArrayList();//Arrays.asList(dataFactory.getRDFSLabel());
+
+            Map<OWLAnnotationProperty, List<String>> langMap = new HashMap<OWLAnnotationProperty, List<String>>();
+
+            Map<IRI, List<String>> annotMap = new HashMap<IRI, List<String>>();
+            List<String> langList = new ArrayList();
+
+            String en = Locale.ENGLISH.getLanguage();
+            langList.add(en);
+            annotMap.put(dataFactory.getRDFSLabel().getIRI(), langList);
+
+            for (IRI iri : annotMap.keySet()){
+                OWLAnnotationProperty p  = manager.getOWLDataFactory().getOWLAnnotationProperty(iri);
+                annotationProperties.add(p);
+                langMap.put(p, annotMap.get(iri));
+            }
+
+            ShortFormProvider shortFormProvider = new AnnotationValueShortFormProvider(
+                    annotationProperties,
+                    //langMap,
+                    Collections.<OWLAnnotationProperty, List<String>> emptyMap(),
+                    manager);
+
+            dlQueryEngine = new DLQueryEngine(createReasoner(stato), shortFormProvider);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (OWLOntologyCreationException e) {
+            e.printStackTrace();
+        }
+    }
 
     public STATOQueryDemo(String statoFullPath) {
 
@@ -57,7 +157,7 @@ public class STATOQueryDemo{ //extends HttpServlet {
             //ServletContext context = getServletContext();
             //String fullPath = context.getRealPath("/WEB-INF/stato/releases/1.1/stato.owl");
             //String fullPath =  getClass().getResource("/WEB-INF/stato/releases/1.1/stato.owl").getPath();
-
+            manager = OWLManager.createOWLOntologyManager();
             stato = loadLocalOntology(statoFullPath);
             dataFactory = manager.getOWLDataFactory();
 
@@ -114,6 +214,17 @@ public class STATOQueryDemo{ //extends HttpServlet {
         return manager.loadOntologyFromOntologyDocument(inputStream);
     }
 
+    private OWLOntology loadOntology(IRI iri) throws OWLOntologyCreationException{
+        //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
+        //return manager.loadOntologyFromOntologyDocument(file);
+        OWLOntology onto =  manager.loadOntology(iri);
+
+
+        return onto;
+
+    }
+
+
     private OWLOntology loadLocalOntology(String fileString)
             throws IOException, OWLOntologyCreationException {
         System.out.println("In loadLocalOntology... fileString="+fileString);
@@ -121,24 +232,30 @@ public class STATOQueryDemo{ //extends HttpServlet {
         //String path = file.getParent();
         //System.out.println("path="+path);
         //String catalogPath = path + "/catalog-v001.xml";
-        manager = OWLManager.createOWLOntologyManager();
         //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
         //return manager.loadOntologyFromOntologyDocument(file);
-        return manager.loadOntology(IRI.create("file:"+fileString));
+        return manager.loadOntology(IRI.create("file:" + fileString));
     }
-    /*
-    private OWLOntology loadLocalOntology(String fileString)
+      
+    private OWLOntology loadLocalOntology(File file)
             throws IOException, OWLOntologyCreationException {
-        System.out.println("In loadLocalOntology... fileString="+fileString);
-        File file = new File(fileString);
+        System.out.println("In loadLocalOntology... file="+file);
         String path = file.getParent();
         System.out.println("path="+path);
+
+        Scanner scanner = new Scanner(file);
+        String line = null;
+        int i = 0;
+        while (scanner.hasNext() && i < 10){
+            line = scanner.nextLine();
+            logger.info("Line "+i+": " + line);
+            i++;
+        }
         //String catalogPath = path + "/catalog-v001.xml";
-        manager = OWLManager.createOWLOntologyManager();
         //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
         return manager.loadOntologyFromOntologyDocument(file);
     }
-    */
+
 
 
     public String runDLQuery(String dlQueryString){
@@ -177,6 +294,18 @@ public class STATOQueryDemo{ //extends HttpServlet {
 
 
     public static void main(String[] args) throws Exception {
+
+        URL url = STATOQueryDemo.class.getClass().getResource("/stato/releases/1.1/stato.owl");
+        System.out.println("url = "+url);
+        String jspPath =  url.getPath();
+
+        System.out.println("jspPath="+jspPath);
+        //String statoFilePath = jspPath+ "stato.owl";
+        File statoFile = new File(jspPath);
+
+        STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
+        String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
+        System.out.println(result);
 
         //STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
         //String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");

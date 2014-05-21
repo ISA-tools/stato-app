@@ -1,7 +1,5 @@
 package org.isatools.owl;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 /**
@@ -14,7 +12,7 @@ public class DLQueryParserTest {
     DLQueryParser dlQueryParser = null;
 
 
-    @Before
+
     public void setUp() {
 
 
@@ -25,7 +23,7 @@ public class DLQueryParserTest {
     }
 
 
-    @Test
+
     public void testQuery(String dlQuery) {
 
 
