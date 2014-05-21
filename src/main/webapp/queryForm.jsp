@@ -52,6 +52,15 @@
 String queryType = request.getParameter("queryType");
 
 int start =0 , end=0;
+STATOQueryDemo statoQueryDemo = (STATOQueryDemo) session.getAttribute("statoQueryDemo");
+
+if (statoQueryDemo==null){
+    String jspPath = session.getServletContext().getRealPath("/");
+    String statoFilePath = jspPath+ "stato.owl";
+    File statoFile = new File(statoFilePath);
+    statoQueryDemo = new STATOQueryDemo(statoFile);
+    session.setAttribute("statoQueryDemo", statoQueryDemo);
+    }
 
 if (queryType!=null){
 
@@ -121,17 +130,12 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
             //get query results
             if (queryNumberString!=null){
 
-                    String jspPath = session.getServletContext().getRealPath("/");
-                    String statoFilePath = jspPath+ "stato.owl";
-                    File statoFile = new File(statoFilePath);
-                    STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
 
                 String result = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
                 %>
 
-
-                        <p><%=STATOQueries.QUERY_DL[j]%></p>
+                      <p>Description Logics Query: <%=STATOQueries.QUERY_DL[j]%></p>
                       <p><%=result%></p>
 
                 <%
