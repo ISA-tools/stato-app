@@ -34,7 +34,7 @@ public class STATOQueries {
         //initialising query strings and DL expression
 
         //STATISTICAL TESTS
-        QUERY_STRING[0] = "Which statistical tests make assume the homoskedasticity hypothesis as true?";
+        QUERY_STRING[0] = "Which statistical tests assume the homoskedasticity hypothesis as true?";
         QUERY_DL[0] = "'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)";
 
         QUERY_STRING[1] = "Which statistical tests make particular assumptions before application?";

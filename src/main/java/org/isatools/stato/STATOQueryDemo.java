@@ -141,7 +141,7 @@ public class STATOQueryDemo{ //extends HttpServlet {
                 if (annotation.getValue() instanceof OWLLiteral) {
                     OWLLiteral val = (OWLLiteral) annotation.getValue();
                         //Get your String here
-                        pair = new Pair(cls, val.getLiteral());
+                        pair = new Pair(cls.getIRI().toString(), val.getLiteral());
                         //buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
                     list.add(pair);
                 }

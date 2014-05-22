@@ -87,12 +87,12 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
     queryType = STATOQueries.QUERY_ALL;
 }
 
-    String queryNumberString = request.getParameter("queryNumber");
-    int queryNumber = start;
+String queryNumberString = request.getParameter("queryNumber");
+int queryNumber = start;
 
-    if (queryNumberString!=null){
-        queryNumber = (new Integer(queryNumberString)).intValue();
-    }
+if (queryNumberString!=null){
+    queryNumber = (new Integer(queryNumberString)).intValue();
+}
 
 
 %>
@@ -106,8 +106,7 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
         %>
         <li data-target="#carousel-example-generic" data-slide-to="<%=j%>" <%= (j==queryNumber)? "class=\"active\"": "" %> ></li>
         <%
-
-            }
+            }//for
         %>
     </ol>
 
@@ -127,7 +126,6 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
 
         <%
 
-
             //get query results
             if (queryNumberString!=null){
 
@@ -138,19 +136,19 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
                 <%
                     for(Pair<String, String> pair: resultList){
                 %>
-                      <p><a href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=pair.fst%>"><%=pair.snd%></a></p>
-
+                      <p><a href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=pair.fst.toString()%>"><%=pair.snd.toString()%></a></p>
                 <%
 
-            }
+                    } //for
+
+                    } //for
 
             %>
                     </div>
                     </div>
 
         <%
-            }
-
+            } //if
         %>
 
     </div>
