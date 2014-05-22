@@ -122,12 +122,17 @@ if (queryNumberString!=null){
               <div class="item <%= (j==queryNumber)? "active": "" %> ">
                   <div class="carousel-caption">
                       <h1><%= queryString %></h1>
-                      <p><a class="btn btn-lg btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a></p>
 
         <%
 
             //get query results
-            if (queryNumberString!=null){
+            if (queryNumberString==null){
+             %>
+                      <p><a class="btn btn-lg btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a></p>
+            <%
+
+
+            }else{
 
                 List<Pair<String, String>> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
