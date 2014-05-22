@@ -21,6 +21,7 @@
         .carousel {
             height: 500px;
             margin-bottom: 60px;
+            vertical-align: middle;
         }
         /* Since positioning the image, we need to help out the caption */
         .carousel-caption {
@@ -31,7 +32,7 @@
         .carousel .item {
             width: 100%;
             height: 500px;
-            background-color: #777;
+            background-color: silver;
         }
         .carousel-inner > .item > img {
             position: absolute;
@@ -47,8 +48,60 @@
                 line-height: 1.4;
             }
         }
+
+
+        .flex {
+            display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
+            display: -moz-box;      /* OLD: Firefox (buggy) */
+            display: -ms-flexbox;   /* MID: IE 10 */
+            display: -webkit-flex;  /* NEW, Chrome 21+ */
+            display: flex;          /* NEW: Opera 12.1, Firefox 22+ */
+            -webkit-box-align: center; -moz-box-align: center; /* OLD… */
+            -ms-flex-align: center; /* You know the drill now… */
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+
         img {
             background: #f1f2f1;
+        }
+
+
+        .spinner {
+            display: inline-block;
+            opacity: 0;
+            width: 0;
+
+            -webkit-transition: opacity 0.25s, width 0.25s;
+            -moz-transition: opacity 0.25s, width 0.25s;
+            -o-transition: opacity 0.25s, width 0.25s;
+            transition: opacity 0.25s, width 0.25s;
+        }
+
+        .has-spinner.active {
+            cursor:progress;
+        }
+
+        .has-spinner.active .spinner {
+            opacity: 1;
+            width: auto; /* This doesn't work, just fix for unkown width elements */
+        }
+
+        .has-spinner.btn-mini.active .spinner {
+            width: 10px;
+        }
+
+        .has-spinner.btn-small.active .spinner {
+            width: 13px;
+        }
+
+        .has-spinner.btn.active .spinner {
+            width: 16px;
+        }
+
+        .has-spinner.btn-large.active .spinner {
+            width: 19px;
         }
     </style>
     <!--  <style type="text/css">

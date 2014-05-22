@@ -125,7 +125,12 @@ if (queryNumberString!=null){
             //get query results
             if (queryNumberString==null){
              %>
-                      <p><a class="btn btn-lg btn-success" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">Ask STATO</a></p>
+                      <p>
+                          <a class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">
+                            Ask STATO
+                            <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+                          </a>
+                      </p>
             <%
 
 

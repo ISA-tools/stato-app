@@ -50,7 +50,7 @@
         <div class="row">
 
             <div class="col-lg-4">
-                <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+                <!-- <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image"> -->
 
                 <h2>All demo queries</h2>
 
@@ -61,7 +61,7 @@
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
 
                 <h2>Statistical Tests</h2>
 
@@ -72,8 +72,8 @@
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
+                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image"> -->
+                <span class="glyphicon glyphicon-stats"></span>
                 <h2>Statistical Plots</h2>
                 <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
                     applications</p>
