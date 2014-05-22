@@ -41,12 +41,12 @@ public class STATOQueryDemo{ //extends HttpServlet {
     private final static Logger logger = Logger.getLogger(STATOQueryDemo.class.getName());
 
     //<DLquery, resultMap>
-    private Map<String, List<Pair<String, String>>> resultMap;
+    private Map<String, List<STATOResult>> resultMap;
 
 
     public STATOQueryDemo(File statoFile) {
         System.out.println("STATOQueryDemo constructor");
-        resultMap = new HashMap<String, List<Pair<String, String>>>();
+        resultMap = new HashMap<String, List<STATOResult>>();
         try {
             manager = OWLManager.createOWLOntologyManager();
             stato = loadLocalOntology(statoFile);
@@ -116,8 +116,8 @@ public class STATOQueryDemo{ //extends HttpServlet {
     }
 
 
-    public List<Pair<String, String>> runDLQuery(String dlQueryString){
-        List<Pair<String, String>> resultString = resultMap.get(dlQueryString);
+    public List<STATOResult> runDLQuery(String dlQueryString){
+        List<STATOResult> resultString = resultMap.get(dlQueryString);
 
         if (resultString!=null)
             return resultString;
@@ -130,24 +130,33 @@ public class STATOQueryDemo{ //extends HttpServlet {
         return resultString;
     }
 
-    public List<Pair<String, String>> processResults(Set<OWLClass> set){
+    public List<STATOResult> processResults(Set<OWLClass> set){
 
-        List<Pair<String, String>> list = new ArrayList<Pair<String, String>>();
+        List<STATOResult> list = new ArrayList<STATOResult>();
 
-        Pair<String, String> pair = null;
+        STATOResult result = null;
+        String iri = null, label = null, definition = null;
         for(OWLClass cls: set){
+
+            iri = cls.getIRI().toString();
             // Get the annotations on the class that use the label property (rdfs:label)
             for (OWLAnnotation annotation : cls.getAnnotations(stato, dataFactory.getRDFSLabel())) {
                 if (annotation.getValue() instanceof OWLLiteral) {
                     OWLLiteral val = (OWLLiteral) annotation.getValue();
-                        //Get your String here
-                        pair = new Pair(cls.getIRI().toString(), val.getLiteral());
-                        //buffer.append( "<a href=\"http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid="+ cls +">"+ val.getLiteral()+"</a> <br>" );
-                    list.add(pair);
+                    //Get your String here
+                    label = val.getLiteral();
                 }
             }
+            for (OWLAnnotation annotation : cls.getAnnotations(stato, dataFactory.getOWLAnnotationProperty(IRI.create("http://purl.obolibrary.org/obo/IAO_0000115")))) {
+                if (annotation.getValue() instanceof OWLLiteral) {
+                    OWLLiteral val = (OWLLiteral) annotation.getValue();
+                    //Get your String here
+                    definition = val.getLiteral();
+                }
+            }
+            result = new STATOResult(iri, label, definition);
+            list.add(result);
         }
-        //return buffer.toString();
         return list;
     }
 

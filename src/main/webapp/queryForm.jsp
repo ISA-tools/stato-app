@@ -6,6 +6,7 @@
 <%@ page import="java.io.File" %>
 <%@ page import="org.semanticweb.owlapi.model.IRI" %>
 <%@ page import="com.sun.tools.javac.util.Pair" %>
+<%@ page import="org.isatools.stato.STATOResult" %>
 
 <form method=post action="queryFrom.jsp" name=queryForm>
 
@@ -91,6 +92,7 @@ if (queryNumberString!=null){
     queryNumber = (new Integer(queryNumberString)).intValue();
 }
 
+String dlQuery = null;
 
 %>
 
@@ -118,7 +120,7 @@ if (queryNumberString!=null){
         %>
               <div class="item <%= (j==queryNumber)? "active": "" %> ">
                   <div class="carousel-caption">
-                      <h1><%= queryString %></h1>
+                      <h2><%= queryString %></h2>
 
         <%
 
@@ -136,22 +138,30 @@ if (queryNumberString!=null){
 
             }else{
 
-                List<Pair<String, String>> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
-
-                    for(Pair<String, String> pair: resultList){
+                List<STATOResult> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
+                dlQuery = STATOQueries.QUERY_DL[j];
                 %>
-                      <p><a class="result" href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=pair.fst.toString()%>"><%=pair.snd.toString()%></a></p>
+
+                      <ul>
+                <%
+
+                    for(STATOResult statoResult: resultList){
+
+                %>
+                      <li align="left">
+                         <span title="<%=statoResult.getDefinition()%>"><a class="result" href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank"><%=statoResult.getLabel()%></a></span>
+                      </li>
                 <%
 
                     } //for
 
                     %>
-                      <p>Expression used to query the ontology: <%=STATOQueries.QUERY_DL[j]%></p>
-                      <%
+                      </ul>
+                    <%
 
                     } //else
 
-            %>
+             %>
                 </div>
             </div>
 
@@ -170,6 +180,19 @@ if (queryNumberString!=null){
     </a>
 
 </div>
+
+<%
+    if (queryNumberString!=null) {
+%>
+<h5 align="center">How STATO query answering works?</h5>
+<h6 align="center">The results above are obtained by posing this expression to the <a href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
+<h5 align="center"><strong><%=dlQuery%></strong></h5>
+
+
+<%
+    }
+%>
+
 
 </form>
 <!-- /.carousel -->

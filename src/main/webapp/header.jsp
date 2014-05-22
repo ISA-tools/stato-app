@@ -67,7 +67,6 @@
             background: #f1f2f1;
         }
 
-
         .spinner {
             display: inline-block;
             opacity: 0;
