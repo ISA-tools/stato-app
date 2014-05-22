@@ -63,7 +63,9 @@ if (statoQueryDemo==null){
     session.setAttribute("statoQueryDemo", statoQueryDemo);
     }
 
-if (queryType!=null){
+if (queryType==null){
+    queryType = STATOQueries.QUERY_ALL;
+}
 
 if (queryType.equals(STATOQueries.QUERY_ALL)){
     start = STATOQueries.QUERY_ALL_START;
@@ -80,11 +82,6 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
 } else if (queryType.equals(STATOQueries.QUERY_MEASURES)){
     start = STATOQueries.QUERY_MEASURES_START;
     end = STATOQueries.QUERY_MEASURES_END;
-}
-
-} else {
-
-    queryType = STATOQueries.QUERY_ALL;
 }
 
 String queryNumberString = request.getParameter("queryNumber");
@@ -136,21 +133,22 @@ if (queryNumberString!=null){
 
                 List<Pair<String, String>> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
 
-                %>
-                      <p>Description Logics Query: <%=STATOQueries.QUERY_DL[j]%></p>
-                <%
                     for(Pair<String, String> pair: resultList){
                 %>
-                      <p><a href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=pair.fst.toString()%>"><%=pair.snd.toString()%></a></p>
+                      <p><a class="result" href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=pair.fst.toString()%>"><%=pair.snd.toString()%></a></p>
                 <%
 
                     } //for
 
-                    } //for
+                    %>
+                      <p>Expression used to query the ontology: <%=STATOQueries.QUERY_DL[j]%></p>
+                      <%
+
+                    } //else
 
             %>
-                    </div>
-                    </div>
+                </div>
+            </div>
 
         <%
             } //if

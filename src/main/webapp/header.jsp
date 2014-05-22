@@ -12,6 +12,12 @@
    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        a.result:link {color: green;}
+        a.result:visited {color: green;}
+        a.result:hover {color: orange;}
+        a.result:focus {color: darkorange;}
+        a.result:active {color: orangered;}
+
         .carousel {
             height: 500px;
             margin-bottom: 60px;
