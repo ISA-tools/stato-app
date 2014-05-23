@@ -1,5 +1,21 @@
 <%@include file="header.jsp" %>
 
+<script>
+    function askSTATO(){
+        var item = $('#myCarousel .carousel-inner .item.active');
+        document.queryForm.queryNumber.value = item;
+        document.queryForm.ask.toggleClass('active');
+        $('.carousel').carousel('pause');
+        queryForm.submit();
+        //e.preventDefault();//this will prevent the link trying to navigate to another page
+        //var href = $(this).attr("href");//get the href so we can navigate later
+        //do the update
+        //when update has finished, navigate to the other page
+        //window.location = href;
+    };
+</script>
+
+
 <%@ page import="java.util.*" %>
 <%@ page import="org.isatools.stato.STATOQueries" %>
 <%@ page import="org.isatools.stato.STATOQueryDemo" %>
@@ -7,8 +23,6 @@
 <%@ page import="org.semanticweb.owlapi.model.IRI" %>
 <%@ page import="com.sun.tools.javac.util.Pair" %>
 <%@ page import="org.isatools.stato.STATOResult" %>
-
-
 
 <form method=post action="queryFrom.jsp" name=queryForm>
 
@@ -88,6 +102,10 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
 }
 
 String queryNumberString = request.getParameter("queryNumber");
+%>
+
+    QUERY NUMBER: <%=queryNumberString%>
+<%
 int queryNumber = start;
 
 if (queryNumberString!=null){
@@ -96,14 +114,17 @@ if (queryNumberString!=null){
 
 %>
 
-<div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
+
+
+
+<div class="carousel slide" data-ride="carousel" id="myCarousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <%
             for(int j = start; j <= end; j++){
                 String queryString= STATOQueries.QUERY_STRING[j];
         %>
-        <li data-target="#carousel-example-generic" data-slide-to="<%=j%>" <%= (j==queryNumber)? "class=\"active\"": "" %> ></li>
+        <li data-target="#myCarousel" data-slide-to="<%=j%>" <%= (j==queryNumber)? "class=\"active\"": "" %> ></li>
         <%
             }//for
         %>
@@ -128,11 +149,11 @@ if (queryNumberString!=null){
             if (queryNumberString==null){
              %>
                       <p>
+                          <input type="hidden" NAME="queryNumber">
                           <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
-                          <a id="ask" class="btn btn-success has-spinner" style="width:150px"href="#">
+                          <input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO">
                             <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
-                            Ask STATO
-                          </a>
+                          </input>
                       </p>
             <%
 
@@ -177,10 +198,10 @@ if (queryNumberString!=null){
     </div>
 
     <!-- Controls -->
-    <a class="carousel-control left" href="#carousel-example-generic" data-slide="prev">
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
         <span class="icon-prev"></span>
     </a>
-    <a class="carousel-control right" href="#carousel-example-generic" data-slide="next">
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
         <span class="icon-next"></span>
     </a>
 
@@ -188,25 +209,7 @@ if (queryNumberString!=null){
 
 
 
-
-
 </form>
 <!-- /.carousel -->
-
-<script>
-
-    $("#ask").click(function(){
-        $(this).toggleClass('active');
-        $('.carousel').carousel('pause');
-        //e.preventDefault();//this will prevent the link trying to navigate to another page
-        //var href = $(this).attr("href");//get the href so we can navigate later
-
-        //do the update
-
-
-        //when update has finished, navigate to the other page
-        //window.location = href;
-    });
-</script>
 
 <%@include file="footer.jsp" %>

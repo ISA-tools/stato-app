@@ -72,12 +72,12 @@
         .spinner {
             display: inline-block;
             opacity: 0;
-            width: 0;
+            max-width: 0;
 
-            -webkit-transition: opacity 0.25s, width 0.25s;
-            -moz-transition: opacity 0.25s, width 0.25s;
-            -o-transition: opacity 0.25s, width 0.25s;
-            transition: opacity 0.25s, width 0.25s;
+            -webkit-transition: opacity 0.25s, max-width 0.45s;
+            -moz-transition: opacity 0.25s, max-width 0.45s;
+            -o-transition: opacity 0.25s, max-width 0.45s;
+            transition: opacity 0.25s, max-width 0.45s; /* Duration fixed since we animate additional hidden width */
         }
 
         .has-spinner.active {
@@ -86,23 +86,7 @@
 
         .has-spinner.active .spinner {
             opacity: 1;
-            width: auto; /* This doesn't work, just fix for unkown width elements */
-        }
-
-        .has-spinner.btn-mini.active .spinner {
-            width: 10px;
-        }
-
-        .has-spinner.btn-small.active .spinner {
-            width: 13px;
-        }
-
-        .has-spinner.btn.active .spinner {
-            width: 16px;
-        }
-
-        .has-spinner.btn-large.active .spinner {
-            width: 19px;
+            max-width: 50px; /* More than it will ever come, notice that this affects on animation duration */
         }
         /* Spinner - ends */
 
