@@ -98,9 +98,6 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
 %>
 
-
-
-
 <div class="carousel slide" data-ride="carousel" id="myCarousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -133,7 +130,7 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
             if (queryNumberString==null){
              %>
                       <p>
-                          <input type="hidden" NAME="hiddenButton">
+                          <input type="hidden" id="hiddenButton" name="hiddenButton">
                           <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
 
                           <!--<input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO()"/>-->
@@ -198,28 +195,18 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
         <span class="icon-next"></span>
     </a>
 
+    <div id="carouselButtons">
+        <button id="playButton" type="button" class="btn btn-default btn-xs">
+            <span class="glyphicon glyphicon-play"></span>
+        </button>
+        <button id="pauseButton" type="button" class="btn btn-default btn-xs">
+            <span class="glyphicon glyphicon-pause"></span>
+        </button>
+    </div>
+
 </div>
 
 </form>
 <!-- /.carousel -->
-
-<script>
-    function askSTATO(){
-        var item = $('#myCarousel .carousel-inner .item.active');
-        document.queryForm.hiddenButton.value = item.index();
-        $('.carousel').carousel('pause');
-        //$('.progress-bar').progressbar();
-        var askButton = $('#askButton');
-        $askButton.attr('disabled', true);
-        $askButton.attr('active', true);
-        queryForm.submit();
-        //e.preventDefault();//this will prevent the link trying to navigate to another page
-        //var href = $(this).attr("href");//get the href so we can navigate later
-        //do the update
-        //when update has finished, navigate to the other page
-        //window.location = href;
-    };
-</script>
-
 
 <%@include file="footer.jsp" %>

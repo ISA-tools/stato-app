@@ -68,6 +68,12 @@
         }
 
 
+        #carouselButtons {
+            margin-left: 100px;
+            position: absolute;
+            bottom: 0px;
+        }
+
         /* Spinner - starts */
         .spinner {
             display: inline-block;

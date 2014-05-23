@@ -37,8 +37,39 @@
 -->
 
 <script>
-    $('.carousel').carousel()
+    function askSTATO(){
+        var item = $('#myCarousel .carousel-inner .item.active');
+        $('#hiddenButton').val(item.index());
+        $('#myCarousel').carousel('pause');
+        $('#pauseButton').attr('active',true);
+        var $askButton = $('#askButton');
+        $askButton.attr('disabled', true);
+        $askButton.attr('active', true);
+        queryForm.submit();
+        //$('.progress-bar').progressbar();
+        //e.preventDefault();//this will prevent the link trying to navigate to another page
+        //var href = $(this).attr("href");//get the href so we can navigate later
+        //do the update
+        //when update has finished, navigate to the other page
+        //window.location = href;
+    };
+
+    $(function () {
+        $('#myCarousel').carousel({
+            interval:2000,
+            pause: "false"
+        });
+        $('#playButton').click(function () {
+            $('#myCarousel').carousel('cycle');
+        });
+        $('#pauseButton').click(function () {
+            $('#myCarousel').carousel('pause');
+        });
+    });
+
 </script>
+
+
 
 </body>
 </html>
