@@ -9,6 +9,7 @@
 
     <!-- Le styles -->
    <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet">-->
+   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -67,6 +68,7 @@
             background: #f1f2f1;
         }
 
+        /* Spinner - starts */
         .spinner {
             display: inline-block;
             opacity: 0;
@@ -102,6 +104,8 @@
         .has-spinner.btn-large.active .spinner {
             width: 19px;
         }
+        /* Spinner - ends */
+
     </style>
     <!--  <style type="text/css">
         body {

@@ -8,6 +8,8 @@
 <%@ page import="com.sun.tools.javac.util.Pair" %>
 <%@ page import="org.isatools.stato.STATOResult" %>
 
+
+
 <form method=post action="queryFrom.jsp" name=queryForm>
 
     <div class="navbar-wrapper">
@@ -92,8 +94,6 @@ if (queryNumberString!=null){
     queryNumber = (new Integer(queryNumberString)).intValue();
 }
 
-String dlQuery = null;
-
 %>
 
 <div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
@@ -128,9 +128,10 @@ String dlQuery = null;
             if (queryNumberString==null){
              %>
                       <p>
-                          <a class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">
-                            Ask STATO
+                          <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
+                          <a id="ask" class="btn btn-success has-spinner" style="width:150px"href="#">
                             <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+                            Ask STATO
                           </a>
                       </p>
             <%
@@ -139,25 +140,29 @@ String dlQuery = null;
             }else{
 
                 List<STATOResult> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
-                dlQuery = STATOQueries.QUERY_DL[j];
+
+                for(STATOResult statoResult: resultList){
                 %>
+                          <p>
+                            <span title="<%=statoResult.getDefinition()%>">
+                                <a class="result" href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank">
+                                    <%=statoResult.getLabel()%>
+                                </a>
+                            </span>
+                          </p>
 
-                      <ul>
-                <%
 
-                    for(STATOResult statoResult: resultList){
-
-                %>
-                      <li align="left">
-                         <span title="<%=statoResult.getDefinition()%>"><a class="result" href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank"><%=statoResult.getLabel()%></a></span>
-                      </li>
                 <%
 
                     } //for
 
                     %>
-                      </ul>
-                    <%
+                      <br>
+                      <h5 align="center">How STATO query answering works?</h5>
+                      <h6 align="center">The results above are obtained by posing this expression to the <a href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
+                      <h5 align="center"><strong><%=STATOQueries.QUERY_DL[j]%></strong></h5>
+
+                      <%
 
                     } //else
 
@@ -181,20 +186,27 @@ String dlQuery = null;
 
 </div>
 
-<%
-    if (queryNumberString!=null) {
-%>
-<h5 align="center">How STATO query answering works?</h5>
-<h6 align="center">The results above are obtained by posing this expression to the <a href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
-<h5 align="center"><strong><%=dlQuery%></strong></h5>
 
 
-<%
-    }
-%>
 
 
 </form>
 <!-- /.carousel -->
+
+<script>
+
+    $("#ask").click(function(){
+        $(this).toggleClass('active');
+        $('.carousel').carousel('pause');
+        //e.preventDefault();//this will prevent the link trying to navigate to another page
+        //var href = $(this).attr("href");//get the href so we can navigate later
+
+        //do the update
+
+
+        //when update has finished, navigate to the other page
+        //window.location = href;
+    });
+</script>
 
 <%@include file="footer.jsp" %>
