@@ -9,9 +9,8 @@
 
     <!-- Le styles -->
    <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet">-->
-   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <style>
         a.result:link {color: green;}
         a.result:visited {color: green;}
@@ -67,6 +66,7 @@
         img {
             background: #f1f2f1;
         }
+
 
         /* Spinner - starts */
         .spinner {
@@ -175,7 +175,7 @@
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="../assets/js/html5shiv.js"></script>
+    <!--<script src="../assets/js/html5shiv.js"></script>-->
     <![endif]-->
 
     <!-- Fav and touch icons -->

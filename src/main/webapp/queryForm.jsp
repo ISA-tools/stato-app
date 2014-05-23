@@ -1,21 +1,5 @@
 <%@include file="header.jsp" %>
 
-<script>
-    function askSTATO(){
-        var item = $('#myCarousel .carousel-inner .item.active');
-        document.queryForm.queryNumber.value = item;
-        document.queryForm.ask.toggleClass('active');
-        $('.carousel').carousel('pause');
-        queryForm.submit();
-        //e.preventDefault();//this will prevent the link trying to navigate to another page
-        //var href = $(this).attr("href");//get the href so we can navigate later
-        //do the update
-        //when update has finished, navigate to the other page
-        //window.location = href;
-    };
-</script>
-
-
 <%@ page import="java.util.*" %>
 <%@ page import="org.isatools.stato.STATOQueries" %>
 <%@ page import="org.isatools.stato.STATOQueryDemo" %>
@@ -24,7 +8,7 @@
 <%@ page import="com.sun.tools.javac.util.Pair" %>
 <%@ page import="org.isatools.stato.STATOResult" %>
 
-<form method=post action="queryFrom.jsp" name=queryForm>
+<form method=post action="queryForm.jsp" name=queryForm>
 
     <div class="navbar-wrapper">
         <div class="container">
@@ -101,14 +85,14 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
     end = STATOQueries.QUERY_MEASURES_END;
 }
 
-String queryNumberString = request.getParameter("queryNumber");
+String queryNumberString = request.getParameter("hiddenButton");
 %>
 
     QUERY NUMBER: <%=queryNumberString%>
 <%
 int queryNumber = start;
 
-if (queryNumberString!=null){
+if (queryNumberString!=null && !queryNumberString.equals("")){
     queryNumber = (new Integer(queryNumberString)).intValue();
 }
 
@@ -149,12 +133,21 @@ if (queryNumberString!=null){
             if (queryNumberString==null){
              %>
                       <p>
-                          <input type="hidden" NAME="queryNumber">
+                          <input type="hidden" NAME="hiddenButton">
                           <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
-                          <input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO">
-                            <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
-                          </input>
+
+                          <!--<input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO()"/>-->
+                          <button id="askButton" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO()">
+                              Ask STATO
+                              <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+                          </button>
+
                       </p>
+                      <!--
+                      <div class="progress progress-striped">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuetransitiongoal="80"></div>
+                      </div>
+                      -->
             <%
 
 
@@ -207,9 +200,26 @@ if (queryNumberString!=null){
 
 </div>
 
-
-
 </form>
 <!-- /.carousel -->
+
+<script>
+    function askSTATO(){
+        var item = $('#myCarousel .carousel-inner .item.active');
+        document.queryForm.hiddenButton.value = item.index();
+        $('.carousel').carousel('pause');
+        //$('.progress-bar').progressbar();
+        var askButton = $('#askButton');
+        $askButton.attr('disabled', true);
+        $askButton.attr('active', true);
+        queryForm.submit();
+        //e.preventDefault();//this will prevent the link trying to navigate to another page
+        //var href = $(this).attr("href");//get the href so we can navigate later
+        //do the update
+        //when update has finished, navigate to the other page
+        //window.location = href;
+    };
+</script>
+
 
 <%@include file="footer.jsp" %>
