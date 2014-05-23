@@ -96,6 +96,44 @@
         }
         /* Spinner - ends */
 
+
+        /** Carousel fade **/
+
+        .carousel.carousel-fade .item {
+            -webkit-transition: opacity 2s ease-in-out;
+            -moz-transition: opacity 2s ease-in-out;
+            -ms-transition: opacity 2s ease-in-out;
+            -o-transition: opacity 2s ease-in-out;
+            transition: opacity 2s ease-in-out;
+        }
+        .carousel.carousel-fade .active.left,
+        .carousel.carousel-fade .active.right {
+            left: 0;
+            z-index: 2;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        .carousel.carousel-fade .next,
+        .carousel.carousel-fade .prev {
+            left: 0;
+            z-index: 1;
+        }
+
+        .carousel.carousel-fade .carousel-control {
+            z-index: 3;
+        }
+        .unstyled li {
+            display: inline;
+            vertical-align: baseline;
+            padding: 0 16px;
+            position: relative;
+        }
+
+
+        /** Carouse fade ends **/
+
+
+
     </style>
     <!--  <style type="text/css">
         body {

@@ -98,7 +98,7 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
 %>
 
-<div class="carousel slide" data-ride="carousel" id="myCarousel">
+<div class="carousel slide carousel-fade" data-ride="carousel" id="myCarousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <%
