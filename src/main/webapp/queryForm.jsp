@@ -126,7 +126,7 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
         <%
 
-            //get query results
+           //queryNumberString is null, means that the 'Ask STATO' button was never pressed
             if (queryNumberString==null){
              %>
                       <p>
@@ -136,23 +136,21 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                           <!--<input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO()"/>-->
                           <button id="askButton" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO()">
                               Ask STATO
-                              <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+                              <span class="spinner"><i class="icon-spinner icon-refresh"></i></span>
                           </button>
 
                       </p>
-                      <!--
-                      <div class="progress progress-striped">
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuetransitiongoal="80"></div>
-                      </div>
-                      -->
             <%
 
-
+            //get the results
             }else{
 
-                List<STATOResult> resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[j]);
+                List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(STATOQueries.QUERY_DL[queryNumber]);
+                if (queryNumber == j || resultList != null) {
+                   if (resultList ==null)
+                       resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[queryNumber]);
 
-                for(STATOResult statoResult: resultList){
+                    for(STATOResult statoResult: resultList){
                 %>
                           <p>
                             <span title="<%=statoResult.getDefinition()%>">
@@ -171,18 +169,39 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                       <br>
                       <h5 align="center">How STATO query answering works?</h5>
                       <h6 align="center">The results above are obtained by posing this expression to the <a href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
-                      <h5 align="center"><strong><%=STATOQueries.QUERY_DL[j]%></strong></h5>
+                      <h5 align="center"><strong><%=STATOQueries.QUERY_DL[queryNumber]%></strong></h5>
 
                       <%
 
-                    } //else
+
+                        }else { //if queryNumber != j
+
+                            %>
+
+                      <p>
+                          <input type="hidden" id="hiddenButton" name="hiddenButton">
+                          <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
+
+                          <!--<input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO()"/>-->
+                          <button id="askButton" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO()">
+                              Ask STATO
+                              <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+                          </button>
+
+                      </p>
+
+                            <%
+
+                        }
+
+                    } //else queryNumberString!=null
 
              %>
                 </div>
             </div>
 
         <%
-            } //if
+            } //for each of the slides
         %>
 
     </div>

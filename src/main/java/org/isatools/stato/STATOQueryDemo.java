@@ -161,6 +161,13 @@ public class STATOQueryDemo{ //extends HttpServlet {
     }
 
 
+    public List<STATOResult> getPrecomputedResults(String dlQueryString){
+        if (resultMap!=null)
+            return resultMap.get(dlQueryString);
+        return null;
+    }
+
+
 //    public void runQueries(){
 //        for(String dlQuery: STATOQueries.QUERY_DL){
 //            String processedResult = runDLQuery(dlQuery);

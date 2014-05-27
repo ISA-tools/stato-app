@@ -57,7 +57,7 @@
     $(function () {
         $('#myCarousel').carousel({
             interval:6000,
-            pause: "false"
+            pause: "hover"
         });
         $('#playButton').click(function () {
             $('#myCarousel').carousel('cycle');
