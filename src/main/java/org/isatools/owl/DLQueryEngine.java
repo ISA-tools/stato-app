@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 
 public class DLQueryEngine {
 
@@ -20,6 +21,8 @@ public class DLQueryEngine {
     private OWLOntologyManager manager;
     private OWLDataFactory factory;
     private OWLOntology rootOntology;
+
+    private final static Logger logger = Logger.getLogger(DLQueryEngine.class.getName());
 
     /**
      * Constructs a DLQueryEngine. This will answer "DL queries" using the
@@ -134,18 +137,7 @@ public class DLQueryEngine {
         }
         OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
 
-//        OWLClass query = factory.getOWLClass(IRI.create("http://example.org/query"));
-//
-//        OWLEquivalentClassesAxiom equivalentClassesAxiom = factory.getOWLEquivalentClassesAxiom(query, classExpression);
-//
-//        manager.addAxiom(rootOntology, equivalentClassesAxiom);
-
-        System.out.println("ClassExpression");
-        System.out.println(classExpression);
-
-        //NodeSet<OWLClass> subClasses = reasoner.getSubClasses(query,
-        //        direct);
-
+        logger.info("ClassExpression =" + classExpression);
         NodeSet<OWLClass> subClasses = reasoner.getSubClasses(classExpression,
                 direct);
 

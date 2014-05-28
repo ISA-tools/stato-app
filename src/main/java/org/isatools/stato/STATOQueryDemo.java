@@ -12,6 +12,7 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -120,9 +121,14 @@ public class STATOQueryDemo{ //extends HttpServlet {
 
         STATOResult result = null;
         String iri = null, label = null, definition = null;
+        String owlNothingIRI = dataFactory.getOWLNothing().getIRI().toString();
         for(OWLClass cls: set){
 
             iri = cls.getIRI().toString();
+
+            if (iri.equals(owlNothingIRI))
+                continue;
+
             // Get the annotations on the class that use the label property (rdfs:label)
             for (OWLAnnotation annotation : cls.getAnnotations(stato, dataFactory.getRDFSLabel())) {
                 if (annotation.getValue() instanceof OWLLiteral) {
@@ -164,23 +170,16 @@ public class STATOQueryDemo{ //extends HttpServlet {
 
     public static void main(String[] args) throws Exception {
 
-//        URL url = STATOQueryDemo.class.getClass().getResource("/stato/releases/1.1/stato.owl");
-//        System.out.println("url = "+url);
-//        String jspPath =  url.getPath();
-//
-//        System.out.println("jspPath="+jspPath);
-//        //String statoFilePath = jspPath+ "stato.owl";
-//        File statoFile = new File(jspPath);
-//
-//        STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
-//        String result = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
-//        System.out.println(result);
-
-        //STATOQueryDemo statoQueryDemo = new STATOQueryDemo();
-        //String resultMap = statoQueryDemo.runDLQuery("'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)");
-        //System.out.println(resultMap);
-        //statoQueryDemo.runQueries();
-        //System.out.println(statoQueryDemo.getResultMap());
+        URL url = STATOQueryDemo.class.getClass().getResource("/stato/releases/1.1/stato.owl");
+        System.out.println("url = "+url);
+        String path =  url.getPath();
+        File statoFile = new File(path);
+        STATOQueryDemo statoQueryDemo = new STATOQueryDemo(statoFile);
+        List<STATOResult> resultList = statoQueryDemo.runDLQuery("'statistical hypothesis test' and achieves_planned_objective some 'association testing objective'");
+        for(STATOResult result: resultList){
+            System.out.println("label =" + result.getLabel());
+            System.out.println("IRI =" + result.getIRI());
+        }
     }
 
 }
