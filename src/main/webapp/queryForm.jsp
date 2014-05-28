@@ -86,10 +86,7 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
 }
 
 String queryNumberString = request.getParameter("hiddenButton");
-%>
 
-    QUERY NUMBER: <%=queryNumberString%>
-<%
 int queryNumber = start;
 
 if (queryNumberString!=null && !queryNumberString.equals("")){
@@ -127,7 +124,7 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
         <%
 
            //queryNumberString is null, means that the 'Ask STATO' button was never pressed
-            if (queryNumberString==null){
+            if (queryNumberString==null || queryNumber!=j){
              %>
                       <p>
                           <input type="hidden" id="hiddenButton" name="hiddenButton">
