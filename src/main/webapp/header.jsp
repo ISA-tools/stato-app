@@ -11,6 +11,8 @@
    <!-- <link href="../assets/css/bootstrap.css" rel="stylesheet">-->
 
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+
     <style>
         a.result:link {color: green;}
         a.result:visited {color: green;}
@@ -19,7 +21,7 @@
         a.result:active {color: orangered;}
 
         .carousel {
-            height: 500px;
+            height: 600px;
             margin-bottom: 60px;
             vertical-align: middle;
         }
@@ -27,11 +29,13 @@
         .carousel-caption {
             z-index: 10;
             margin-top: 10px;
+            /*margin-bottom: 200px;*/
+            vertical-align: middle;
         }
         /* Declare heights because of positioning of img element */
         .carousel .item {
             width: 100%;
-            height: 500px;
+            height: 600px;
             background-color: silver;
         }
         .carousel-inner > .item > img {
@@ -67,11 +71,10 @@
             background: #f1f2f1;
         }
 
-
         #carouselButtons {
             margin-left: 100px;
             position: absolute;
-            bottom: 0px;
+            /*bottom: 0px;*/
         }
 
         /* Spinner - starts */
