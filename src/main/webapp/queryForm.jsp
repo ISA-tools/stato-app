@@ -131,9 +131,9 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                           <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
 
                           <!--<input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO()"/>-->
-                          <button id="askButton" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO()">
+                          <button id="askButton_<%=j%>" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO('<%=j%>')">
                               Ask STATO
-                              <span class="spinner"><i class="icon-spinner icon-refresh"></i></span>
+                              <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                           </button>
 
                       </p>

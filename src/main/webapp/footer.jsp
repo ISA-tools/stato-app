@@ -20,14 +20,14 @@
 
 
 <script>
-    function askSTATO(){
+    function askSTATO(j){
         var item = $('#myCarousel .carousel-inner .item.active');
         $('#hiddenButton').val(item.index());
         $('#myCarousel').carousel('pause');
         $('#pauseButton').attr('active',true);
-        var $askButton = $('#askButton');
+        var $askButton = $('#askButton_'+j);
         $askButton.attr('disabled', true);
-        $askButton.attr('active', true);
+        $("#askButton_"+j).toggleClass("active");
         queryForm.submit();
 
     };

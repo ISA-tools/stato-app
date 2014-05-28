@@ -28,9 +28,10 @@
         /* Since positioning the image, we need to help out the caption */
         .carousel-caption {
             z-index: 10;
-            margin-top: 10px;
-            /*margin-bottom: 200px;*/
-            vertical-align: middle;
+            margin-top: 0px;
+            margin-bottom: 100px;
+            height: 400px;
+            overflow:scroll;
         }
         /* Declare heights because of positioning of img element */
         .carousel .item {
