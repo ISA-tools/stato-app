@@ -1,6 +1,5 @@
 package org.isatools.stato;
 
-import com.sun.tools.javac.util.Pair;
 import org.isatools.owl.DLQueryEngine;
 import org.isatools.owl.DLQueryParser;
 import org.isatools.owl.OWLClassifier;
@@ -13,7 +12,6 @@ import org.semanticweb.owlapi.util.ShortFormProvider;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -35,14 +33,10 @@ public class STATOQueryDemo{ //extends HttpServlet {
     private DLQueryParser dlQueryParser = null;
     private DLQueryEngine dlQueryEngine = null;
 
-//    private URL STATO_url = null;
-//    private IRI STATO_iri = IRI.create("http://purl.obolibrary.org/obo/stato.owl");
-
     private final static Logger logger = Logger.getLogger(STATOQueryDemo.class.getName());
 
-    //<DLquery, resultMap>
+    //a map with the DLquery string
     private Map<String, List<STATOResult>> resultMap;
-
 
     public STATOQueryDemo(File statoFile) {
         System.out.println("STATOQueryDemo constructor");
@@ -102,16 +96,6 @@ public class STATOQueryDemo{ //extends HttpServlet {
         String path = file.getParent();
         System.out.println("path="+path);
 
-//        Scanner scanner = new Scanner(file);
-//        String line = null;
-//        int i = 0;
-//        while (scanner.hasNext() && i < 10){
-//            line = scanner.nextLine();
-//            logger.info("Line "+i+": " + line);
-//            i++;
-//        }
-        //String catalogPath = path + "/catalog-v001.xml";
-        //manager.addIRIMapper(new CatalogXmlIRIMapper(catalogPath));
         return manager.loadOntologyFromOntologyDocument(file);
     }
 
@@ -168,12 +152,15 @@ public class STATOQueryDemo{ //extends HttpServlet {
     }
 
 
-//    public void runQueries(){
-//        for(String dlQuery: STATOQueries.QUERY_DL){
-//            String processedResult = runDLQuery(dlQuery);
-//            resultMap.put(dlQuery, processedResult);
-//        }
-//    }
+    public void runQueries(){
+        for(String dlQuery: STATOQueries.QUERY_DL){
+            List<STATOResult> resultList = runDLQuery(dlQuery);
+            for(STATOResult result: resultList){
+                System.out.println("label =" + result.getLabel());
+                System.out.println("IRI =" + result.getIRI());
+            }
+        }
+    }
 
     public static void main(String[] args) throws Exception {
 
