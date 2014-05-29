@@ -158,16 +158,14 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                     for(STATOResult statoResult: resultList){
                 %>
 
-                          <div class = "well" align="center">
-                              <strong>
-                                  <a id="pop_<%=j%>_<%=k%>" class="result popper-upper"
+                          <div class = "well well-sm" align="center">
+                                  <a id="pop_<%=j%>_<%=k%>" class="result popper-upper btn"
                                      onmouseover="showPopup('#pop_<%=j%>_<%=k%>')"
                                      onmouseout="hidePopup('#pop_<%=j%>_<%=k%>')"
                                      href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank"
                                      rel="popover" data-original-title="Term Definition" data-content="<%=statoResult.getDefinition()%>">
                                      <%=statoResult.getLabel()%>
                                   </a>
-                             </strong>
                           </div>
                 <%
                     k++;
@@ -179,8 +177,11 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
                       <div class="col-md-2">
 
-                      <h5 align="center"><i class = "icon-question-sign icon-lead"></i>How STATO query answering works?</h5>
-                      <h6 align="center">These results are obtained by posing this expression to the <a href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
+                      <h5 align="center"><i class="icon-info-sign"></i> STATO returned <%=resultList.size()%> results.</h5>
+
+
+                      <h5 align="center"><i class = "icon-question-sign icon-lead"></i> How STATO query answering works?</h5>
+                      <h6 align="center">These results are obtained by posing this expression to the <a class="result" href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
                       <h5 align="center"><strong><%=STATOQueries.QUERY_DL[queryNumber]%></strong></h5>
 
                        </div>

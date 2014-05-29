@@ -137,6 +137,15 @@
         /** Carouse fade ends **/
 
 
+        .popover-title {
+            color: green;
+            font-size: 15px;
+        }
+        .popover-content {
+            color: darkgreen;
+            font-size: 10px;
+        }
+
 
     </style>
 
