@@ -20,6 +20,15 @@
 
 
 <script>
+
+    function showPopup(id) {
+        $(id).popover('show');
+    }
+
+    function hidePopup(id) {
+        $(id).popover('hide');
+    }
+
     $(".popper-upper").each(function(){
         $(this).popover();
     });

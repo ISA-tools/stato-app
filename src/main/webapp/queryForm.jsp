@@ -160,7 +160,9 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
                           <div class = "well" align="center">
                               <strong>
-                                  <a class="result popper-upper"
+                                  <a id="pop_<%=j%>_<%=k%>" class="result popper-upper"
+                                     onmouseover="showPopup('#pop_<%=j%>_<%=k%>')"
+                                     onmouseout="hidePopup('#pop_<%=j%>_<%=k%>')"
                                      href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank"
                                      rel="popover" data-original-title="Term Definition" data-content="<%=statoResult.getDefinition()%>">
                                      <%=statoResult.getLabel()%>
