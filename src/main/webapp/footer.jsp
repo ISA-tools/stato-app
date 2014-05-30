@@ -36,7 +36,7 @@
     $(function () {
 
         $('#myCarousel').carousel({
-            interval:4000,
+            interval:3000,
             pause: "hover"
         });
         $('#playButton').click(function () {

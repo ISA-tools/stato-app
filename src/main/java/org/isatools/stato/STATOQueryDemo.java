@@ -100,8 +100,13 @@ public class STATOQueryDemo{ //extends HttpServlet {
         return manager.loadOntologyFromOntologyDocument(file);
     }
 
+    public List<STATOResult> runDLQuery(int queryNumber){
+        logger.info("Running query number "+ queryNumber);
+        return runDLQuery(STATOQueries.QUERY_DL[queryNumber]);
+    }
 
-    public List<STATOResult> runDLQuery(String dlQueryString){
+
+    private List<STATOResult> runDLQuery(String dlQueryString){
         List<STATOResult> resultString = resultMap.get(dlQueryString);
 
         if (resultString!=null)
@@ -151,7 +156,12 @@ public class STATOQueryDemo{ //extends HttpServlet {
     }
 
 
-    public List<STATOResult> getPrecomputedResults(String dlQueryString){
+    public List<STATOResult> getPrecomputedResults(int queryNumber){
+        logger.info("Getting precomputed results for queryNumber="+queryNumber);
+        return getPrecomputedResults(STATOQueries.QUERY_DL[queryNumber]);
+    }
+
+    private List<STATOResult> getPrecomputedResults(String dlQueryString){
         if (resultMap!=null)
             return resultMap.get(dlQueryString);
         return null;

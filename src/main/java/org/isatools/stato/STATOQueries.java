@@ -56,7 +56,7 @@ public class STATOQueries {
         QUERY_STRING[6] = "Which statistical test or data transformation method may be used to test association between categorical variable?";
         QUERY_DL[6] = "'statistical hypothesis test' and achieves_planned_objective some 'association testing objective'";
 
-        QUERY_STRING[7] = "Which statistical test use an ‘F- distribution'?";
+        QUERY_STRING[7] = "Which statistical test use an 'F- distribution'?";
         QUERY_DL[7] = "'statistical hypothesis test' and 'has part' some ('normal distribution hypothesis' and 'has value' value true)";
 
         //PLOTS

@@ -123,11 +123,12 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
         <%
 
-           //queryNumberString is null, means that the 'Ask STATO' button was never pressed
+           //queryNumberString is null (it means that the 'Ask STATO' button was never pressed) or queryNumber is not the same as the current slide (j)
             if (queryNumberString==null || queryNumber!=j){
              %>
                       <p>
-                          <input type="hidden" id="hiddenButton_<%=j%>" name="hiddenButton">
+                          <!--<input type="hidden" id="hiddenButton_<%=j%>" name="hiddenButton"> -->
+                          <input type="hidden" id="hiddenButton" name="hiddenButton">
 
                           <button id="askButton_<%=j%>" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO('<%=j%>')">
                               Ask STATO
@@ -137,8 +138,8 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                       </p>
             <%
 
-            //get the results
-            }else{
+            //get the results - a query was selected or there are previous results
+            } else {
 
                 %>
                       <div class="container">
@@ -149,10 +150,10 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
                 <%
 
-                List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(STATOQueries.QUERY_DL[queryNumber]);
+                List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(queryNumber);
                 if (queryNumber == j || resultList != null) {
                    if (resultList ==null)
-                       resultList = statoQueryDemo.runDLQuery(STATOQueries.QUERY_DL[queryNumber]);
+                       resultList = statoQueryDemo.runDLQuery(queryNumber);
                        int k = 0;
 
                     for(STATOResult statoResult: resultList){
@@ -189,24 +190,6 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                           </div> <!--container-->
                       <%
 
-
-                        }else { //if queryNumber != j
-
-                            %>
-
-                      <p>
-                          <input type="hidden" id="hiddenButton" name="hiddenButton">
-                          <%--<a id="ask" class="btn btn-lg btn-success has-spinner" href="queryForm.jsp?queryType=<%=queryType%>&queryNumber=<%=j%>">--%>
-
-                          <!--<input type="button" name="ask" class="btn btn-success has-spinner" value="Ask STATO" style="width:150px" onclick="askSTATO()"/>-->
-                          <button id="askButton" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO()">
-                              Ask STATO
-                              <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
-                          </button>
-
-                      </p>
-
-                            <%
 
                         }
 
