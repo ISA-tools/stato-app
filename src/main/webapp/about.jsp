@@ -58,7 +58,7 @@
             <div class="row clearfix">
                 <div class="col-lg-12">
                     <h1 class="section-title">This is Who <span>We Are</span></h1>
-                    <h2 class="section-subtitle"><span style="font-family: 'Lobster', 'cursive'; color:#5f5f5f;">MentorCube</span> started out of the frustration of not being able to find or maintain valuable mentorship connections, both remotely and locally.</h2>
+                    <h2 class="section-subtitle"><span style="font-family: 'Lobster', 'cursive'; color:#5f5f5f;">STATO</span> started out to provide semantic coverage for processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics.</h2>
                 </div>
             </div>
         </div>
@@ -66,23 +66,29 @@
             <div class="container">
                 <div class="row clearfix">
                     <div class="team-user team-image-box col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                        <div class="text-center square"><img class="image-circle" src="assets/img/team/3.jpg" alt=""></div>
-                        <h3 class="team-title">Lamec Fletez</h3>
-                        <h3 class="team-subtitle">Co-Founder &amp; Lead Product Manager</h3>
+                        <div class="text-center square"><img class="image-circle" src="assets/img/orlaith.jpg" alt=""></div>
+                        <h3 class="team-title">Orlaith Burke</h3>
+                       <!-- <h3 class="team-subtitle">Co-Founder &amp; Lead Product Manager</h3>-->
                     </div>
                     <div class="team-user team-image-box col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                        <div class="text-center square"><img class="image-circle" src="assets/img/team/2.jpg" alt=""></div>
-                        <h3 class="team-title">Danielle Grebbien</h3>
-                        <h3 class="team-subtitle">Co-Founder &amp; Lead Operations Manager</h3>
+                        <div class="text-center square"><img class="image-circle" src="assets/img/alejandra.jpg" alt=""></div>
+                        <h3 class="team-title">Alejandra Gonzalez-Beltran</h3>
+                        <!--<h3 class="team-subtitle">Co-Founder &amp; Lead Operations Manager</h3>-->
                     </div>
                     <div class="team-user team-image-box col-xs-6 col-sm-6 col-md-4 col-lg-4">
-                        <div class="text-center square"><img class="image-circle" src="assets/img/team/1.jpg" alt=""></div>
-                        <h3 class="team-title">Jose Luis Teran</h3>
-                        <h3 class="team-subtitle">Co-Founder &amp; Lead Software Developer</h3>
+                        <div class="text-center square"><img class="image-circle" src="assets/img/philippe.jpg" alt=""></div>
+                        <h3 class="team-title">Philippe Rocca-Serra</h3>
+                        <!--<h3 class="team-subtitle">Co-Founder &amp; Lead Software Developer</h3>-->
+                    </div>
+                    <div class="team-user team-image-box col-xs-6 col-sm-6 col-md-4 col-lg-4">
+                        <div class="text-center square"><img class="image-circle" src="assets/img/susanna.jpg" alt=""></div>
+                        <h3 class="team-title">Susanna-Assunta Sansone</h3>
+                        <!--<h3 class="team-subtitle">Co-Founder &amp; Lead Software Developer</h3>-->
                     </div>
                 </div>
             </div>
         </div>
+        <!--
         <div class="about-us-info">
             <div class="container">
                 <div class="row clearfix">
@@ -111,6 +117,7 @@
                 </div>
             </div>
         </div>
+        -->
     </section>
     <!-- /#about-section -->
 

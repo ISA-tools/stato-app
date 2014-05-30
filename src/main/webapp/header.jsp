@@ -12,6 +12,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href="assets/css/prettyPhoto.css" id="prettyphoto-css" rel="stylesheet" />
 
     <style>
         a.result:link {color: green;}
@@ -144,6 +146,16 @@
         .popover-content {
             color: darkgreen;
             font-size: 10px;
+        }
+
+
+        .image-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            -webkit-border-radius: 150px;
+            -moz-border-radius: 150px;
+            background: url(http://link-to-your/image.jpg) no-repeat;
         }
 
 
