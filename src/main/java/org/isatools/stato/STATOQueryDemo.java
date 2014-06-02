@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  *
  * @author <a href="mailto:alejandra.gonzalez.beltran@gmail.com">Alejandra Gonzalez-Beltran</a>
  */
-public class STATOQueryDemo{ //extends HttpServlet {
+public class STATOQueryDemo{
 
     private OWLClassifier classifier = null;
     private OWLOntologyManager manager = null;

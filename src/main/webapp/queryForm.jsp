@@ -1,12 +1,12 @@
 <%@include file="header.jsp" %>
 
-<%@ page import="java.util.*" %>
-<%@ page import="org.isatools.stato.STATOQueries" %>
-<%@ page import="org.isatools.stato.STATOQueryDemo" %>
-<%@ page import="java.io.File" %>
-<%@ page import="org.semanticweb.owlapi.model.IRI" %>
-<%@ page import="com.sun.tools.javac.util.Pair" %>
-<%@ page import="org.isatools.stato.STATOResult" %>
+<%@page info="stato-ui"%>
+
+<%@ page import="java.util.List" %>
+<%@ page import="org.isatools.stato.STATOQueries"%>
+<%@ page import="org.isatools.stato.STATOQueryDemo"%>
+<%@ page import="java.io.File"%>
+<%@ page import="org.isatools.stato.STATOResult"%>
 
 <form method=post action="queryForm.jsp" name=queryForm>
 
