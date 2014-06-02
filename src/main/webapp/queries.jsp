@@ -55,7 +55,6 @@
                 <h2>All demo queries</h2>
 
                 <p>STATO helps answer queries about tests, plots, measures and designs.</p>
-                <!--<p><a class="btn btn-default" href="#" role="button">ASK STATO &raquo;</a></p>-->
                 <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=all">Ask STATO</a>
             </div>
             <!-- /.col-lg-4 -->

@@ -150,8 +150,8 @@
 
 
         .image-circle {
-            width: 300px;
-            height: 300px;
+            width: 100px;
+            height: 100px;
             border-radius: 150px;
             -webkit-border-radius: 150px;
             -moz-border-radius: 150px;

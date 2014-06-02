@@ -40,7 +40,7 @@ public class STATOQueryDemo{
     private Map<String, List<STATOResult>> resultMap;
 
     public STATOQueryDemo(File statoFile) {
-        System.out.println("STATOQueryDemo constructor");
+        System.out.println("STATOQueryDemo constructor "+statoFile);
         resultMap = new HashMap<String, List<STATOResult>>();
         try {
             manager = OWLManager.createOWLOntologyManager();
@@ -94,9 +94,7 @@ public class STATOQueryDemo{
     private OWLOntology loadLocalOntology(File file)
             throws IOException, OWLOntologyCreationException {
         System.out.println("In loadLocalOntology... file="+file);
-        String path = file.getParent();
-        System.out.println("path="+path);
-
+        System.out.println("calling manager.loadOntologyFromOntologyDocument("+file+")");
         return manager.loadOntologyFromOntologyDocument(file);
     }
 
