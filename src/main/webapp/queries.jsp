@@ -50,20 +50,16 @@
         <div class="row">
 
             <div class="col-lg-4">
-                <!-- <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image"> -->
-
+                <span class="glyphicon icon-asterisk"></span>
                 <h2>All demo queries</h2>
-
                 <p>STATO helps answer queries about tests, plots, measures and designs.</p>
                 <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=all">Ask STATO</a>
             </div>
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
-
+                <span class="icon-large icon-stats"></span>
                 <h2>Statistical Tests</h2>
-
                 <p>STATO maintains information about statistical tests and their conditions of application. We show some
                     query examples about statistical tests.</p>
                 <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=tests">Ask STATO about tests</a>
@@ -71,7 +67,6 @@
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image"> -->
                 <span class="glyphicon glyphicon-stats"></span>
                 <h2>Statistical Plots</h2>
                 <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
@@ -81,15 +76,15 @@
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
+                <span class="icon-large icon-ruller"></span>
                 <h2>Statistical Measures</h2>
                 <p>STATO and statistical measures</p>
                 <a class="btn btn-large btn-success" href="queryForm.jsp">Ask STATO about measures</a>
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">
-
+                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+                <span class="icon-large icon-pen"></span>
                 <h2>Study Designs</h2>
 
                 <p>STATO and study designs</p>

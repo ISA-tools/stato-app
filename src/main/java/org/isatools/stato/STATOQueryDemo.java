@@ -95,6 +95,9 @@ public class STATOQueryDemo{
             throws IOException, OWLOntologyCreationException {
         System.out.println("In loadLocalOntology... file="+file);
         System.out.println("calling manager.loadOntologyFromOntologyDocument("+file+")");
+        System.out.println("absolute path ="+ file.getAbsolutePath());
+        System.out.println("file length ="+ file.length());
+
         return manager.loadOntologyFromOntologyDocument(file);
     }
 
