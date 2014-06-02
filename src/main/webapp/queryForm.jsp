@@ -225,6 +225,11 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
 
 </div>
 
+<p align="center">
+
+<i class="icon-flag icon-light"></i>
+ Use the arrows or play/pause buttons to see all the queries. Press the button 'Ask STATO' to compute the results over the ontology.</p>
+
 </form>
 <!-- /.carousel -->
 

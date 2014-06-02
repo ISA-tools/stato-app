@@ -87,7 +87,9 @@ public class STATOQueryDemo{
      * @return
      */
     private OWLReasoner createReasoner(final OWLOntology rootOntology) {
+        System.out.println("Creating reasoner...");
         OWLReasoner reasoner = new Reasoner.ReasonerFactory().createReasoner(rootOntology);
+        System.out.println("After creating reasoner...");
         return reasoner;
     }
       

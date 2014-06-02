@@ -73,7 +73,7 @@
 
 
         img {
-            background: #f1f2f1;
+            background: #EDEFED;
         }
 
         #carouselButtons {
@@ -148,6 +148,15 @@
         .popover-content {
             color: darkgreen;
             font-size: 10px;
+            text-shadow: none;
+            padding: 14px;
+            background-color: white;
+            -webkit-border-radius: 0 0 3px 3px;
+            -moz-border-radius: 0 0 3px 3px;
+            border-radius: 0 0 3px 3px;
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            background-clip: padding-box;
         }
 
 

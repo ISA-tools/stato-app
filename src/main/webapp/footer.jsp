@@ -33,15 +33,17 @@
         $(this).popover();
     });
 
-    $(function () {
+    $(function() {
 
         $('#myCarousel').carousel({
-            interval:3000,
+            interval: 3000,
             pause: "hover"
         });
+
         $('#playButton').click(function () {
             $('#myCarousel').carousel('cycle');
         });
+
         $('#pauseButton').click(function () {
             $('#myCarousel').carousel('pause');
         });
@@ -57,7 +59,6 @@
         $askButton.attr('disabled', true);
         $("#askButton_"+j).toggleClass("active");
         queryForm.submit();
-
     };
 </script>
 
