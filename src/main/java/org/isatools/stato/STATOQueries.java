@@ -18,13 +18,13 @@ public class STATOQueries {
 
     public static String QUERY_PLOTS = "plots";
     public static int QUERY_PLOTS_START = 8;
-    public static int QUERY_PLOTS_END = 11;
+    public static int QUERY_PLOTS_END = 10;
 
     public static String QUERY_MEASURES = "measures";
     public static int QUERY_MEASURES_START = 11;
     public static int QUERY_MEASURES_END = 11;
 
-    public static String QUERY_DESIGN = "designs";
+    public static String QUERY_DESIGNS = "designs";
     public static int QUERY_DESIGN_START = 12;
     public static int QUERY_DESIGN_END = 13;
 

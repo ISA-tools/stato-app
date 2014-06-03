@@ -61,7 +61,7 @@
                 <h2>Statistical Tests</h2>
                 <p>STATO maintains information about statistical tests and their conditions of application. We show some
                     query examples about statistical tests.</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=tests">Ask STATO about tests</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_TESTS%>">Ask STATO about tests</a>
             </div>
             <!-- /.col-lg-4 -->
 
@@ -70,7 +70,7 @@
                 <h2>Statistical Plots</h2>
                 <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
                     applications</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=plots">Ask STATO about plots</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_PLOTS%>">Ask STATO about plots</a>
             </div>
             <!-- /.col-lg-4 -->
 
@@ -78,7 +78,7 @@
                 <span class="icon-large icon-ruller"></span>
                 <h2>Statistical Measures</h2>
                 <p>STATO and statistical measures</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp">Ask STATO about measures</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Ask STATO about measures</a>
             </div>
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
@@ -88,7 +88,7 @@
 
                 <p>STATO and study designs</p>
                 <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=designs">Ask STATO about designs</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Ask STATO about designs</a>
             </div>
             <!-- /.col-lg-4 -->
         </div>

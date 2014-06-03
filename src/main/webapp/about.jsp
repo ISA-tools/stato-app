@@ -32,7 +32,7 @@
                                             <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_TESTS%>">Statistical tests demo queries</a></li>
                                             <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_PLOTS%>">Statistical plots demo queries</a></li>
                                             <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Statistical measures demo queries</a></li>
-                                            <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGN%>">Study designs demo queries</a></li>
+                                            <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Study designs demo queries</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="contact.jsp">Contact</a></li>
