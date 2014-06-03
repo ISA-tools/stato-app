@@ -29,7 +29,7 @@
                                     <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_TESTS%>">Statistical tests demo queries</a></li>
                                     <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_PLOTS%>">Statistical plots demo queries</a></li>
                                     <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Statistical measures demo queries</a></li>
-                                    <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGN%>">Study designs demo queries</a></li>
+                                    <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Study designs demo queries</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact.jsp">Contact</a></li>
@@ -56,6 +56,33 @@
             </div>
             <!-- /.col-lg-4 -->
 
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
+                <span class="icon-large icon-pen"></span>
+                <h2>Study Designs</h2>
+
+                <p>STATO and study designs</p>
+                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Ask STATO about designs</a>
+            </div>
+            <!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+                <span class="icon-large icon-ruller"></span>
+                <h2>Statistical Measures</h2>
+                <p>STATO and statistical measures</p>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Ask STATO about measures</a>
+            </div>
+
+    </div>
+
+        <div class="row">
+
+            <div class="col-lg-4">
+
+            </div>
+
             <div class="col-lg-4">
                 <span class="icon-large icon-stats"></span>
                 <h2>Statistical Tests</h2>
@@ -72,28 +99,12 @@
                     applications</p>
                 <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_PLOTS%>">Ask STATO about plots</a>
             </div>
-            <!-- /.col-lg-4 -->
 
-            <div class="col-lg-4">
-                <span class="icon-large icon-ruller"></span>
-                <h2>Statistical Measures</h2>
-                <p>STATO and statistical measures</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Ask STATO about measures</a>
             </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
-                <span class="icon-large icon-pen"></span>
-                <h2>Study Designs</h2>
 
-                <p>STATO and study designs</p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Ask STATO about designs</a>
-            </div>
-            <!-- /.col-lg-4 -->
         </div>
         <!-- /.row -->
-    </div>
+
 
 
 

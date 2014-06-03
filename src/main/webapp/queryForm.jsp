@@ -76,7 +76,7 @@ if (queryType.equals(STATOQueries.QUERY_ALL)){
 }else if (queryType.equals(STATOQueries.QUERY_PLOTS)){
     start = STATOQueries.QUERY_PLOTS_START;
     end = STATOQueries.QUERY_PLOTS_END;
-}else if (queryType.equals(STATOQueries.QUERY_DESIGN)){
+}else if (queryType.equals(STATOQueries.QUERY_DESIGNS)){
     start = STATOQueries.QUERY_DESIGN_START;
     end = STATOQueries.QUERY_DESIGN_END;
 } else if (queryType.equals(STATOQueries.QUERY_MEASURES)){
