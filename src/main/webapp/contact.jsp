@@ -61,6 +61,7 @@
                         <div class="text-center square"><img class="image-circle" src="assets/img/alejandra.jpg" alt="Alejandra Gonzalez-Beltran"></div>
                         <h5 class="team-title">Alejandra Gonzalez-Beltran</h5>
                         <h5 class="team-subtitle">Senior Software Engineer, Oxford e-Research Centre, University of Oxford</h5>
+                        <a href="http://www.oerc.ox.ac.uk/people/alejandra" target="_blank" class="result">More info</a>
                     </div>
 
 
@@ -68,6 +69,7 @@
                         <div class="text-center square"><img class="image-circle" src="assets/img/philippe.jpg" alt="Philippe Rocca-Serra"></div>
                         <h5 class="team-title">Philippe Rocca-Serra</h5>
                         <h5 class="team-subtitle">Technical Project Leader, Oxford e-Research Centre, University of Oxford</h5>
+                        <a href="http://www.oerc.ox.ac.uk/people/philippe-rocca-serra" target="_blank" class="result">More info</a>
                     </div>
 
                 </div>
@@ -77,11 +79,13 @@
                         <div class="text-center square"><img class="image-circle" src="assets/img/orlaith.jpg" alt="Orlaith Burke"></div>
                         <h5 class="team-title">Orlaith Burke</h5>
                         <h5 class="team-subtitle">Senior Statistician, Nuffield Department of Population Health, University of Oxford</h5>
+                        <a href="http://www.linkedin.com/pub/orlaith-burke/51/516/6b7" target="_blank" class="result">More info</a>
                     </div>
                     <div class="team-user team-image-box col-xs-6 col-sm-6 col-md-4 col-lg-4">
                         <div class="text-center square"><img class="image-circle" src="assets/img/susanna.jpg" alt="Susanna-Assunta Sansone"></div>
                         <h5 class="team-title">Susanna-Assunta Sansone</h5>
                         <h5 class="team-subtitle">Associate Director, Oxford e-Research Centre, University of Oxford</h5>
+                        <a href="http://www.oerc.ox.ac.uk/people/susanna-assunta-sansone" target="_blank" class="result">More info</a>
                     </div>
                 </div>
             </div>
