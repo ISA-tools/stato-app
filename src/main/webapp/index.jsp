@@ -13,11 +13,10 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">STATO-APP</a>
+                            <a class="navbar-brand" href="index.jsp">STATO-APP</a>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.jsp">Home</a></li>
                                 <li class="dropdown">
                                    <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
                                    <ul class="dropdown-menu">
