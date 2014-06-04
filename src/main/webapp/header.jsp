@@ -50,6 +50,7 @@
             min-width: 100%;
             height: 500px;
         }
+
         @media (min-width: 768px) {
             .carousel-caption p {
                 margin-top: 10px;
@@ -57,7 +58,6 @@
                 line-height: 1.4;
             }
         }
-
 
         .flex {
             display: -webkit-box;   /* OLD: Safari,  iOS, Android browser, older WebKit browsers.  */
@@ -136,10 +136,7 @@
             padding: 0 16px;
             position: relative;
         }
-
-
         /** Carouse fade ends **/
-
 
         .popover-title {
             color: green;
@@ -169,6 +166,10 @@
             background: url(http://link-to-your/image.jpg) no-repeat;
         }
 
+
+        .highlight {
+            color: black;
+        }
 
     </style>
 
