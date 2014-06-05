@@ -5,8 +5,8 @@ package org.isatools.stato;
  */
 public class STATOQueries {
 
-    public static String[] QUERY_STRING = new String[15];
-    public static String[] QUERY_DL = new String[15];
+    public static String[] QUERY_STRING = new String[16];
+    public static String[] QUERY_DL = new String[16];
 
     public static String QUERY_ALL = "all";
     public static int QUERY_ALL_START = 0;
@@ -18,15 +18,15 @@ public class STATOQueries {
 
     public static String QUERY_PLOTS = "plots";
     public static int QUERY_PLOTS_START = 9;
-    public static int QUERY_PLOTS_END = 11;
+    public static int QUERY_PLOTS_END = 12;
 
     public static String QUERY_MEASURES = "measures";
-    public static int QUERY_MEASURES_START = 12;
-    public static int QUERY_MEASURES_END = 12;
+    public static int QUERY_MEASURES_START = 13;
+    public static int QUERY_MEASURES_END = 13;
 
     public static String QUERY_DESIGNS = "designs";
-    public static int QUERY_DESIGN_START = 13;
-    public static int QUERY_DESIGN_END = 14;
+    public static int QUERY_DESIGN_START = 14;
+    public static int QUERY_DESIGN_END = 15;
 
 
     static{
@@ -43,7 +43,7 @@ public class STATOQueries {
         QUERY_STRING[2] = "Which <span class='highlight'>statistical tests</span> should only be applied if <span class='highlight'>normality and equivariance hypothesis</span> are met?";
         QUERY_DL[2] = "'statistical hypothesis test' and 'has part' some ('normal distribution hypothesis' and 'has value' value true) and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)";
 
-        QUERY_STRING[3] = "What are the <span class='highlight'>statistical tests</span> which can be used to perform <span class='highlight'>within subject comparison</span>?";
+        QUERY_STRING[3] = "What are the <span class='highlight'>statistical tests</span> which can be used to test <span class='highlight'>within subject variation</span>?";
         QUERY_DL[3] = "'statistical hypothesis test' and achieves_planned_objective some 'within subject comparison objective'";
 
         QUERY_STRING[4] = "Which <span class='highlight'>statistical tests</span> use a <span class='highlight'>contingency table</span>?";
@@ -74,16 +74,20 @@ public class STATOQueries {
         QUERY_STRING[11] = "Which <span class='highlight'>plots</span> use <span class='highlight'>effect size estimate</span>?";
         QUERY_DL[11] = "graph and 'has part' some (axis and denotes some 'effect size estimate')";
 
+        QUERY_STRING[12] = "Which <span class='highlight'>plots</span> may be used to render a <span class='highlight'>differential expression analysis</span>?";
+        QUERY_DL[12] = "graph and is_specified_output_of some \n" +
+                "('gene list visualization' and ('is preceded by' some 'differential expression analysis data transformation'))";
+
         //STATISTICAL MEASURES
-        QUERY_STRING[12] = "Having <span class='highlight'>2 ordinal variables</span>, which <span class='highlight'>correlation coefficient</span> can be computed?";
-        QUERY_DL[12] = "'correlation coefficient' and 'is about' exactly 2 'ordinal variable'";
+        QUERY_STRING[13] = "Having <span class='highlight'>2 ordinal variables</span>, which <span class='highlight'>correlation coefficient</span> can be computed?";
+        QUERY_DL[13] = "'correlation coefficient' and 'is about' exactly 2 'ordinal variable'";
 
         //STUDY DESIGN
-        QUERY_STRING[13] = "Which <span class='highlight'>study designs</span> use <span class='highlight'>blocking variables</span>?";
-        QUERY_DL[13] = "'study design' and declares some 'blocking variable'";
+        QUERY_STRING[14] = "Which <span class='highlight'>study designs</span> use <span class='highlight'>blocking variables</span>?";
+        QUERY_DL[14] = "'study design' and declares some 'blocking variable'";
 
-        QUERY_STRING[14] = "Which <span class='highlight'>study designs</span> uses <span class='highlight'>time</span> as <span class='highlight'>blocking variable</span>?";
-        QUERY_DL[14] = "'study design' and declares some ('blocking variable' and 'is about' some 'time sampled measurement data set')";
+        QUERY_STRING[15] = "Which <span class='highlight'>study designs</span> uses <span class='highlight'>time</span> as <span class='highlight'>blocking variable</span>?";
+        QUERY_DL[15] = "'study design' and declares some ('blocking variable' and 'is about' some 'time sampled measurement data set')";
 
     }
 
