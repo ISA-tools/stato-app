@@ -56,19 +56,19 @@ public class STATOQueries {
         QUERY_DL[6] = "achieves_planned_objective some 'equal variance testing objective'\n" +
                 "or 'homoskedasticity test'";
 
-        QUERY_STRING[7] = "Which <span class='highlight'>statistical tests<span class='highlight'> may be used to test <span class='highlight'>association between categorical variables</span>?";
+        QUERY_STRING[7] = "Which <span class='highlight'>statistical tests</span> may be used to test <span class='highlight'>association between categorical variables</span>?";
         QUERY_DL[7] = "'statistical hypothesis test' and achieves_planned_objective some 'association between categorical variables testing objective'";
 
         QUERY_STRING[8] = "Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?";
         QUERY_DL[8] = "'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)";
 
         //PLOTS
-        QUERY_STRING[9] = "Which <span class='highlight'>plots<span class='highlight'> may be used to represent the results of a <span class='highlight'>genetic association study</a>?";
+        QUERY_STRING[9] = "Which <span class='highlight'>plots</span> may be used to represent the results of a <span class='highlight'>genetic association study</span>?";
         QUERY_DL[9] = "graph and 'is about' some 'genetic association study'\n" +
                 "or\n" +
                 "is_specified_output_of some ('data visualization' and 'genetic association study')";
 
-        QUERY_STRING[10] = "Which <span class='highlight'>plots</span> may be used to represent the results of a meta-analysis?";
+        QUERY_STRING[10] = "Which <span class='highlight'>plots</span> may be used to represent the results of a <span class='highlight'>meta-analysis</span>?";
         QUERY_DL[10] = "is_specified_output_of some ('data visualization' and ('is preceded by' some 'meta analysis'))";
 
         QUERY_STRING[11] = "Which <span class='highlight'>plots</span> use <span class='highlight'>effect size estimate</span>?";
