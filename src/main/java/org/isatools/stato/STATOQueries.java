@@ -79,7 +79,7 @@ public class STATOQueries {
                 "('gene list visualization' and ('is preceded by' some 'differential expression analysis data transformation'))";
 
         //STATISTICAL MEASURES
-        QUERY_STRING[13] = "Having <span class='highlight'>2 ordinal variables</span>, which <span class='highlight'>correlation coefficient</span> can be computed?";
+        QUERY_STRING[13] = "Having <span class='highlight'>two ordinal variables</span>, which <span class='highlight'>correlation coefficient</span> can be computed?";
         QUERY_DL[13] = "'correlation coefficient' and 'is about' exactly 2 'ordinal variable'";
 
         //STUDY DESIGN

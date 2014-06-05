@@ -8,7 +8,53 @@
 <%@ page import="java.io.File"%>
 <%@ page import="org.isatools.stato.STATOResult"%>
 
-<form method=post action="queryForm.jsp" name=queryForm>
+
+<%
+    String queryType = request.getParameter("queryType");
+
+    int start =0 , end=0;
+    STATOQueryDemo statoQueryDemo = (STATOQueryDemo) session.getAttribute("statoQueryDemo");
+
+    if (statoQueryDemo==null){
+        String jspPath = session.getServletContext().getRealPath("/");
+        String statoFilePath = jspPath+ "stato.owl";
+        File statoFile = new File(statoFilePath);
+        statoQueryDemo = new STATOQueryDemo(statoFile);
+        session.setAttribute("statoQueryDemo", statoQueryDemo);
+    }
+
+    if (queryType==null){
+        queryType = STATOQueries.QUERY_ALL;
+    }
+
+    if (queryType.equals(STATOQueries.QUERY_ALL)){
+        start = STATOQueries.QUERY_ALL_START;
+        end = STATOQueries.QUERY_ALL_END;
+    }else if (queryType.equals(STATOQueries.QUERY_TESTS)){
+        start = STATOQueries.QUERY_TESTS_START;
+        end = STATOQueries.QUERY_TESTS_END;
+    }else if (queryType.equals(STATOQueries.QUERY_PLOTS)){
+        start = STATOQueries.QUERY_PLOTS_START;
+        end = STATOQueries.QUERY_PLOTS_END;
+    }else if (queryType.equals(STATOQueries.QUERY_DESIGNS)){
+        start = STATOQueries.QUERY_DESIGN_START;
+        end = STATOQueries.QUERY_DESIGN_END;
+    } else if (queryType.equals(STATOQueries.QUERY_MEASURES)){
+        start = STATOQueries.QUERY_MEASURES_START;
+        end = STATOQueries.QUERY_MEASURES_END;
+    }
+
+    String queryNumberString = request.getParameter("hiddenButton");
+
+    int queryNumber = start;
+
+    if (queryNumberString!=null && !queryNumberString.equals("")){
+        queryNumber = (new Integer(queryNumberString)).intValue();
+    }
+
+%>
+
+<form method=post action="queryForm.jsp?queryType=<%=queryType%>" name=queryForm>
 
 <div class="navbar-wrapper">
     <div class="container">
@@ -49,50 +95,10 @@
 </div>
 
 
-<%
-String queryType = request.getParameter("queryType");
+QUERY_TYPE: <%= queryType%>
+QUERY_NUMBER_STRING: <%= queryNumberString%>
+QUERY_NUMER: <%= queryNumber%>
 
-int start =0 , end=0;
-STATOQueryDemo statoQueryDemo = (STATOQueryDemo) session.getAttribute("statoQueryDemo");
-
-if (statoQueryDemo==null){
-    String jspPath = session.getServletContext().getRealPath("/");
-    String statoFilePath = jspPath+ "stato.owl";
-    File statoFile = new File(statoFilePath);
-    statoQueryDemo = new STATOQueryDemo(statoFile);
-    session.setAttribute("statoQueryDemo", statoQueryDemo);
-    }
-
-if (queryType==null){
-    queryType = STATOQueries.QUERY_ALL;
-}
-
-if (queryType.equals(STATOQueries.QUERY_ALL)){
-    start = STATOQueries.QUERY_ALL_START;
-    end = STATOQueries.QUERY_ALL_END;
-}else if (queryType.equals(STATOQueries.QUERY_TESTS)){
-    start = STATOQueries.QUERY_TESTS_START;
-    end = STATOQueries.QUERY_TESTS_END;
-}else if (queryType.equals(STATOQueries.QUERY_PLOTS)){
-    start = STATOQueries.QUERY_PLOTS_START;
-    end = STATOQueries.QUERY_PLOTS_END;
-}else if (queryType.equals(STATOQueries.QUERY_DESIGNS)){
-    start = STATOQueries.QUERY_DESIGN_START;
-    end = STATOQueries.QUERY_DESIGN_END;
-} else if (queryType.equals(STATOQueries.QUERY_MEASURES)){
-    start = STATOQueries.QUERY_MEASURES_START;
-    end = STATOQueries.QUERY_MEASURES_END;
-}
-
-String queryNumberString = request.getParameter("hiddenButton");
-
-int queryNumber = start;
-
-if (queryNumberString!=null && !queryNumberString.equals("")){
-    queryNumber = (new Integer(queryNumberString)).intValue();
-}
-
-%>
 
 <div class="carousel slide carousel-fade" data-ride="carousel" id="myCarousel">
     <!-- Indicators -->
@@ -116,7 +122,7 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
             for(int j = start; j <= end; j++){
                 String queryString= STATOQueries.QUERY_STRING[j];
         %>
-              <div class="item <%= (j==queryNumber)? "active": "" %> ">
+              <div class="item <%= (j==queryNumber)? "active": "" %> " id="<%=j%>">
                   <div class="carousel-caption">
                       <h2><%= queryString %></h2>
 
@@ -163,7 +169,7 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                                      onmouseover="showPopup('#pop_<%=j%>_<%=k%>')"
                                      onmouseout="hidePopup('#pop_<%=j%>_<%=k%>')"
                                      href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank"
-                                     rel="popover" data-original-title="Term Definition" data-content="<%=statoResult.getDefinition()%>">
+                                     rel="popover" data-original-title="<%=statoResult.getLabel()%>" data-content="<%=statoResult.getDefinition()%>">
                                      <%=statoResult.getLabel()%>
                                   </a>
                           </div>
@@ -178,11 +184,9 @@ if (queryNumberString!=null && !queryNumberString.equals("")){
                       <div class="col-md-2">
 
                       <h5 align="center"><i class="icon-info-sign"></i> STATO returned <%=resultList.size()%> results.</h5>
-
-
                       <h5 align="center"><i class = "icon-question-sign icon-lead"></i> How STATO query answering works?</h5>
                       <h6 align="center">These results are obtained by posing this expression to the <a class="result" href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
-                      <h5 align="center"><strong><%=STATOQueries.QUERY_DL[queryNumber]%></strong></h5>
+                      <h5 align="center"><span class="highlight"><%=STATOQueries.QUERY_DL[queryNumber]%></span></h5>
 
                        </div>
                       </div> <!--row-->

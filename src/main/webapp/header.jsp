@@ -139,7 +139,7 @@
         /** Carouse fade ends **/
 
         .popover-title {
-            color: green;
+            color: darkorange;
             font-size: 15px;
         }
         .popover-content {
@@ -170,6 +170,7 @@
         .highlight {
             color: black;
         }
+
 
     </style>
 

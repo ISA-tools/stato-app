@@ -52,7 +52,8 @@
 
     function askSTATO(j){
         var item = $('#myCarousel .carousel-inner .item.active');
-        $('#hiddenButton').val(item.index());
+        //$('#hiddenButton').val(item.index());
+        $('#hiddenButton').val(item.attr('id'));
         $('#myCarousel').carousel('pause');
         $('#pauseButton').attr('active',true);
         var $askButton = $('#askButton_'+j);
