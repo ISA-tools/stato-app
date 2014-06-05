@@ -94,12 +94,6 @@
     </div>
 </div>
 
-
-QUERY_TYPE: <%= queryType%>
-QUERY_NUMBER_STRING: <%= queryNumberString%>
-QUERY_NUMER: <%= queryNumber%>
-
-
 <div class="carousel slide carousel-fade" data-ride="carousel" id="myCarousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
