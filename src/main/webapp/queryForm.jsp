@@ -1,6 +1,6 @@
 <%@include file="header.jsp" %>
 
-<%@page info="stato-ui"%>
+<%@page info="stato-app"%>
 
 <%@ page import="java.util.List" %>
 <%@ page import="org.isatools.stato.STATOQueries"%>
