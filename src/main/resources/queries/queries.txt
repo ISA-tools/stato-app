@@ -1,0 +1,52 @@
+===STATISTICAL TESTS
+
+#queries per objectives
+
+Which <span class='highlight'>statistical tests</span> may be used to test <span class='highlight'>association between categorical variables</span>?
+'statistical hypothesis test' and achieves_planned_objective some 'association between categorical variables testing objective'
+
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>group difference</span>?
+achieves_planned_objective some 'between group comparison objective'
+
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
+achieves_planned_objective some 'equal variance testing objective'
+
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>goodness of fit</span>?
+achieves_planned_objective some 'goodness of fit testing objective'
+
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>homogeneity test objective</span>?
+achieves_planned_objective some 'homogeneity test objective'
+
+Which <span class='highlight'>statistical tests</span> evaluate if <span class='highlight'>sphericity</span> holds?
+achieves_planned_objective some 'sphericity testing objective'
+
+ Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?
+'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)
+
+Which <span class='highlight'>statistical tests</span> require the <span class='highlight'>homoskedasticity hypothesis</span> to be true in order to be used?
+'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
+
+Which <span class='highlight'>statistical tests</span> may be applied to compare groups when <span class='highlight'>normality and equivariance hypothesis</span> are met?
+'statistical hypothesis test' and 'has part' some (hypothesis and 'has value' value true)
+
+Which <span class='highlight'>statistical tests</span> should only be applied if <span class='highlight'>normality and equivariance hypothesis</span> are met?
+'statistical hypothesis test' and 'has part' some ('normal distribution hypothesis' and 'has value' value true) and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
+
+What are the <span class='highlight'>statistical tests</span> which can be used to test <span class='highlight'>within subject variation</span>?
+'statistical hypothesis test' and achieves_planned_objective some 'within subject comparison objective'
+
+Which <span class='highlight'>statistical tests</span> use a <span class='highlight'>contingency table</span>?
+'statistical hypothesis test' and has_specified_input some 'contingency table'
+
+Which <span class='highlight'>statistical tests</span> require <span class='highlight'>ranking of a variable</span>?
+'statistical hypothesis test' and 'has part' some ranking
+
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
+achieves_planned_objective some 'equal variance testing objective' or 'homoskedasticity test'
+
+
+Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?
+'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)
+
+
+
