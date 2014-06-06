@@ -44,9 +44,44 @@ Which <span class='highlight'>statistical tests</span> require <span class='high
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
 achieves_planned_objective some 'equal variance testing objective' or 'homoskedasticity test'
 
-
 Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?
 'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)
 
+===plots
 
+Which <span class='highlight'>plots</span> may be used to represent the results of a <span class='highlight'>genetic association study</span>?
+graph and 'is about' some 'genetic association study' or is_specified_output_of some ('data visualization' and 'genetic association study')
 
+Which <span class='highlight'>plots</span> may be used to represent the results of a <span class='highlight'>meta-analysis</span>?
+is_specified_output_of some ('data visualization' and ('is preceded by' some 'meta analysis'))
+
+Which <span class='highlight'>plots</span> use <span class='highlight'>effect size estimate</span>?
+graph and 'has part' some (axis and denotes some 'effect size estimate')
+
+Which <span class='highlight'>plots</span> may be used to render a <span class='highlight'>differential expression analysis</span>?
+graph and is_specified_output_of some ('gene list visualization' and ('is preceded by' some 'differential expression analysis data transformation'))
+
+Which <span class='highlight'>plots</span> provide insights into the performance of a <span class='highlight'>binary classification</span>?
+graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary classification')\n";
+
+Which <span class='highlight'>plots</span> provide insights into <span class='highlight'>similarity between two distributions</span>?
+graph and is_specified_output_of some ('data visualization' and ('is about' exactly 2 'probability distribution'))
+
+===measures
+
+Having <span class='highlight'>two ordinal variables</span>, which <span class='highlight'>correlation coefficient</span> can be computed?
+'correlation coefficient' and 'is about' exactly 2 'ordinal variable'
+
+Which <span class='highlight'>measures</span> give an insight into <span class='highlight'>central tendency</span>?
+'measure of central tendency'
+
+Which <span class='highlight'>measures</span> are indicative of <span class='highlight'>data variation</span>?
+'measure of variation'
+
+===designs
+
+Which <span class='highlight'>study designs</span> use <span class='highlight'>blocking variables</span>?
+'study design' and declares some 'blocking variable'
+
+Which <span class='highlight'>study designs</span> uses <span class='highlight'>time</span> as <span class='highlight'>blocking variable</span>?
+'study design' and declares some ('blocking variable' and 'is about' some 'time sampled measurement data set')
