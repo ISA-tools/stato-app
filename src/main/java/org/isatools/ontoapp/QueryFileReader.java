@@ -15,6 +15,7 @@ public class QueryFileReader {
     private ArrayList<String> queryStringList = new ArrayList<String>();
     private ArrayList<String> queryList = new ArrayList<String>();
     private ArrayList<String> queryTypeList = new ArrayList<String>();
+    private ArrayList<String> queryTypeStringList = new ArrayList<String>();
     private ArrayList<Integer> startList = new ArrayList<Integer>();
     private ArrayList<Integer> endList = new ArrayList<Integer>();
 
@@ -42,6 +43,7 @@ public class QueryFileReader {
         BufferedReader br = null;
 
         String queryType = null;
+        String queryTypeString = null;
         String queryString = null;
         String query = null;
         boolean firstString = true;
@@ -65,8 +67,10 @@ public class QueryFileReader {
                     if (queryType!=null)
                         endList.add(new Integer(count-1));
 
-                    queryType = line.substring(QUERY_TYPE_SEPARATOR.length());
+                    queryType = line.substring(QUERY_TYPE_SEPARATOR.length(),line.indexOf(','));
+                    queryTypeString = line.substring(line.indexOf(',')+1);
                     queryTypeList.add(queryType);
+                    queryTypeStringList.add(queryTypeString);
                     startList.add(new Integer(count));
 
                 } else {

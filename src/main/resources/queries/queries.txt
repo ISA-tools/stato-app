@@ -1,4 +1,4 @@
-===tests
+===tests,Statistical tests
 
 #queries per objectives
 
@@ -47,7 +47,7 @@ achieves_planned_objective some 'equal variance testing objective' or 'homoskeda
 Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?
 'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)
 
-===plots
+===plots,Statistical plots
 
 Which <span class='highlight'>plots</span> may be used to represent the results of a <span class='highlight'>genetic association study</span>?
 graph and 'is about' some 'genetic association study' or is_specified_output_of some ('data visualization' and 'genetic association study')
@@ -67,7 +67,7 @@ graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary cl
 Which <span class='highlight'>plots</span> provide insights into <span class='highlight'>similarity between two distributions</span>?
 graph and is_specified_output_of some ('data visualization' and ('is about' exactly 2 'probability distribution'))
 
-===measures
+===measures,Statistical measures
 
 Having <span class='highlight'>two ordinal variables</span>, which <span class='highlight'>correlation coefficient</span> can be computed?
 'correlation coefficient' and 'is about' exactly 2 'ordinal variable'
@@ -78,7 +78,7 @@ Which <span class='highlight'>measures</span> give an insight into <span class='
 Which <span class='highlight'>measures</span> are indicative of <span class='highlight'>data variation</span>?
 'measure of variation'
 
-===designs
+===designs,Study designs
 
 Which <span class='highlight'>study designs</span> use <span class='highlight'>blocking variables</span>?
 'study design' and declares some 'blocking variable'
