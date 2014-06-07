@@ -18,6 +18,8 @@ public class QueryFileReader {
     private ArrayList<Integer> startList = new ArrayList<Integer>();
     private ArrayList<Integer> endList = new ArrayList<Integer>();
 
+    //queryType for all the queries
+    private static String QUERY_TYPE_ALL = "all";
     private static String QUERY_TYPE_SEPARATOR = "===";
     private static String COMMENT = "#";
     /**
@@ -25,6 +27,13 @@ public class QueryFileReader {
      */
     public QueryFileReader(){
 
+    }
+
+    private void addQueryTypeAll(int total){
+
+        queryTypeList.add(QUERY_TYPE_ALL);
+        startList.add(new Integer(0));
+        endList.add(new Integer(total));
 
     }
 
@@ -80,8 +89,7 @@ public class QueryFileReader {
             }
 
             if (queryType!=null)
-                endList.add(new Integer(count-1));
-
+               addQueryTypeAll(count-1);
 
         }catch(IOException ioexception){
 
