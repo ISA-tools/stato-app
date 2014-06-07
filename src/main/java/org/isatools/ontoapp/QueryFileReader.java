@@ -35,6 +35,7 @@ public class QueryFileReader {
         String queryType = null;
         String queryString = null;
         String query = null;
+        boolean firstString = true;
 
         try {
             br = new BufferedReader(new FileReader(file));
@@ -44,23 +45,43 @@ public class QueryFileReader {
 
 
             while (line != null) {
-                line = br.readLine();
 
-                if (line.startsWith(COMMENT)){
+                if (line.startsWith(COMMENT) || line.equals("")){
 
+                    line = br.readLine();
                     continue;
 
                 } else if (line.startsWith(QUERY_TYPE_SEPARATOR)){
 
+                    if (queryType!=null)
+                        endList.add(new Integer(count-1));
+
                     queryType = line.substring(QUERY_TYPE_SEPARATOR.length());
                     queryTypeList.add(queryType);
+                    startList.add(new Integer(count));
 
                 } else {
-                
 
+                    if (queryType!=null) {
+
+                        if (firstString) {
+                            queryStringList.add(line);
+                            firstString = false;
+                        } else {
+                            queryList.add(line);
+                            count++;
+                            firstString = true;
+                        }
+
+                    }
                 }
 
+                line = br.readLine();
             }
+
+            if (queryType!=null)
+                endList.add(new Integer(count-1));
+
 
         }catch(IOException ioexception){
 
@@ -76,6 +97,15 @@ public class QueryFileReader {
                 ioexception.printStackTrace();
             }
         }
+
+    }
+
+    public static void main(String[] args) {
+        String fileName = "/Users/agbeltran/workspace/stato-app/src/main/resources/queries/queries.txt";
+        QueryFileReader reader = new QueryFileReader();
+        reader.readFile(fileName);
+
+
 
     }
 
