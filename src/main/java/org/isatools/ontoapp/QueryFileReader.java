@@ -12,17 +12,10 @@ import java.util.ArrayList;
  */
 public class QueryFileReader {
 
-    private ArrayList<String> queryStringList = new ArrayList<String>();
-    private ArrayList<String> queryList = new ArrayList<String>();
-    private ArrayList<String> queryTypeList = new ArrayList<String>();
-    private ArrayList<String> queryTypeStringList = new ArrayList<String>();
-    private ArrayList<Integer> startList = new ArrayList<Integer>();
-    private ArrayList<Integer> endList = new ArrayList<Integer>();
-
-    //queryType for all the queries
-    private static String QUERY_TYPE_ALL = "all";
+    //strings related to the input file format
     private static String QUERY_TYPE_SEPARATOR = "===";
     private static String COMMENT = "#";
+
     /**
      *
      */
@@ -30,15 +23,10 @@ public class QueryFileReader {
 
     }
 
-    private void addQueryTypeAll(int total){
 
-        queryTypeList.add(QUERY_TYPE_ALL);
-        startList.add(new Integer(0));
-        endList.add(new Integer(total));
+    public QueryInfo readFile(String file) {
 
-    }
-
-    public void readFile(String file) {
+        QueryInfo queryInfo = new QueryInfo();
 
         BufferedReader br = null;
 
@@ -65,23 +53,24 @@ public class QueryFileReader {
                 } else if (line.startsWith(QUERY_TYPE_SEPARATOR)){
 
                     if (queryType!=null)
-                        endList.add(new Integer(count-1));
+                        queryInfo.addEnd(count - 1);
 
                     queryType = line.substring(QUERY_TYPE_SEPARATOR.length(),line.indexOf(','));
                     queryTypeString = line.substring(line.indexOf(',')+1);
-                    queryTypeList.add(queryType);
-                    queryTypeStringList.add(queryTypeString);
-                    startList.add(new Integer(count));
+                    queryInfo.addQueryType(queryType);
+                    queryInfo.addQueryTypeString(queryTypeString);
+                    queryInfo.addStart(count);
 
                 } else {
 
                     if (queryType!=null) {
 
                         if (firstString) {
-                            queryStringList.add(line);
+                            queryInfo.addQueryString(line);
                             firstString = false;
                         } else {
-                            queryList.add(line);
+                            queryInfo.addQuery(line);
+
                             count++;
                             firstString = true;
                         }
@@ -93,7 +82,9 @@ public class QueryFileReader {
             }
 
             if (queryType!=null)
-               addQueryTypeAll(count-1);
+               queryInfo.addQueryTypeAll(count - 1);
+
+            return queryInfo;
 
         }catch(IOException ioexception){
 
@@ -105,20 +96,20 @@ public class QueryFileReader {
                 if (br!=null)
                     br.close();
 
+
             }catch(IOException ioexception){
                 ioexception.printStackTrace();
             }
         }
+        return null;
 
     }
 
     public static void main(String[] args) {
         String fileName = "/Users/agbeltran/workspace/stato-app/src/main/resources/queries/queries.txt";
         QueryFileReader reader = new QueryFileReader();
-        reader.readFile(fileName);
-
-
-
+        QueryInfo queryInfo = reader.readFile(fileName);
+        System.out.println("end");
     }
 
 }
