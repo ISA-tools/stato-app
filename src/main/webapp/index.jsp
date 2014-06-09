@@ -55,14 +55,10 @@
         <p class="lead" align="center"><strong>STATO</strong> also covers aspects of experimental design and description of plots and graphical representations</p>
         <p class="lead" align="center">commonly used to provide visual cues of data distribution or layout and to assist review of the results.</p>
 
-        <p class="lead" align="center">
-        For more information about STATO, please visit the <a href="http://isa-tools.github.io/stato/">STATO website</a>.
-        </p>
+        <p class="lead" align="center">For more information about STATO, please visit the <a href="http://isa-tools.github.io/stato/">STATO website</a>.</p>
 
-        <p class="lead" align="center">
-        This web application is a demonstration on some of the STATO elements, shown by running queries over the ontology. We show natural language queries and their counterparts written in description logics, relying on Manchester OWL syntax.
-        </p>
-
+        <p class="lead" align="center">This web application is a <strong>demonstration on some of the STATO elements</strong>, </p>
+        <p class="lead" align="center">shown by running queries over the ontology. We show natural language queries and their counterparts written in description logics, relying on <a href="http://www.w3.org/TR/owl2-manchester-syntax/">Manchester OWL syntax</a>.</p>
 
         <p align="center"><a class="btn btn-large btn-success" href="queryForm.jsp">Check the STATO queries demo</a></p>
     </div>
