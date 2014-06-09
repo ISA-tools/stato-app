@@ -1,6 +1,7 @@
 package org.isatools.ontoapp;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by agbeltran on 09/06/2014.
@@ -16,6 +17,7 @@ public class QueryInfo {
 
     //queryType for all the queries
     private static String QUERY_TYPE_ALL = "all";
+    private static String QUERY_TYPE_STRING_ALL = "All";
 
 
     public QueryInfo(){
@@ -25,6 +27,7 @@ public class QueryInfo {
 
     public void addQueryTypeAll(int total){
         queryTypeList.add(QUERY_TYPE_ALL);
+        queryTypeStringList.add(QUERY_TYPE_STRING_ALL);
         startList.add(new Integer(0));
         endList.add(new Integer(total));
 
@@ -52,5 +55,13 @@ public class QueryInfo {
 
     public void addQuery(String query){
         queryList.add(query);
+    }
+
+    public List<String> getQueryTypes(){
+        return queryTypeList;
+    }
+
+    public List<String> getQueryStringTypes(){
+        return queryTypeStringList;
     }
 }

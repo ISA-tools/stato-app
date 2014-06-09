@@ -1,3 +1,21 @@
+<%@ page import="org.isatools.ontoapp.QueryFileReader" %>
+<%@ page import="org.isatools.ontoapp.QueryInfo" %>
+
+<%
+
+    ServletContext context = request.getSession().getServletContext();
+    QueryInfo queryInfo = (QueryInfo) context.getAttribute("queryInfo");
+
+    if (queryInfo == null) {
+        QueryFileReader queryFileReader = new QueryFileReader();
+        String jspPath = session.getServletContext().getRealPath("/");
+        String queriesFilePath = jspPath + "queries.txt";
+        queryInfo = queryFileReader.readFile(queriesFilePath);
+        context.setAttribute("queryInfo", queryInfo);
+    }
+
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -25,6 +25,7 @@ public class QueryFileReader {
 
 
     public QueryInfo readFile(String file) {
+        System.out.println("In QueryFileReader.readFile("+file+")");
 
         QueryInfo queryInfo = new QueryInfo();
 
@@ -80,6 +81,8 @@ public class QueryFileReader {
 
                 line = br.readLine();
             }
+
+            queryInfo.addEnd(count-1);
 
             if (queryType!=null)
                queryInfo.addQueryTypeAll(count - 1);

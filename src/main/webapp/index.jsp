@@ -1,7 +1,7 @@
 <%@include file="header.jsp"%>
-<%@ page import="org.isatools.stato.STATOQueries" %>
+<%@ page import="java.util.List" %>
 
-        <div class="navbar-wrapper">
+<div class="navbar-wrapper">
             <div class="container">
 
                 <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -22,11 +22,16 @@
                                    <ul class="dropdown-menu">
                                        <li><a href="queries.jsp">Demo queries by type</a></li>
                                        <li class="divider"></li>
-                                       <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_ALL%>">All demo queries</a></li>
-                                       <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_TESTS%>">Statistical tests demo queries</a></li>
-                                       <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_PLOTS%>">Statistical plots demo queries</a></li>
-                                       <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Statistical measures demo queries</a></li>
-                                       <li><a href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Study designs demo queries</a></li>
+                                       <%
+                                           List<String> queryTypeList = queryInfo.getQueryTypes();
+                                           List<String> queryTypeStringList = queryInfo.getQueryStringTypes();
+
+                                           for(int i=0; i < queryTypeList.size(); i++){
+                                       %>
+                                       <li><a href="queryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                       <%
+                                           }
+                                       %>
                                    </ul>
                                </li>
                                 <li><a href="contact.jsp">Contact</a></li>
