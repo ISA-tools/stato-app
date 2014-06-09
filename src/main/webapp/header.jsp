@@ -189,6 +189,68 @@
             color: black;
         }
 
+        .query-item {
+            font-family: "Helvetica";
+            float: left;
+            width: 250px;
+            min-height: 150px;
+            margin: 10px;
+            border-radius: 3px;
+            background-color: #f8f8f8;
+            color: #414241;
+            padding: 10px;
+        }
+
+        .query-item-info {
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .query-name {
+            padding-top: 20px;
+            font-weight: normal;
+            line-height: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            color: #414241;
+        }
+
+        .query-name:hover {
+            text-decoration: none;
+            color: #27AAE1;
+        }
+
+        .query-item-block {
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .query-item-details {
+            color: #aaaaaa;
+            text-align: left;
+            font-size: 1.1em;
+            font-weight: bolder;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .counter {
+            float: none;
+            padding: 2px 5px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #999;
+            background: #eee;
+            border-radius: 2px;
+        }
+
+
+        .counter-orange {
+            background-color: #eb6b22;
+            color: #fff;
+            text-shadow: none;
+        }
+
 
     </style>
 

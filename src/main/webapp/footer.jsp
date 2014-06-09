@@ -61,6 +61,18 @@
         $("#askButton_"+j).toggleClass("active");
         queryForm.submit();
     };
+
+    function askSTATOgrid(j){
+        var item = $('#myCarousel .carousel-inner .item.active');
+        //$('#hiddenButton').val(item.index());
+        $('#hiddenButton').val(item.attr('id'));
+        $('#myCarousel').carousel('pause');
+        $('#pauseButton').attr('active',true);
+        var $askButton = $('#askButton_'+j);
+        $askButton.attr('disabled', true);
+        $("#askButton_"+j).toggleClass("active");
+        gridQueryForm.submit();
+    };
 </script>
 
 

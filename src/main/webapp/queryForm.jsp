@@ -167,7 +167,7 @@
 
                  </div> <!--col-md-6 -->
 
-                      <div class="col-md-2">
+                      <div class="col-md-4">
 
                       <h5 align="center"><i class="icon-info-sign"></i> STATO returned <%=resultList.size()%> results.</h5>
                       <h5 align="center"><i class = "icon-question-sign icon-lead"></i> How STATO query answering works?</h5>
