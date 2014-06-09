@@ -2,10 +2,9 @@
 
 <%@page info="stato-app"%>
 
-<%@ page import="java.util.List" %>
-<%@ page import="org.isatools.stato.STATOQueries"%>
-<%@ page import="org.isatools.stato.STATOQueryDemo"%>
 <%@ page import="java.io.File"%>
+<%@ page import="java.util.List" %>
+<%@ page import="org.isatools.stato.STATOQueryDemo"%>
 <%@ page import="org.isatools.stato.STATOResult"%>
 
 
@@ -13,36 +12,24 @@
     String queryType = request.getParameter("queryType");
 
     int start =0 , end=0;
-    STATOQueryDemo statoQueryDemo = (STATOQueryDemo) session.getAttribute("statoQueryDemo");
+
+    STATOQueryDemo statoQueryDemo = (STATOQueryDemo) context.getAttribute("statoQueryDemo");
 
     if (statoQueryDemo==null){
         String jspPath = session.getServletContext().getRealPath("/");
         String statoFilePath = jspPath+ "stato.owl";
         File statoFile = new File(statoFilePath);
         statoQueryDemo = new STATOQueryDemo(statoFile);
-        session.setAttribute("statoQueryDemo", statoQueryDemo);
+        context.setAttribute("statoQueryDemo", statoQueryDemo);
     }
 
     if (queryType==null){
-        queryType = STATOQueries.QUERY_ALL;
+        queryType = QueryInfo.QUERY_TYPE_ALL;
     }
 
-    if (queryType.equals(STATOQueries.QUERY_ALL)){
-        start = STATOQueries.QUERY_ALL_START;
-        end = STATOQueries.QUERY_ALL_END;
-    }else if (queryType.equals(STATOQueries.QUERY_TESTS)){
-        start = STATOQueries.QUERY_TESTS_START;
-        end = STATOQueries.QUERY_TESTS_END;
-    }else if (queryType.equals(STATOQueries.QUERY_PLOTS)){
-        start = STATOQueries.QUERY_PLOTS_START;
-        end = STATOQueries.QUERY_PLOTS_END;
-    }else if (queryType.equals(STATOQueries.QUERY_DESIGNS)){
-        start = STATOQueries.QUERY_DESIGN_START;
-        end = STATOQueries.QUERY_DESIGN_END;
-    } else if (queryType.equals(STATOQueries.QUERY_MEASURES)){
-        start = STATOQueries.QUERY_MEASURES_START;
-        end = STATOQueries.QUERY_MEASURES_END;
-    }
+    int index = queryInfo.getIndexForQueryType(queryType);
+    start = queryInfo.getStart(index);
+    end = queryInfo.getEnd(index);
 
     String queryNumberString = request.getParameter("hiddenButton");
 
@@ -104,7 +91,7 @@
     <ol class="carousel-indicators">
         <%
             for(int j = start; j <= end; j++){
-                String queryString= STATOQueries.QUERY_STRING[j];
+                String queryString= queryInfo.getQueryString(j);
         %>
         <li data-target="#myCarousel" data-slide-to="<%=j%>" <%= (j==queryNumber)? "class=\"active\"": "" %> ></li>
         <%
@@ -119,7 +106,7 @@
         <%
 
             for(int j = start; j <= end; j++){
-                String queryString= STATOQueries.QUERY_STRING[j];
+                String queryString= queryInfo.getQueryString(j);
         %>
               <div class="item <%= (j==queryNumber)? "active": "" %> " id="<%=j%>">
                   <div class="carousel-caption">
@@ -154,10 +141,10 @@
 
                 <%
 
-                List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(queryNumber);
+                List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(queryInfo,queryNumber);
                 if (queryNumber == j || resultList != null) {
                    if (resultList ==null)
-                       resultList = statoQueryDemo.runDLQuery(queryNumber);
+                       resultList = statoQueryDemo.runDLQuery(queryInfo,queryNumber);
                        int k = 0;
 
                     for(STATOResult statoResult: resultList){
@@ -185,7 +172,7 @@
                       <h5 align="center"><i class="icon-info-sign"></i> STATO returned <%=resultList.size()%> results.</h5>
                       <h5 align="center"><i class = "icon-question-sign icon-lead"></i> How STATO query answering works?</h5>
                       <h6 align="center">These results are obtained by posing this expression to the <a class="result" href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
-                      <h5 align="center"><span class="highlight"><%=STATOQueries.QUERY_DL[queryNumber]%></span></h5>
+                      <h5 align="center"><span class="highlight"><%=queryInfo.getQuery(queryNumber)%></span></h5>
 
                        </div>
                       </div> <!--row-->

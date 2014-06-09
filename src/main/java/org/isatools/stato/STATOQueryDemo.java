@@ -1,5 +1,6 @@
 package org.isatools.stato;
 
+import org.isatools.ontoapp.QueryInfo;
 import org.isatools.owl.DLQueryEngine;
 import org.isatools.owl.DLQueryParser;
 import org.isatools.owl.OWLClassifier;
@@ -103,9 +104,9 @@ public class STATOQueryDemo{
         return manager.loadOntologyFromOntologyDocument(file);
     }
 
-    public List<STATOResult> runDLQuery(int queryNumber){
+    public List<STATOResult> runDLQuery(QueryInfo queryInfo, int queryNumber){
         logger.info("Running query number "+ queryNumber);
-        return runDLQuery(STATOQueries.QUERY_DL[queryNumber]);
+        return runDLQuery(queryInfo.getQuery(queryNumber));
     }
 
 
@@ -159,9 +160,9 @@ public class STATOQueryDemo{
     }
 
 
-    public List<STATOResult> getPrecomputedResults(int queryNumber){
+    public List<STATOResult> getPrecomputedResults(QueryInfo queryInfo, int queryNumber){
         logger.info("Getting precomputed results for queryNumber="+queryNumber);
-        return getPrecomputedResults(STATOQueries.QUERY_DL[queryNumber]);
+        return getPrecomputedResults(queryInfo.getQuery(queryNumber));
     }
 
     private List<STATOResult> getPrecomputedResults(String dlQueryString){
@@ -171,8 +172,8 @@ public class STATOQueryDemo{
     }
 
 
-    public void runQueries(){
-        for(String dlQuery: STATOQueries.QUERY_DL){
+    public void runQueries(QueryInfo queryInfo){
+        for(String dlQuery: queryInfo.getQueries()){
             List<STATOResult> resultList = runDLQuery(dlQuery);
             for(STATOResult result: resultList){
                 System.out.println("label =" + result.getLabel());

@@ -23,7 +23,6 @@ public class QueryFileReader {
 
     }
 
-
     public QueryInfo readFile(String file) {
         System.out.println("In QueryFileReader.readFile("+file+")");
 
@@ -33,8 +32,6 @@ public class QueryFileReader {
 
         String queryType = null;
         String queryTypeString = null;
-        String queryString = null;
-        String query = null;
         boolean firstString = true;
 
         try {
@@ -71,9 +68,8 @@ public class QueryFileReader {
                             firstString = false;
                         } else {
                             queryInfo.addQuery(line);
-
-                            count++;
                             firstString = true;
+                            count++;
                         }
 
                     }
@@ -112,7 +108,6 @@ public class QueryFileReader {
         String fileName = "/Users/agbeltran/workspace/stato-app/src/main/resources/queries/queries.txt";
         QueryFileReader reader = new QueryFileReader();
         QueryInfo queryInfo = reader.readFile(fileName);
-        System.out.println("end");
     }
 
 }

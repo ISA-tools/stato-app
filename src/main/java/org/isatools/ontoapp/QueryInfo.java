@@ -16,14 +16,13 @@ public class QueryInfo {
     private ArrayList<Integer> endList = new ArrayList<Integer>();
 
     //queryType for all the queries
-    private static String QUERY_TYPE_ALL = "all";
+    public static String QUERY_TYPE_ALL = "all";
     private static String QUERY_TYPE_STRING_ALL = "All";
 
 
     public QueryInfo(){
 
     }
-
 
     public void addQueryTypeAll(int total){
         queryTypeList.add(QUERY_TYPE_ALL);
@@ -64,4 +63,33 @@ public class QueryInfo {
     public List<String> getQueryStringTypes(){
         return queryTypeStringList;
     }
+
+    public int getStart(int index){
+        return startList.get(index).intValue();
+    }
+
+    public int getEnd(int index){
+       return endList.get(index).intValue();
+    }
+
+    public int getIndexForQueryType(String queryType){
+        for(int i=0; i<queryTypeList.size(); i ++){
+          if (queryTypeList.get(i).equals(queryType))
+              return i;
+        }
+        return -1;
+    }
+
+    public String getQueryString(int index){
+        return queryStringList.get(index);
+    }
+
+    public String getQuery(int index){
+        return queryList.get(index);
+    }
+
+    public List<String> getQueries(){
+        return queryList;
+    }
+
 }
