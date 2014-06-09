@@ -57,8 +57,8 @@
 
         <p class="lead" align="center">For more information about STATO, please visit the <a href="http://isa-tools.github.io/stato/">STATO website</a>.</p>
 
-        <p class="lead" align="center">This web application is a <strong>demonstration on some of the STATO elements</strong>, </p>
-        <p class="lead" align="center">shown by running queries over the ontology. We show natural language queries and their counterparts written in description logics, relying on <a href="http://www.w3.org/TR/owl2-manchester-syntax/">Manchester OWL syntax</a>.</p>
+        <p class="lead" align="center">This web application is a <strong>demonstration on some of the STATO elements</strong>, shown by running queries over the ontology. </p>
+        <p class="lead" align="center">We show natural language queries and their counterparts written in description logics, relying on <a href="http://www.w3.org/TR/owl2-manchester-syntax/">Manchester OWL syntax</a>.</p>
 
         <p align="center"><a class="btn btn-large btn-success" href="queryForm.jsp">Check the STATO queries demo</a></p>
     </div>
