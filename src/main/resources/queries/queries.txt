@@ -72,6 +72,9 @@ Which <span class='highlight'>measures</span> give an insight into <span class='
 Which <span class='highlight'>measures</span> are indicative of <span class='highlight'>data variation</span>?
 'measure of variation'
 
+Which <span class='highlight'>statistical measures</span> may be use to provide <span='highlight'>an estimate of the effect size</span>?
+'effect size estimate'
+
 ===designs,Study designs
 
 Which <span class='highlight'>study designs</span> use <span class='highlight'>blocking variables</span>?
