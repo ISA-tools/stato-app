@@ -65,19 +65,19 @@
             <div class="col-lg-4">
                 <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
                 <span class="icon-large icon-pen"></span>
-                <h2>Study Designs</h2>
-
-                <p>STATO and study designs</p>
+                <h2><%=queryInfo.getQueryTypeString(0)%></h2>
+                <p>STATO and <%=queryInfo.getQueryType(0)%></p>
                 <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_DESIGNS%>">Ask STATO about designs</a>
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(0)%>">Ask STATO about <%=queryInfo.getQueryType(0)%></a>
             </div>
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
                 <span class="icon-large icon-ruller"></span>
-                <h2>Statistical Measures</h2>
-                <p>STATO and statistical measures</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_MEASURES%>">Ask STATO about measures</a>
+                <h2><%=queryInfo.getQueryTypeString(1)%></h2>
+                <p>STATO and <%=queryInfo.getQueryType(1)%></p>
+                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(0)%>">Ask STATO about <%=queryInfo.getQueryType(1)%></a>
             </div>
 
     </div>
@@ -90,19 +90,19 @@
 
             <div class="col-lg-4">
                 <span class="icon-large icon-stats"></span>
-                <h2>Statistical Tests</h2>
-                <p>STATO maintains information about statistical tests and their conditions of application. We show some
-                    query examples about statistical tests.</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_TESTS%>">Ask STATO about tests</a>
+                <h2><%=queryInfo.getQueryTypeString(2)%></h2>
+                <p>STATO and <%=queryInfo.getQueryType(2)%></p>
+                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(0)%>">Ask STATO about <%=queryInfo.getQueryType(2)%></a>
             </div>
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
                 <span class="glyphicon glyphicon-stats"></span>
-                <h2>Statistical Plots</h2>
-                <p>STATO defines a vocabulary of statistical plots and their relationships with tests and their
-                    applications</p>
-                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=STATOQueries.QUERY_PLOTS%>">Ask STATO about plots</a>
+                <h2><%=queryInfo.getQueryTypeString(3)%></h2>
+                <p>STATO and <%=queryInfo.getQueryType(3)%></p>
+                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <a class="btn btn-large btn-success" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(0)%>">Ask STATO about <%=queryInfo.getQueryType(3)%></a>
             </div>
 
             </div>

@@ -92,4 +92,12 @@ public class QueryInfo {
         return queryList;
     }
 
+    public String getQueryType(int index){
+        return queryTypeList.get(index);
+    }
+
+    public String getQueryTypeString(int index){
+        return queryTypeStringList.get(index);
+    }
+
 }
