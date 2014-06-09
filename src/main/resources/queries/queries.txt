@@ -23,9 +23,6 @@ achieves_planned_objective some 'sphericity testing objective'
 What are the <span class='highlight'>statistical tests</span> which can be used to test <span class='highlight'>within subject variation</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'within subject comparison objective'
 
- Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?
-'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)
-
 Which <span class='highlight'>statistical tests</span> require the <span class='highlight'>homoskedasticity hypothesis</span> to be true in order to be used?
 'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
 
