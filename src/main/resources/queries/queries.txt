@@ -41,8 +41,8 @@ Which <span class='highlight'>statistical tests</span> require <span class='high
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
 achieves_planned_objective some 'equal variance testing objective' or 'homoskedasticity test'
 
-Which <span class='highlight'>statistical tests</span> use an <span class='highlight'>F- distribution</span>?
-'statistical hypothesis test' and 'has part' some (F-distribution and 'has value' value true)
+Which <span class='highlight'>statistical tests</span> relies on an <span class='highlight'>F- distribution</span>?
+'statistical hypothesis test' and has_specified_input some F-distribution
 
 ===plots,Statistical plots
 
