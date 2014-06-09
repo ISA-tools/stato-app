@@ -56,7 +56,7 @@ Which <span class='highlight'>plots</span> may be used to render a <span class='
 graph and is_specified_output_of some ('gene list visualization' and ('is preceded by' some 'differential expression analysis data transformation'))
 
 Which <span class='highlight'>plots</span> provide insights into the performance of a <span class='highlight'>binary classification</span>?
-graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary classification')\n";
+graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary classification'
 
 Which <span class='highlight'>plots</span> provide insights into <span class='highlight'>similarity between two distributions</span>?
 graph and is_specified_output_of some ('data visualization' and ('is about' exactly 2 'probability distribution'))
@@ -66,10 +66,10 @@ graph and is_specified_output_of some ('data visualization' and ('is about' exac
 Which <span class='highlight'>correlation coefficient</span> can be calculated using <span class='highlight'>two ordinal variables</span>?
 'correlation coefficient' and 'is about' exactly 2 'ordinal variable'
 
-Which <span class='highlight'>measures</span> give an insight into <span class='highlight'>central tendency</span>?
+Which <span class='highlight'>statistical measures</span> give an insight into <span class='highlight'>central tendency</span>?
 'measure of central tendency'
 
-Which <span class='highlight'>measures</span> are indicative of <span class='highlight'>data variation</span>?
+Which <span class='highlight'>statistical measures</span> are indicative of <span class='highlight'>data spread</span>?
 'measure of variation'
 
 Which <span class='highlight'>statistical measures</span> may be use to provide <span='highlight'>an estimate of the effect size</span>?
