@@ -97,7 +97,7 @@
             for(int j = start; j <= end; j++){
                 String queryString= queryInfo.getQueryString(j);
 %>
-        <!--<div class="clearfix"></div>-->
+
         <div class="query-item" align="center">
 
 
@@ -119,7 +119,7 @@
 
                     <input type="hidden" id="hiddenButton" name="hiddenButton">
 
-                    <button id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" onclick="askSTATOgrid('<%=j%>')">
+                    <button type="button" id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" data-toggle="modal" data-target="#myModal">
                         Ask STATO
                         <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                     </button>
@@ -140,102 +140,23 @@
         </ul>
 
 
-        <!--
-                <div class="clearfix"></div>
-
-            <ul class="list">
-                <div class="query-item" align="center">
+    </div>
 
 
-                <div class="query-item-info">
-                    <a class="query-name" href="/biodbcore-000144">
-
-                        <img src="" width="30px"/><br/><br/>
-
-                        <span style="font-weight: bolder; font-size: 1.3em">Stem Cell Discovery Engine</span><br/>
-
-                    </a>
-                </div>
-
-                <div class="search-item-block" style="margin-top: 15px; margin-bottom: 10px">
-
-                    <div class="search-item-details" >
-
-                        Standards
-                                 <span class="counter counter-blue">                                        14</span>
-                    </div>
 
 
-                    <div class="clearfix"></div>
-                    <div class="search-item-details">
-                        <div class="bio-icon-publication pull-left" style="font-size: 1.9em"></div>
-                        <div class="pull-left" style="margin-top: 4px">Publications</div>
-
-                        <span class="counter  counter-green">1</span>
-                    </div>
-
-
-                </div>
-                </div>
-
-
-                <div class="clearfix"></div>
-
-                <div class="query-item" align="center">
-
-
-                    <div class="query-item-info">
-                        <a class="query-name" href="/biodbcore-000144">
-
-                            <img src="" width="30px"/><br/><br/>
-
-                            <span style="font-weight: bolder; font-size: 1.3em">Stem Cell Discovery Engine</span><br/>
-
-                        </a>
-                    </div>
-
-                    <div class="search-item-block" style="margin-top: 15px; margin-bottom: 10px">
-
-                        <div class="search-item-details" >
-
-                            Standards
-                            <span class="counter counter-blue">                                        14</span>
-                        </div>
-
-
-                        <div class="clearfix"></div>
-                        <div class="search-item-details">
-                            <div class="bio-icon-publication pull-left" style="font-size: 1.9em"></div>
-                            <div class="pull-left" style="margin-top: 4px">Publications</div>
-
-                            <span class="counter  counter-green">1</span>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-            </ul>
-
-            -->
-
-        <!--
-
-        <div class="list-group">
-            <a href="#" class="list-group-item active">
-                <h4 class="list-group-item-heading">List group item heading</h4>
-                <p class="list-group-item-text">...</p>
-            </a>
+    <div class="modal fade hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-remote="/mmfansler/aQ3Ge/show/">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Modal header</h3>
         </div>
-
-        <div class="list-group">
-            <a href="#" class="list-group-item ">
-                <h4 class="list-group-item-heading">List group item heading</h4>
-                <p class="list-group-item-text">...</p>
-            </a>
+        <div class="modal-body">
+            <p>One fine body…</p>
         </div>
-   -->
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-primary">Save changes</button>
+        </div>
     </div>
 </form>
 
