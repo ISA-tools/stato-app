@@ -41,7 +41,7 @@
 
 %>
 
-<form method=post action="gridQueryForm.jsp?queryType=<%=queryType%>" name=gridQueryForm>
+<!--<form method=post action="gridQueryForm.jsp?queryType=queryType%>" name=gridQueryForm> -->
 
 
     <div class="navbar-wrapper">
@@ -119,10 +119,30 @@
 
                     <input type="hidden" id="hiddenButton" name="hiddenButton">
 
-                    <button type="button" id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" data-toggle="modal" data-target="#myModal">
+                    <button type="button" id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" data-toggle="modal" data-target="#myModal_<%=j%>">
                         Ask STATO
                         <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                     </button>
+
+
+
+
+                    <div class="modal fade" id="myModal_<%=j%>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                    <h4 class="modal-title" id="myModalLabel"><%=queryString%></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>Modal Body</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -145,20 +165,7 @@
 
 
 
-    <div class="modal fade hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-remote="/mmfansler/aQ3Ge/show/">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Modal header</h3>
-        </div>
-        <div class="modal-body">
-            <p>One fine body…</p>
-        </div>
-        <div class="modal-footer">
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <button class="btn btn-primary">Save changes</button>
-        </div>
-    </div>
-</form>
+<!--</form>-->
 
 
 <%@include file="footer.jsp" %>

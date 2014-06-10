@@ -62,18 +62,6 @@
         queryForm.submit();
     };
 
-    function askSTATOgrid(j){
-        var item = $('#myCarousel .carousel-inner .item.active');
-        //$('#hiddenButton').val(item.index());
-        $('#hiddenButton').val(item.attr('id'));
-        $('#myCarousel').carousel('pause');
-        $('#pauseButton').attr('active',true);
-        var $askButton = $('#askButton_'+j);
-        $askButton.attr('disabled', true);
-        $("#askButton_"+j).toggleClass("active");
-        gridQueryForm.submit();
-    };
-
 
     $('.btn-group[data-toggle=buttons]').each(function (i, e) {
         var default_class = $(e).data('toggle-default-class') || 'btn-default';

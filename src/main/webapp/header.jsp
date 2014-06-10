@@ -25,14 +25,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <link href="assets/css/bootstrap.icon-large.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.icon-large.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.css" rel="stylesheet">-
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.icon-large.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.icon-large.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lobster' type='text/css'>
     <link href="assets/css/prettyPhoto.css" id="prettyphoto-css" rel="stylesheet" />
 
     <style>
