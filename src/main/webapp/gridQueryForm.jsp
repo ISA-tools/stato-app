@@ -31,17 +31,10 @@
     start = queryInfo.getStart(index);
     end = queryInfo.getEnd(index);
 
-    String queryNumberString = request.getParameter("hiddenButton");
-
-    int queryNumber = start;
-
-    if (queryNumberString!=null && !queryNumberString.equals("")){
-        queryNumber = (new Integer(queryNumberString)).intValue();
-    }
 
 %>
 
-<!--<form method=post action="gridQueryForm.jsp?queryType=queryType%>" name=gridQueryForm> -->
+<form method=post action="gridQueryForm.jsp?queryType=queryType%>" name=gridQueryForm>
 
 
     <div class="navbar-wrapper">
@@ -114,7 +107,6 @@
 
             <div class="search-item-block" style="margin-top: 15px; margin-bottom: 10px">
 
-
                 <div class="search-item-details" >
 
                     <input type="hidden" id="hiddenButton" name="hiddenButton">
@@ -123,8 +115,6 @@
                         Ask STATO
                         <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                     </button>
-
-
 
 
                     <div class="modal fade" id="myModal_<%=j%>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
@@ -138,12 +128,10 @@
                                     <h3>STATO results</h3>
 
                                     <%
-                                        List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(queryInfo,queryNumber);
-                                        if (queryNumber == j || resultList != null) {
-                                            if (resultList ==null)
-                                                resultList = statoQueryDemo.runDLQuery(queryInfo,queryNumber);
+                                        List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(queryInfo,j);
+                                        if (resultList ==null)
+                                                resultList = statoQueryDemo.runDLQuery(queryInfo,j);
                                             int k = 0;
-
                                             for(STATOResult statoResult: resultList){
                                     %>
 
@@ -166,7 +154,7 @@
                                     <h5 align="center"><i class="icon-info-sign"></i> STATO returned <%=resultList.size()%> results.</h5>
                                     <h5 align="center"><i class = "icon-question-sign icon-lead"></i> How STATO query answering works?</h5>
                                     <h6 align="center">These results are obtained by posing this expression to the <a class="result" href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
-                                    <h5 align="center"><span class="highlight"><%=queryInfo.getQuery(queryNumber)%></span></h5>
+                                    <h5 align="center"><span class="highlight"><%=queryInfo.getQuery(j)%></span></h5>
                                     <%
                                         }
                                     %>
@@ -186,11 +174,6 @@
 
         </div>
 
-            <%
-                }
-
-            %>
-
 
         </ul>
 
@@ -200,7 +183,7 @@
 
 
 
-<!--</form>-->
+</form>
 
 
 <%@include file="footer.jsp" %>

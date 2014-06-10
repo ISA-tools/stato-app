@@ -85,6 +85,26 @@
                 });
     });
 
+    function selectQueryView(queryType){
+      var views = document.getElementsByName('view');
+
+      var viewValue;
+
+      for (var i = 0, length = views.length; i < length; i++) {
+          if (views[i].checked) {
+              viewValue = views[i].value
+              break;
+          }
+      }
+
+      var form = document.getElementById('selectQueryViewForm')
+      if (viewValue="grid")
+          form.action = "gridQueryForm?queryType=all&view="+viewValue;
+      else if (viewValue="carousel")
+          form.action = "queryForm?queryType=all&view="+viewValue;
+       form.submit();
+    }
+
 </script>
 
 
