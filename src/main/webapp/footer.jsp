@@ -97,12 +97,11 @@
           }
       }
 
-      var form = document.getElementById('selectQueryViewForm')
       if (viewValue="grid")
-          form.action = "gridQueryForm?queryType=all&view="+viewValue;
+          selectQueryViewForm.action = "gridQueryForm.jsp?queryType="+queryType;
       else if (viewValue="carousel")
-          form.action = "queryForm?queryType=all&view="+viewValue;
-       form.submit();
+          selectQueryViewForm.action = "queryForm.jsp?queryType="+queryType;
+        selectQueryViewForm.submit();
     }
 
 </script>

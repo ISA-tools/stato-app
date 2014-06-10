@@ -31,7 +31,7 @@
 
                                         for(int i=0; i < queryTypeList.size(); i++){
                                     %>
-                                    <li><a href="selectQueryView.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                    <li><a href="queryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
                                     <%
                                         }
                                     %>
@@ -72,7 +72,6 @@
                 <span class="glyphicon icon-asterisk"></span>
                 <h2 class="highlight">All demo queries</h2>
                 <p>STATO helps answer queries about tests, plots, measures and designs.</p>
-               <!-- <a class="btn btn-large btn-warning" href="" onclick="redirect(this,'all');return false;">Ask STATO</a> -->
                 <button class="btn btn-large btn-warning" onclick="selectQueryView('all')">Ask STATO</button>
             </div>
             <!-- /.col-lg-4 -->
@@ -83,7 +82,7 @@
                 <span class="icon-large icon-pen"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(0)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(0)%></p>
-                <a class="btn btn-large btn-warning" href="selectQueryView.jsp?queryType=<%=queryInfo.getQueryType(0)%>">Ask STATO about <%=queryInfo.getQueryType(0)%></a>
+                <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(0)%>')">Ask STATO about <%=queryInfo.getQueryType(0)%></button>
             </div>
             <!-- /.col-lg-4 -->
 
@@ -91,7 +90,7 @@
                 <span class="icon-large icon-ruller"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(1)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(1)%></p>
-                <a class="btn btn-large btn-warning" href="selectQueryView.jsp?queryType=<%=queryInfo.getQueryType(1)%>">Ask STATO about <%=queryInfo.getQueryType(1)%></a>
+                <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(1)%>')">Ask STATO about <%=queryInfo.getQueryType(1)%></button>
             </div>
 
     </div>
@@ -106,7 +105,7 @@
                 <span class="icon-large icon-stats"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(2)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(2)%></p>
-                <a class="btn btn-large btn-warning" href="selectQueryView.jsp?queryType=<%=queryInfo.getQueryType(2)%>">Ask STATO about <%=queryInfo.getQueryType(2)%></a>
+                <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(2)%>')">Ask STATO about <%=queryInfo.getQueryType(2)%></button>
             </div>
             <!-- /.col-lg-4 -->
 
@@ -114,7 +113,7 @@
                 <span class="glyphicon glyphicon-stats"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(3)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(3)%></p>
-                <a class="btn btn-large btn-warning" href="selectQueryView.jsp?queryType=<%=queryInfo.getQueryType(3)%>">Ask STATO about <%=queryInfo.getQueryType(3)%></a>
+                <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(3)%>')">Ask STATO about <%=queryInfo.getQueryType(3)%></button>
             </div>
 
             </div>
