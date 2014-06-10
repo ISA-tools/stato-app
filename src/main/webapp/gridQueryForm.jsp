@@ -119,7 +119,7 @@
 
                     <input type="hidden" id="hiddenButton" name="hiddenButton">
 
-                    <button id="askButton_<%=j%>" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATOgrid('<%=j%>')">
+                    <button id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" onclick="askSTATOgrid('<%=j%>')">
                         Ask STATO
                         <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                     </button>

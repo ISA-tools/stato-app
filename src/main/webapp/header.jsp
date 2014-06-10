@@ -186,7 +186,12 @@
 
 
         .highlight {
-            color: black;
+            color: darkblue;
+            font-weight:bold;
+        }
+
+        .highlight:hover{
+            color: #27AAE1;
         }
 
         .query-item {
@@ -213,11 +218,6 @@
             text-align: center;
             font-size: 1.3em;
             color: #414241;
-        }
-
-        .query-name:hover {
-            text-decoration: none;
-            color: #27AAE1;
         }
 
         .query-item-block {

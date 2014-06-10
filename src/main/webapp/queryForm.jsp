@@ -121,7 +121,7 @@
                           <!--<input type="hidden" id="hiddenButton_<%=j%>" name="hiddenButton"> -->
                           <input type="hidden" id="hiddenButton" name="hiddenButton">
 
-                          <button id="askButton_<%=j%>" class="btn btn-success has-spinner" style="width:150px" onclick="askSTATO('<%=j%>')">
+                          <button id="askButton_<%=j%>" class="btn btn-warning has-spinner" style="width:150px" onclick="askSTATO('<%=j%>')">
                               Ask STATO
                               <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                           </button>
