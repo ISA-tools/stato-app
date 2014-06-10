@@ -135,7 +135,42 @@
                                     <h4 class="modal-title" id="myModalLabel"><%=queryString%></h4>
                                 </div>
                                 <div class="modal-body">
-                                    <h3>Modal Body</h3>
+                                    <h3>STATO results</h3>
+
+                                    <%
+                                        List<STATOResult> resultList = statoQueryDemo.getPrecomputedResults(queryInfo,queryNumber);
+                                        if (queryNumber == j || resultList != null) {
+                                            if (resultList ==null)
+                                                resultList = statoQueryDemo.runDLQuery(queryInfo,queryNumber);
+                                            int k = 0;
+
+                                            for(STATOResult statoResult: resultList){
+                                    %>
+
+                                    <div class = "well well-sm" align="center">
+                                        <a id="pop_<%=j%>_<%=k%>" class="result popper-upper btn"
+                                           onmouseover="showPopup('#pop_<%=j%>_<%=k%>')"
+                                           onmouseout="hidePopup('#pop_<%=j%>_<%=k%>')"
+                                           href="http://bioportal.bioontology.org/ontologies/STATO/?p=classes&conceptid=<%=statoResult.getIRI()%>" target="_blank"
+                                           rel="popover" data-original-title="<%=statoResult.getLabel()%>" data-content="<%=statoResult.getDefinition()%>">
+                                            <%=statoResult.getLabel()%>
+                                        </a>
+                                    </div>
+                                    <%
+                                            k++;
+                                        } //for
+
+                                    %>
+
+
+                                    <h5 align="center"><i class="icon-info-sign"></i> STATO returned <%=resultList.size()%> results.</h5>
+                                    <h5 align="center"><i class = "icon-question-sign icon-lead"></i> How STATO query answering works?</h5>
+                                    <h6 align="center">These results are obtained by posing this expression to the <a class="result" href="bioportal.bioontology.org/ontologies/STATO">STATistics Ontology (STATO)</a>:</h6>
+                                    <h5 align="center"><span class="highlight"><%=queryInfo.getQuery(queryNumber)%></span></h5>
+                                    <%
+                                        }
+                                    %>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -160,7 +195,7 @@
         </ul>
 
 
-    </div>
+    </div> <!--container -->
 
 
 
