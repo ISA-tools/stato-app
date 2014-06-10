@@ -34,7 +34,7 @@
 
                                               for(int i=0; i < queryTypeList.size(); i++){
                                             %>
-                                                 <li><a href="queryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                                 <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
                                             <%
                                               }
                                             %>
@@ -59,7 +59,7 @@
         <h3>STATO Query Demo</h3>
         <p><span style="font-family: 'cursive'; color:#5f5f5f;">STATO</span> started out to provide semantic coverage for processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics.</p>
         <p class="lead">The <span style="font-family: 'cursive'; color:#5f5f5f;">STATO</span> Query Demo was developed to demonstrate how the <a href="http://isa-tools.github.io/stato">STATistics Ontology</a> can be used to answer queries about common knowledge on statistics.</p>
-        <a class="btn btn-large btn-success" href="queryForm.jsp">Check the STATO queries demo</a>
+        <a class="btn btn-large btn-success" href="carouselQueryForm.jsp">Check the STATO queries demo</a>
     </div>
 
 

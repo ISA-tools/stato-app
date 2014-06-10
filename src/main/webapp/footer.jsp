@@ -97,10 +97,10 @@
           }
       }
 
-      if (viewValue="grid")
+      if (viewValue=="grid")
           selectQueryViewForm.action = "gridQueryForm.jsp?queryType="+queryType;
-      else if (viewValue="carousel")
-          selectQueryViewForm.action = "queryForm.jsp?queryType="+queryType;
+      else if (viewValue=="carousel")
+          selectQueryViewForm.action = "carouselQueryForm.jsp?queryType="+queryType;
         selectQueryViewForm.submit();
     }
 

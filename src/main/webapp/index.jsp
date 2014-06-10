@@ -28,7 +28,7 @@
 
                                            for(int i=0; i < queryTypeList.size(); i++){
                                        %>
-                                       <li><a href="queryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                       <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
                                        <%
                                            }
                                        %>
@@ -60,7 +60,7 @@
         <p class="lead" align="center">This web application is a <strong>demonstration on some of the STATO elements</strong>, shown by running queries over the ontology. </p>
         <p class="lead" align="center">We show natural language queries and their counterparts written in description logics, relying on <a href="http://www.w3.org/TR/owl2-manchester-syntax/">Manchester OWL syntax</a>.</p>
 
-        <p align="center"><a class="btn btn-large btn-success" href="queryForm.jsp">Check the STATO queries demo</a></p>
+        <p align="center"><a class="btn btn-large btn-success" href="carouselQueryForm.jsp">Check the STATO queries demo</a></p>
     </div>
 
 <%@include file="footer.jsp"%>

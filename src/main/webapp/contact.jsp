@@ -34,7 +34,7 @@
 
                                                 for(int i=0; i < queryTypeList.size(); i++){
                                             %>
-                                            <li><a href="queryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                            <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
                                             <%
                                                 }
                                             %>

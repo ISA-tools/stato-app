@@ -41,7 +41,7 @@
 
 %>
 
-<form method=post action="queryForm.jsp?queryType=<%=queryType%>" name=queryForm>
+<form method=post action="carouselQueryForm.jsp?queryType=<%=queryType%>" name=queryForm>
 
 <div class="navbar-wrapper">
     <div class="container">
@@ -70,7 +70,7 @@
 
                                     for(int i=0; i < queryTypeList.size(); i++){
                                 %>
-                                <li><a href="queryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
                                 <%
                                     }
                                 %>
