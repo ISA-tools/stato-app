@@ -12,6 +12,7 @@ public class QueryInfo {
     private ArrayList<String> queryList = new ArrayList<String>();
     private ArrayList<String> queryTypeList = new ArrayList<String>();
     private ArrayList<String> queryTypeStringList = new ArrayList<String>();
+    private ArrayList<String> queryTypeDescriptionList = new ArrayList<String>();
     private ArrayList<Integer> startList = new ArrayList<Integer>();
     private ArrayList<Integer> endList = new ArrayList<Integer>();
 
@@ -46,6 +47,10 @@ public class QueryInfo {
 
     public void addQueryTypeString(String queryTypeString){
         queryTypeStringList.add(queryTypeString);
+    }
+
+    public void addQueryTypeDescription(String queryTypeDescription){
+        queryTypeStringList.add(queryTypeDescription);
     }
 
     public void addQueryString(String queryString){

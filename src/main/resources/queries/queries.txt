@@ -1,4 +1,4 @@
-===tests,Statistical tests
+===tests,Statistical tests,These queries demonstrate STATO definitions related to <a href="http://www.itl.nist.gov/div898/handbook/prc/section1/prc13.htm">statistical tests, i.e. the mechanisms to make quantitative decisions about a process or processes</a>.
 
 #queries per objectives
 
