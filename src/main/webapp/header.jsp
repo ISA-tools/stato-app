@@ -252,6 +252,18 @@
         }
 
 
+        .btn-group-wrap {
+            text-align: center;
+        }
+
+        div.btn-group {
+            margin: 0 auto;
+            text-align: center;
+            width: inherit;
+            display: inline-block;
+        }
+
+
     </style>
 
     <!-- Fav and touch icons -->

@@ -50,6 +50,20 @@
 
     <div class="container marketing">
 
+        <div class="btn-group-wrap">
+            <div class="btn-group" data-toggle="buttons" data-toggle-default-class="btn-default">
+                <label class="btn btn-xs btn-default" data-toggle-class="btn-primary">
+                    <input type="radio" name="status" value="1" id="status-published" />
+                    Carousel View
+                </label>
+                <label class="btn btn-xs btn-primary active" data-toggle-class="btn-primary">
+                    <input type="radio" name="status" value="0" id="status-draft" checked />
+                    Grid View
+                </label>
+            </div>
+        </div>
+
+
         <!-- Three columns of text below the carousel -->
         <div class="row">
 
@@ -67,7 +81,6 @@
                 <span class="icon-large icon-pen"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(0)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(0)%></p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
                 <a class="btn btn-large btn-warning" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(0)%>">Ask STATO about <%=queryInfo.getQueryType(0)%></a>
             </div>
             <!-- /.col-lg-4 -->
@@ -75,8 +88,7 @@
             <div class="col-lg-4">
                 <span class="icon-large icon-ruller"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(1)%></h2>
-                <p>STATO and <%=queryInfo.getQueryTypeDescription(1)%></p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <p><%=queryInfo.getQueryTypeDescription(1)%></p>
                 <a class="btn btn-large btn-warning" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(1)%>">Ask STATO about <%=queryInfo.getQueryType(1)%></a>
             </div>
 
@@ -91,8 +103,7 @@
             <div class="col-lg-4">
                 <span class="icon-large icon-stats"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(2)%></h2>
-                <p>STATO and <%=queryInfo.getQueryTypeDescription(2)%></p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <p><%=queryInfo.getQueryTypeDescription(2)%></p>
                 <a class="btn btn-large btn-warning" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(2)%>">Ask STATO about <%=queryInfo.getQueryType(2)%></a>
             </div>
             <!-- /.col-lg-4 -->
@@ -100,8 +111,7 @@
             <div class="col-lg-4">
                 <span class="glyphicon glyphicon-stats"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(3)%></h2>
-                <p>STATO and <%=queryInfo.getQueryTypeDescription(3)%></p>
-                <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                <p><%=queryInfo.getQueryTypeDescription(3)%></p>
                 <a class="btn btn-large btn-warning" href="queryForm.jsp?queryType=<%=queryInfo.getQueryType(3)%>">Ask STATO about <%=queryInfo.getQueryType(3)%></a>
             </div>
 
