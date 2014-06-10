@@ -50,7 +50,7 @@ public class QueryInfo {
     }
 
     public void addQueryTypeDescription(String queryTypeDescription){
-        queryTypeStringList.add(queryTypeDescription);
+        queryTypeDescriptionList.add(queryTypeDescription);
     }
 
     public void addQueryString(String queryString){
@@ -103,6 +103,10 @@ public class QueryInfo {
 
     public String getQueryTypeString(int index){
         return queryTypeStringList.get(index);
+    }
+
+    public String getQueryTypeDescription(int index){
+        return queryTypeDescriptionList.get(index);
     }
 
 }

@@ -62,7 +62,6 @@ public class QueryFileReader {
                     }
                     queryInfo.addQueryType(queryType);
                     queryInfo.addQueryTypeString(queryTypeString);
-                    queryInfo.addQueryTypeString(queryTypeString);
                     queryInfo.addStart(count);
 
                 } else {

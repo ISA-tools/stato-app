@@ -41,7 +41,7 @@ achieves_planned_objective some 'equal variance testing objective' or 'homoskeda
 Which <span class='highlight'>statistical tests</span> relies on an <span class='highlight'>F- distribution</span>?
 'statistical hypothesis test' and has_specified_input some F-distribution
 
-===plots,Statistical plots
+===plots,Statistical plots,These queries show some of the STATO definitions related to statistical plots, i.e. graphical representations that are useful for statistical analysis.
 
 Which <span class='highlight'>plots</span> may be used to represent the results of a <span class='highlight'>genetic association study</span>?
 graph and 'is about' some 'genetic association study' or is_specified_output_of some ('data visualization' and 'genetic association study')
@@ -61,7 +61,7 @@ graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary cl
 Which <span class='highlight'>plots</span> provide insights into <span class='highlight'>similarity between two distributions</span>?
 graph and is_specified_output_of some ('data visualization' and ('is about' exactly 2 'probability distribution'))
 
-===measures,Statistical measures
+===measures,Statistical measures,These queries exemplify some of the STATO constructs related to statistical measures, i.e. a quantitative summary values.
 
 Which <span class='highlight'>correlation coefficient</span> can be calculated using <span class='highlight'>two ordinal variables</span>?
 'correlation coefficient' and 'is about' exactly 2 'ordinal variable'
@@ -75,7 +75,7 @@ Which <span class='highlight'>statistical measures</span> are indicative of <spa
 Which <span class='highlight'>statistical measures</span> may be use to provide <span='highlight'>an estimate of the effect size</span>?
 'effect size estimate'
 
-===designs,Study designs
+===designs,Study designs,These queries provide some of the experimental design concepts represented in STATO.
 
 Which <span class='highlight'>study designs</span> use <span class='highlight'>blocking variables</span>?
 'study design' and declares some 'blocking variable'
