@@ -56,7 +56,7 @@ Which <span class='highlight'>plots</span> may be used to render a <span class='
 graph and is_specified_output_of some ('gene list visualization' and ('is preceded by' some 'differential expression analysis data transformation'))
 
 Which <span class='highlight'>plots</span> provide insights into the performance of a <span class='highlight'>binary classification</span>?
-graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary classification'
+graph and 'is about' some  (assay or 'statistical hypothesis test' or 'binary classification')
 
 Which <span class='highlight'>plots</span> provide insights into <span class='highlight'>similarity between two distributions</span>?
 graph and is_specified_output_of some ('data visualization' and ('is about' exactly 2 'probability distribution'))
