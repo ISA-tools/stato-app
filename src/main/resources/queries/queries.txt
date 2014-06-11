@@ -14,7 +14,7 @@ Which <span class='highlight'>statistical tests</span> evaluate <span class='hig
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>goodness of fit</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'goodness of fit testing objective'
 
-Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>homogeneity test objective</span>?
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>homogeneity hypothesis</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'homogeneity test objective'
 
 Which <span class='highlight'>statistical tests</span> evaluate if <span class='highlight'>sphericity hypothesis</span> holds?

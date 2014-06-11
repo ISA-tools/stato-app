@@ -68,6 +68,7 @@
         <p class="lead" align="center">STATO also covers aspects of <strong>experimental design</strong> and description of <strong>plots and graphical representations</strong></p>
         <p class="lead" align="center">commonly used to provide visual cues of data distribution or layout and to assist review of the results.</p>
 
+        <p align="center"><a class="btn btn-large btn-warning" href="queries.jsp">View the STATO query cases</a></p>
 <!--
         <p class="lead" align="center"><strong>STATO</strong> is a <strong>general-purpose STATistics Ontology</strong> that aims to provide coverage for processes such as statistical tests, </p>
         <p class="lead" align="center">their conditions of applications, and information needed or resulting from statistical methods,</p>
@@ -79,9 +80,6 @@
 
         <p class="lead" align="center">This web application is a <strong>demonstration on some of the STATO elements</strong>, shown by running queries over the ontology. </p>
         <p class="lead" align="center">We show natural language queries and their counterparts written in description logics, relying on <a href="http://www.w3.org/TR/owl2-manchester-syntax/">Manchester OWL syntax</a>.</p>
-
-        <p align="center"><a class="btn btn-large btn-success" href="carouselQueryForm.jsp">Check the STATO queries demo</a></p>
-
         -->
     </div>
 
@@ -92,17 +90,17 @@
         <div class="col-md-4">
             <h2>Content</h2>
             <p>Find out about what the elements represented in the STATO ontology and links to its content: BioPortal for releases and GitHub for the development version.</p>
-            <p><a class="btn btn-primary" href="#content" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#content" role="button">View content &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Background</h2>
             <p>Read more about why STATO was developed and the community behind the ontology. </p>
-            <p><a class="btn btn-primary" href="#background" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#background" role="button">View background &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Objectives</h2>
             <p>Learn about the main objectives set out for the development of the STATO ontology. </p>
-            <p><a class="btn btn-primary" href="#objectives" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#objectives" role="button">View objectives &raquo;</a></p>
         </div>
     </div>
 
@@ -123,7 +121,7 @@
                 <div class="inner">
 
             <div class="col-md-4" >
-                <a id="forkme_banner" href="https://github.com/ISA-tools/stato">View on GitHub</a>
+                <a id="github_banner" href="https://github.com/ISA-tools/stato">View on GitHub</a>
             </div>
 
              <div class="col-md-4">
