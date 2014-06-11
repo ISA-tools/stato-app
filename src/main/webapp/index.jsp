@@ -17,9 +17,9 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                   <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
+                                   <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Query cases <b class="caret"></b></a>
                                    <ul class="dropdown-menu">
-                                       <li><a href="queries.jsp">Demo queries by type</a></li>
+                                       <li><a href="queries.jsp">Query cases by type</a></li>
                                        <li class="divider"></li>
                                        <li class="dropdown-header">Grid View</li>
                                        <%
@@ -28,7 +28,7 @@
 
                                            for(int i=0; i < queryTypeList.size(); i++){
                                        %>
-                                       <li><a href="gridQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                       <li><a href="gridQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> query cases</a></li>
                                        <%
                                            }
                                        %>
@@ -38,7 +38,7 @@
 
                                            for(int i=0; i < queryTypeList.size(); i++){
                                        %>
-                                       <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                       <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> query cases</a></li>
                                        <%
                                            }
                                        %>
