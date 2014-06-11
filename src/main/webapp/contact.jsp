@@ -56,10 +56,9 @@
 </div>
 
 
-    <!-- #about-section -->
     <div class="container marketing">
 
-    <h3>Contact the STATO team</h3>
+    <h3>Meet the STATO team</h3>
 
         <div class="team-container" align="center">
             <div class="container">
@@ -98,10 +97,18 @@
                 </div>
             </div>
         </div>
-        </div>
+   </div>
 
-    </section>
-    <!-- /#about-section -->
+
+
+<div class="container marketing">
+
+    <h3>Support</h3>
+
+    <p class="lead">For discussions about the STAtistics Ontology (STATO), please contact Alejandra and Philippe. </p>
+    <p class="lead">The mailing list for STATO is the: <a href="mailto:stat-ontology@googlegroups.com">STAT-Ontology Google Group</a>.</p>
+    <p class="lead">If you have term requests, plese use the issue tracker is available at: <a href="https://github.com/ISA-tools/stato/issues">STATO Github site</a>.</p>
+</div>
 
 
 

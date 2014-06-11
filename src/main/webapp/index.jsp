@@ -92,17 +92,17 @@
         <div class="col-md-4">
             <h2>Content</h2>
             <p>Find out about what the elements represented in the STATO ontology and links to its content: BioPortal for releases and GitHub for the development version.</p>
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#content" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Background</h2>
             <p>Read more about why STATO was developed and the community behind the ontology. </p>
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#background" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Objectives</h2>
             <p>Learn about the main objectives set out for the development of the STATO ontology. </p>
-            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-primary" href="#objectives" role="button">View details &raquo;</a></p>
         </div>
     </div>
 
@@ -110,6 +110,7 @@
 
     <div class="bs-docs-featurette">
         <div class="container">
+            <a id="content"></a>
             <h2 class="bs-docs-featurette-title" algin="center">Content</h2>
 
             <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies (e.g. the Ontology for Biomedical Investigations or <a href="http://obi-ontology.org/page/Main_Page">OBI</a>), hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses OBI as mid-level ontology.</p>
@@ -124,6 +125,7 @@
 
 <div class="bs-docs-featurette">
     <div class="container">
+        <a id="background"></a>
         <h2 class="bs-docs-featurette-title" algin="center">Background</h2>
 
         <p class="lead">The STATO project tarted in early 2012, as part of the requirement of the <strong>community-driven <a href="http://isacommons.org">ISA Commons</a></strong> to represent data matrices and their statistical values, </p>
@@ -146,6 +148,7 @@
 
 <div class="bs-docs-featurette">
     <div class="container">
+        <a id="objectives"></a>
 <h2 class="bs-docs-featurette-title" algin="center">Objectives</h2>
 
 <p class="lead">The demand-driven nature of STATO ensures its objectives fit the requirements of the communities it has build with and for. STATO is set to provide:</p>
