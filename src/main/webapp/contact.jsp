@@ -2,59 +2,62 @@
 <%@ page import="java.util.List" %>
 
 
-<div class="container">
+<div class="navbar-wrapper">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.jsp">STATO-APP</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="queries.jsp">Demo queries by type</a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Grid View</li>
+                                <%
+                                    List<String> queryTypeList = queryInfo.getQueryTypes();
+                                    List<String> queryTypeStringList = queryInfo.getQueryStringTypes();
 
-    <div class="navbar-wrapper">
-        <div class="container">
+                                    for(int i=0; i < queryTypeList.size(); i++){
+                                %>
+                                <li><a href="gridQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                <%
+                                    }
+                                %>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Carousel View</li>
+                                <%
 
-            <div class="navbar-wrapper">
-                <div class="container">
-
-                    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand" href="index.jsp">STATO-APP</a>
-                            </div>
-                            <div class="navbar-collapse collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="dropdown">
-                                        <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Demo Queries <b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="queries.jsp">Demo queries by type</a></li>
-                                            <li class="divider"></li>
-                                            <%
-                                                List<String> queryTypeList = queryInfo.getQueryTypes();
-                                                List<String> queryTypeStringList = queryInfo.getQueryStringTypes();
-
-                                                for(int i=0; i < queryTypeList.size(); i++){
-                                            %>
-                                            <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
-                                            <%
-                                                }
-                                            %>
-                                        </ul>
-                                    </li>
-                                    <li class="active"><a href="contact.jsp">Contact</a></li>
-                                    <li><a href="about.jsp">About</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
+                                    for(int i=0; i < queryTypeList.size(); i++){
+                                %>
+                                <li><a href="carouselQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                <%
+                                    }
+                                %>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="contact.jsp">Contact</a></li>
+                        <li><a href="about.jsp">About</a></li>
+                    </ul>
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
+
 
     <!-- #about-section -->
-    <div class="jumbotron">
+    <div class="container marketing">
 
     <h3>Contact the STATO team</h3>
 

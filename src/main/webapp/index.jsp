@@ -3,7 +3,6 @@
 
 <div class="navbar-wrapper">
             <div class="container">
-
                 <div class="navbar navbar-inverse navbar-static-top" role="navigation">
                     <div class="container">
                         <div class="navbar-header">
@@ -22,9 +21,20 @@
                                    <ul class="dropdown-menu">
                                        <li><a href="queries.jsp">Demo queries by type</a></li>
                                        <li class="divider"></li>
+                                       <li class="dropdown-header">Grid View</li>
                                        <%
                                            List<String> queryTypeList = queryInfo.getQueryTypes();
                                            List<String> queryTypeStringList = queryInfo.getQueryStringTypes();
+
+                                           for(int i=0; i < queryTypeList.size(); i++){
+                                       %>
+                                       <li><a href="gridQueryForm.jsp?queryType=<%=queryTypeList.get(i)%>"><%=queryTypeStringList.get(i)%> demo queries</a></li>
+                                       <%
+                                           }
+                                       %>
+                                       <li class="divider"></li>
+                                       <li class="dropdown-header">Carousel View</li>
+                                       <%
 
                                            for(int i=0; i < queryTypeList.size(); i++){
                                        %>
