@@ -41,6 +41,12 @@
         a.result:focus {color: darkorange;}
         a.result:active {color: orangered;}
 
+
+        hr{
+            border-top: 1px solid darkorange;
+        }
+
+
         .carousel {
             height: 600px;
             margin-bottom: 60px;
