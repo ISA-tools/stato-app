@@ -262,6 +262,10 @@
             display: inline-block;
         }
 
+        @media screen and (min-width: 768px) {
+         .modal .modal-dialog  {width:900px;}
+        }
+
 
     </style>
 
