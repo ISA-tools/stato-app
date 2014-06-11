@@ -26,7 +26,7 @@ What are the <span class='highlight'>statistical tests</span> which can be used 
 Which <span class='highlight'>statistical tests</span> require the <span class='highlight'>homoskedasticity hypothesis</span> to be true in order to be used?
 'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
 
-Which <span class='highlight'>statistical tests</span> may be applied if both <span class='highlight'>normality and equivariance hypothesis</span> are met?
+Which <span class='highlight'>statistical tests</span> may be applied for group comparison if both <span class='highlight'>normality and equivariance hypotheses</span> are met?
 'statistical hypothesis test' and  achieves_planned_objective some 'between group comparison objective' and 'has part' some ('normal distribution hypothesis' and 'has value' value true) and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
 
 Which <span class='highlight'>statistical tests</span> use a <span class='highlight'>contingency table</span>?

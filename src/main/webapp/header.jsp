@@ -35,9 +35,9 @@
     <link href="assets/css/prettyPhoto.css" id="prettyphoto-css" rel="stylesheet" />
 
     <style>
-        a.result:link {color: green;}
-        a.result:visited {color: green;}
-        a.result:hover {color: orange;}
+        a.result:link {color: blue;}
+        a.result:visited {color: darkblue;}
+        a.result:hover {color: lightblue;}
         a.result:focus {color: darkorange;}
         a.result:active {color: orangered;}
 
