@@ -30,6 +30,7 @@
     int index = queryInfo.getIndexForQueryType(queryType);
     start = queryInfo.getStart(index);
     end = queryInfo.getEnd(index);
+    String queryTypeString = queryInfo.getQueryTypeString(index).toLowerCase();
 
     String queryNumberString = request.getParameter("hiddenButton");
 
@@ -96,6 +97,21 @@
 
         </div>
     </div>
+
+    <%
+
+
+        if (queryTypeString.equals("all")) {
+    %>
+    <h2 align="center">All queries</h2>
+    <%
+    } else {
+    %>
+    <h2 align="center">Queries about <%=queryTypeString%></h2>
+
+    <%
+        }
+    %>
 
 <div class="carousel slide carousel-fade" data-ride="carousel" id="myCarousel">
     <!-- Indicators -->

@@ -19,6 +19,7 @@
     }
 
     int index = queryInfo.getIndexForQueryType(queryType);
+    String queryTypeString = queryInfo.getQueryTypeString(index).toLowerCase();
     start = queryInfo.getStart(index);
     end = queryInfo.getEnd(index);
 
@@ -85,6 +86,22 @@
 
     <div class="container marketing">
 
+
+        <%
+
+
+         if (queryTypeString.equals("all")) {
+        %>
+        <h2 align="center">All queries</h2>
+        <%
+            } else {
+        %>
+        <h2 align="center">Queries about <%=queryTypeString%></h2>
+
+        <%
+            }
+        %>
+
         <ul class="list">
 
 <%
@@ -115,8 +132,6 @@
                         Ask STATO
                         <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
                     </button>
-
-
 
                     <div class="modal fade" id="myModal_<%=j%>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-remote='results.jsp?j=<%=j%>'>
                         <div class="modal-dialog">
