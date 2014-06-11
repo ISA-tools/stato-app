@@ -277,7 +277,7 @@
             z-index: 10;
             padding: 10px 50px 10px 10px;
             color: #fff;
-            background: url('https://raw.githubusercontent.com/GCorbel/blog3/gh-pages/_site/images/blacktocat.png') orange no-repeat 95% 50%;
+            background: url('https://raw.githubusercontent.com/GCorbel/blog3/gh-pages/_site/images/blacktocat.png') #f0ad4e no-repeat 95% 50%;
             font-weight: 700;
             box-shadow: 0 0 10px rgba(0,0,0,.5);
             border-bottom-left-radius: 2px;
@@ -289,7 +289,7 @@
             z-index: 10;
             padding: 10px 50px 10px 10px;
             color: #fff;
-            background: darkorange no-repeat 95% 50%;
+            background: #f0ad4e no-repeat 95% 50%;
             font-weight: 700;
             box-shadow: 0 0 10px rgba(0,0,0,.5);
             border-bottom-left-radius: 2px;

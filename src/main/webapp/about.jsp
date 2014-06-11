@@ -57,13 +57,21 @@
 
 
     <div class="container marketing">
-        <h3>STATO Query Demo</h3>
-        <p><span style="font-family: 'cursive'; color:#5f5f5f;">STATO</span> started out to provide semantic coverage for processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics.</p>
-        <p class="lead">The <span style="font-family: 'cursive'; color:#5f5f5f;">STATO</span> Query Demo was developed to demonstrate how the <a href="http://isa-tools.github.io/stato">STATistics Ontology</a> can be used to answer queries about common knowledge on statistics.</p>
-        <a class="btn btn-large btn-success" href="carouselQueryForm.jsp">Check the STATO queries demo</a>
+        <h3>About STATO</h3>
+        <p class="lead">STATO started out to provide semantic coverage for processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics.</p>
+        <p class="lead">This website provides inforamation about STATO and demonstrates a set of query cases relying on STATO to answer queries about common knowledge on statistics.</p>
+
     </div>
 
+   <hr>
 
+    <div class="container marketing">
+    <h3>Acknowledgements</h3>
+        <p class="lead">STATO has been funded by grants to Dr Susanna-Assunta Sansone</p>
+
+        <p class="lead">The STATO logos were designed by <a href="http://www.antarctic-design.co.uk/">Antarctic Design</a>.</p>
+
+    </div>
 
 
 <%@include file="footer.jsp"%>
