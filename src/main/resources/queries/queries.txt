@@ -17,13 +17,13 @@ achieves_planned_objective some 'goodness of fit testing objective'
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>homogeneity test objective</span>?
 achieves_planned_objective some 'homogeneity test objective'
 
-Which <span class='highlight'>statistical tests</span> evaluate if <span class='highlight'>sphericity</span> holds?
+Which <span class='highlight'>statistical tests</span> evaluate if <span class='highlight'>sphericity hypothesis</span> holds?
 achieves_planned_objective some 'sphericity testing objective'
 
 What are the <span class='highlight'>statistical tests</span> which can be used to test <span class='highlight'>within subject variation</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'within subject comparison objective'
 
-Which <span class='highlight'>statistical tests</span> require the <span class='highlight'>homoskedasticity hypothesis</span> to be true in order to be used?
+Which <span class='highlight'>statistical tests</span> require the <span class='highlight'>variance equality hypothesis</span> to be true?
 'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
 
 Which <span class='highlight'>statistical tests</span> may be applied for group comparison if both <span class='highlight'>normality and equivariance hypotheses</span> are met?
@@ -35,10 +35,10 @@ Which <span class='highlight'>statistical tests</span> use a <span class='highli
 Which <span class='highlight'>statistical tests</span> require <span class='highlight'>ranking of a variable</span>?
 'statistical hypothesis test' and 'has part' some ranking
 
-Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
+Which <span class='highlight'>statistical tests</span> evaluate if <span class='highlight'>variance equality hypothesis</span> holds?
 achieves_planned_objective some 'equal variance testing objective' or 'homoskedasticity test'
 
-Which <span class='highlight'>statistical tests</span> relies on an <span class='highlight'>F- distribution</span>?
+Which <span class='highlight'>statistical tests</span> relies on an <span class='highlight'>F-distribution</span>?
 'statistical hypothesis test' and has_specified_input some F-distribution
 
 ===plots,Statistical plots,These queries show some of the STATO definitions related to statistical plots, i.e. graphical representations that are useful for statistical analysis.
@@ -72,7 +72,7 @@ Which <span class='highlight'>statistical measures</span> give an insight into <
 Which <span class='highlight'>statistical measures</span> are indicative of <span class='highlight'>data spread</span>?
 'measure of variation'
 
-Which <span class='highlight'>statistical measures</span> may be use to provide <span='highlight'>an estimate of the effect size</span>?
+Which <span class='highlight'>statistical measures</span> may be use to provide <span class='highlight'>an estimate of the effect size</span>?
 'effect size estimate'
 
 ===designs,Study designs,These queries provide some of the experimental design concepts represented in STATO.
@@ -82,3 +82,6 @@ Which <span class='highlight'>study designs</span> use <span class='highlight'>b
 
 Which <span class='highlight'>study designs</span> uses <span class='highlight'>time</span> as <span class='highlight'>blocking variable</span>?
 'study design' and declares some ('blocking variable' and 'is about' some 'time sampled measurement data set')
+
+Which <span class='highlight'>study designs</span> uses <span class='highlight'>exactly two blocking variables</span>?
+'study design' and declares exactly 2 'blocking variable'
