@@ -56,7 +56,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.jsp">STATO-APP</a>
+                        <a class="navbar-brand" href="index.jsp">STATO</a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
@@ -88,7 +88,7 @@
                                     %>
                                 </ul>
                             </li>
-                            <li><a href="contact.jsp">Contact</a></li>
+                            <li><a href="contact.jsp">Contact and Support</a></li>
                             <li><a href="about.jsp">About</a></li>
                         </ul>
                     </div>

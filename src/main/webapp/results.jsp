@@ -33,7 +33,7 @@
         <h4 class="modal-title" id="myModalLabel"><%=queryString%></h4>
     </div>
     <div class="modal-body">
-        <h3>STATO results</h3>
+        <h3 style="color:orange">STATO results</h3>
 
 
 <%

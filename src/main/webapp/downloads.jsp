@@ -13,7 +13,7 @@
                         <li><a href="carouselQueryForm.jsp">STATO Queries</a></li>
                         <li class="active"><a href="downloads.jsp">Downloads</a></li>
                         <li><a href="about.jsp">About</a></li>
-                        <li><a href="contact.jsp">Contact</a></li>
+                        <li><a href="contact.jsp">Contact and Support</a></li>
                     </ul>
                 </div>
             </div>
