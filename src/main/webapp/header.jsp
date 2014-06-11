@@ -272,6 +272,38 @@
          .modal .modal-dialog  {width:900px;}
         }
 
+        #forkme_banner {
+            display: block;
+            z-index: 10;
+            padding: 10px 50px 10px 10px;
+            color: #fff;
+            background: url('https://raw.githubusercontent.com/GCorbel/blog3/gh-pages/_site/images/blacktocat.png') orange no-repeat 95% 50%;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        #banner {
+            display: block;
+            z-index: 10;
+            padding: 10px 50px 10px 10px;
+            color: #fff;
+            background: darkorange no-repeat 95% 50%;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0,0,0,.5);
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+
+        .inner {
+            position: relative;
+            width: 700px;
+            padding: 20px 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
 
     </style>
 

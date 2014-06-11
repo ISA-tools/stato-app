@@ -115,8 +115,23 @@
 
             <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies (e.g. the Ontology for Biomedical Investigations or <a href="http://obi-ontology.org/page/Main_Page">OBI</a>), hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses OBI as mid-level ontology.</p>
 
+            <p class="lead">STATO provides textual definitions for all terms, as well as <strong>formal definitions</strong> for 200 terms allowing automatic classification of the statistical methods depending on the nature of the variables used as input, the conditions and their domain of application.</p>
 
+            <p class="lead">STATO is developed using the Web Ontology Language (OWL). The latest release can be browsed through <a href="http://bioportal.bioontology.org/">BioPortal</a>. The development version and previous releases can be found in the <a href="https://github.com/">GitHub</a>.</p>
 
+            <div class="row">
+                <div class="inner">
+
+            <div class="col-md-4" >
+                <a id="forkme_banner" href="https://github.com/ISA-tools/stato">View on GitHub</a>
+            </div>
+
+             <div class="col-md-4">
+                    <a id="banner" href="http://bioportal.bioontology.org/ontologies/STATO">View on BioPortal</a>
+             </div>
+                </div>
+
+             </div>
 
         </div>
     </div>
