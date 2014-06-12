@@ -18,9 +18,9 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Query cases <b class="caret"></b></a>
+                            <a href="queryCases.jsp" class="dropdown-toggle" data-toggle="dropdown">Query cases <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="queries.jsp">Query cases by type</a></li>
+                                <li><a href="queryCases.jsp">Query cases by type</a></li>
                                 <li class="divider"></li>
                                 <li class="dropdown-header">Grid View</li>
                                 <%

@@ -17,9 +17,9 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                   <a href="queries.jsp" class="dropdown-toggle" data-toggle="dropdown">Query cases <b class="caret"></b></a>
+                                   <a href="queryCases.jsp" class="dropdown-toggle" data-toggle="dropdown">Query cases <b class="caret"></b></a>
                                    <ul class="dropdown-menu">
-                                       <li><a href="queries.jsp">Query cases by type</a></li>
+                                       <li><a href="queryCases.jsp">Query cases by type</a></li>
                                        <li class="divider"></li>
                                        <li class="dropdown-header">Grid View</li>
                                        <%
@@ -68,7 +68,7 @@
         <p class="lead" align="center">STATO also covers aspects of <strong>experimental design</strong> and description of <strong>plots and graphical representations</strong></p>
         <p class="lead" align="center">commonly used to provide visual cues of data distribution or layout and to assist review of the results.</p>
 
-        <p align="center"><a class="btn btn-large btn-warning" href="queries.jsp">View the STATO query cases</a></p>
+        <p align="center"><a class="btn btn-large btn-warning" href="queryCases.jsp">View the STATO query cases</a></p>
 <!--
         <p class="lead" align="center"><strong>STATO</strong> is a <strong>general-purpose STATistics Ontology</strong> that aims to provide coverage for processes such as statistical tests, </p>
         <p class="lead" align="center">their conditions of applications, and information needed or resulting from statistical methods,</p>
@@ -115,7 +115,7 @@
         <p class="lead">STATO is a standalone project since Nov 2012. STATO is driven and funded by several ISA-based projects and their user community, but also by collaborations with <strong>data publication platforms</strong>.</p>
         <p class="lead">STATO is applicable to, but not limited, the broad life, natural and biomedical science domain with <strong>documented applications</strong> for factorial design, association studies, differential expression, hit selection and meta-analysis.</p>
         <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies, hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/page/Main_Page">OBI</a>) as mid-level ontology.</p>
-        <p class="lead">The ontology is made available under </p>
+        <p class="lead">The ontology is made available under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</a>.</p>
 
         </div>
 
