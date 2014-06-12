@@ -203,7 +203,7 @@
             font-family: "Helvetica";
             float: left;
             width: 250px;
-            min-height: 150px;
+            min-height: 200px;
             margin: 10px;
             border-radius: 3px;
             background-color: #f8f8f8;
@@ -212,8 +212,9 @@
         }
 
         .query-item-info {
-            height: 100px;
+            height: 150px;
             overflow: hidden;
+            border-bottom: 1px solid #ddd;
         }
 
         .query-name {
@@ -236,7 +237,7 @@
             font-size: 1.1em;
             font-weight: bolder;
             padding: 10px;
-            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
 
         .counter {

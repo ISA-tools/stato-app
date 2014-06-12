@@ -117,16 +117,16 @@
 
                 <span class="counter counter-orange"><%=j-start+1%></span>
                 <div class="query-name">
-                    <span style="font-size: 1.0em"><%=queryString%></span><br/>
+                    <span style="font-size: 1.0em"><%=queryString%></span><!--<br/>-->
 
                 </div>
 
             </div>
 
 
-            <div class="search-item-block" style="margin-top: 15px; margin-bottom: 10px">
+            <div class="query-item-block" style="margin-top: 15px; margin-bottom: 10px">
 
-                <div class="search-item-details" >
+                <div class="query-item-details" >
 
                     <button type="button" id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" data-toggle="modal" data-target="#myModal_<%=j%>">
                         Ask STATO
