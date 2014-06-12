@@ -46,7 +46,7 @@
                         </ul>
                     </li>
                     <li><a href="contact.jsp">Contact and Support</a></li>
-                    <li class="active"><a href="about.jsp">About</a></li>
+                    <li class="active"><a href="about.jsp">Acknowledgements</a></li>
                 </ul>
             </div>
         </div>
@@ -54,16 +54,6 @@
 
 </div>
 </div>
-
-
-    <div class="container marketing">
-        <h3>About STATO</h3>
-        <p class="lead">STATO started out to provide semantic coverage for processes such as statistical tests, their conditions of applications, and information needed or resulting from statistical methods, such as probability distributions, variable, spread and variation metrics.</p>
-        <p class="lead">This website provides information about the STATO ontology, its core development team, and demonstrates a set of query cases relying on the ontology to answer questions about common knowledge on statistics.</p>
-
-    </div>
-
-   <hr>
 
     <div class="container marketing">
     <h3>Acknowledgements</h3>

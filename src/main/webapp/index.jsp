@@ -45,7 +45,7 @@
                                    </ul>
                                </li>
                                 <li><a href="contact.jsp">Contact and Support</a></li>
-                                <li><a href="about.jsp">About</a></li>
+                                <li><a href="about.jsp">Acknowledgements</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,14 +88,14 @@
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Content</h2>
-            <p>Find out about what the elements represented in the STATO ontology and links to its content: BioPortal for releases and GitHub for the development version.</p>
-            <p><a class="btn btn-primary" href="#content" role="button">View content &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
             <h2>Background</h2>
             <p>Read more about why STATO was developed and the community behind the ontology. </p>
             <p><a class="btn btn-primary" href="#background" role="button">View background &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Content</h2>
+            <p>Find out about what the elements represented in the STATO ontology and links to its content.</p>
+            <p><a class="btn btn-primary" href="#content" role="button">View content &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Objectives</h2>
@@ -107,28 +107,14 @@
 <hr>
 
     <div class="jumbotron">
-            <a id="content"></a>
-            <h2>Content</h2>
 
-            <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies (e.g. the Ontology for Biomedical Investigations or <a href="http://obi-ontology.org/page/Main_Page">OBI</a>), hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses OBI as mid-level ontology.</p>
+        <a id="background"></a>
+        <h2>Background</h2>
 
-            <p class="lead">STATO provides <strong>textual definitions</strong> for all terms, as well as <strong>formal definitions</strong> for most of the terms allowing automatic classification, for example, categorising the statistical methods depending on the nature of the variables used as input, the conditions and their domain of application.</p>
-
-            <p class="lead">STATO is developed using the Web Ontology Language (OWL). The latest release can be browsed through <a href="http://bioportal.bioontology.org/">BioPortal</a>. The development version and previous releases can be found in the <a href="https://github.com/">GitHub</a>.</p>
-
-            <div class="row">
-                <div class="inner">
-
-            <div class="col-md-4" >
-                <a id="github_banner" href="https://github.com/ISA-tools/stato">View STATO on GitHub</a>
-            </div>
-
-             <div class="col-md-4">
-                    <a id="banner" href="http://bioportal.bioontology.org/ontologies/STATO">View STATO on BioPortal</a>
-             </div>
-                </div>
-
-             </div>
+        <p class="lead">The STATO project tarted in early 2012, as part of the requirement of the <strong>community-driven <a href="http://isacommons.org">ISA Commons</a></strong> to represent data matrices and their statistical values, </p>
+        <p class="lead">STATO is a standalone project since Nov 2012. STATO is driven and funded by several ISA-based projects and their user community, but also by collaborations with <strong>data publication platforms</strong>.</p>
+        <p class="lead">STATO is applicable to, but not limited, the broad life, natural and biomedical science domain with <strong>documented applications</strong> for factorial design, association studies, differential expression, hit selection and meta-analysis.</p>
+        <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies, hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/page/Main_Page">OBI</a>) as mid-level ontology.</p>
 
         </div>
 
@@ -137,21 +123,35 @@
 
 <div class="bs-docs-featurette">
     <div class="container">
-        <a id="background"></a>
-        <h2>Background</h2>
+        <a id="content"></a>
+        <h2>Content</h2>
 
-        <p class="lead">The STATO project tarted in early 2012, as part of the requirement of the <strong>community-driven <a href="http://isacommons.org">ISA Commons</a></strong> to represent data matrices and their statistical values, </p>
-        <p class="lead">STATO is a standalone projects since Nov 2012. STATO is driven and funded by several ISA-based projects and their user community, but also by collaborations with <strong>data publication platforms</strong>.</p>
-        <p class="lead">STATO is applicable to, but not limited, the broad life, natural and biomedical science domain with <strong>documented applications</strong> for factorial design, association studies, </p>
-        <p class="lead">differential expression, hit selection and meta-analysis.</p>
+        <p class="lead">STATO provides <strong>textual definitions</strong> for all terms, as well as <strong>formal definitions</strong> for most of the terms allowing automatic classification, for example, categorising the statistical methods depending on the nature of the variables used as input, the conditions and their domain of application.</p>
 
-        <p class="lead" align="center">STATO also benefits from: <p>
+        <p class="lead">STATO also benefits from: <p>
 
         <ol>
-        <li class="lead"><strong>extensive documentation</strong> with the provision of textual and formal definitions; </li>
-        <li class="lead">an <strong>associated R code snippets</strong> using the dedicated R-command metadata tag, aiming at facilitating teaching and learning while relying of the popular R language;</li>
-        <li class="lead"><strong>query examples</strong> documentation, highlighting how the ontology can be harnessed for reviewers/tutors/student alike.</li>
+            <li class="lead"><strong>extensive documentation</strong> with the provision of textual and formal definitions; </li>
+            <li class="lead">associated <strong>R code snippets</strong> via a dedicated 'R-command' annotation, to facilate a 'learn and apply' approach in the popular R environment;</li>
+            <li class="lead"><strong>query examples</strong> documentation, highlighting how the ontology can be harnessed for reviewers/tutors/student alike.</li>
         </ol>
+
+
+        <p class="lead">STATO is developed using the Web Ontology Language (OWL). The latest release can be browsed through <a href="http://bioportal.bioontology.org/">BioPortal</a>. The development version and previous releases can be found in the <a href="https://github.com/">GitHub</a>.</p>
+
+        <div class="row">
+            <div class="inner">
+
+                <div class="col-md-4" >
+                    <a id="github_banner" href="https://github.com/ISA-tools/stato">View STATO on GitHub</a>
+                </div>
+
+                <div class="col-md-4">
+                    <a id="banner" href="http://bioportal.bioontology.org/ontologies/STATO">View STATO on BioPortal</a>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 </div>
@@ -162,21 +162,25 @@
         <a id="objectives"></a>
     <h2>Objectives</h2>
 
-<p class="lead">The demand-driven nature of STATO ensures its objectives fit the requirements of the communities it has build with and for. STATO is set to provide:</p>
+<p class="lead">STATO development is informed by use cases, some of which we referred to in the Background section. STATO is set to provide:</p>
 
 <ol>
 
-    <li class="lead">a common terminology, with formal definitions, to smooth the communication between, mainly, biologists and statisticians but also scientists in other domains relying on statistical methods and commonly used graphical representation, as well specialized, application specific ones.. Also, journal reviewers will find it useful, as the basis for standardised reporting of data matrices.</li>
+    <li class="lead">a resource to help in the communication and reporting of scientific
+        results for biologists, scientists using statistical methods. STATO can
+        also currently support Publishers and Journal reviewers by helping
+        reporting guideline compliance and standardizing annotation of result
+        tables</li>
 
     <li class="lead">a set of core classes for annotating statistical methods used in life, natural and biomedical sciences investigations, but also metrics and estimates generated by those methods and link to the hypothesis being evaluated to allow better representation and data review.</li>
 
-    <li class="lead">formal definition of most statistical tests to provide a didactic framework for students and reviewers</li>
+    <li class="lead">formal definitions of most common univariate statistical tests to provide a didactic framework for students and reviewers</li>
 
-    <li class="lead">a formal way of validating results and the suitability of the application of statistical tests when using the data</li>
+    <li class="lead">a formal way of navigating the conditions of application of classic statistical tests and distinguishing them</li>
 
-    <li class="lead">a semantic framework to support the creation of standardized data matrices to help with reproducibility and review of results.</li>
+    <li class="lead">a semantic framework to support the creation of standardized analysis reports to help with review of results</li>
 
-    <li class="lead">a vocabulary for text mining of statistical analysis for, for example, scholarly articles.</li>
+    <li class="lead">a specialized vocabulary enabling text mining of statistical analyses.</li>
 
 </ol>
 </div>

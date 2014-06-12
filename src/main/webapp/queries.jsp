@@ -49,7 +49,7 @@
                                 </ul>
                             </li>
                             <li><a href="contact.jsp">Contact and Support</a></li>
-                            <li><a href="about.jsp">About</a></li>
+                            <li><a href="about.jsp">Acknowledgements</a></li>
                         </ul>
                     </div>
                 </div>
