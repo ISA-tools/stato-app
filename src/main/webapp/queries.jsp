@@ -90,7 +90,6 @@
         <div class="row">
 
             <div class="col-lg-4">
-                <span class="glyphicon icon-asterisk"></span>
                 <h2 class="highlight">All query cases</h2>
                 <p>STATO helps answer queries about statistical tests, plots, measures and designs.</p>
                 <button class="btn btn-large btn-warning" onclick="selectQueryView('all')">Ask STATO</button>
@@ -100,7 +99,6 @@
             <!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <!--<img class="img-circle" data-src="holder.js/140x140" alt="Generic placeholder image">-->
-                <span class="icon-large icon-pen"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(0)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(0)%></p>
                 <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(0)%>')">Ask STATO about <%=queryInfo.getQueryType(0)%></button>
@@ -108,7 +106,6 @@
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <span class="icon-large icon-ruller"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(1)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(1)%></p>
                 <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(1)%>')">Ask STATO about <%=queryInfo.getQueryType(1)%></button>
@@ -123,7 +120,6 @@
             </div>
 
             <div class="col-lg-4">
-                <span class="icon-large icon-stats"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(2)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(2)%></p>
                 <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(2)%>')">Ask STATO about <%=queryInfo.getQueryType(2)%></button>
@@ -131,7 +127,6 @@
             <!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
-                <span class="glyphicon glyphicon-stats"></span>
                 <h2 class="highlight"><%=queryInfo.getQueryTypeString(3)%></h2>
                 <p><%=queryInfo.getQueryTypeDescription(3)%></p>
                 <button class="btn btn-large btn-warning" onclick="selectQueryView('<%=queryInfo.getQueryType(3)%>')">Ask STATO about <%=queryInfo.getQueryType(3)%></button>

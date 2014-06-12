@@ -166,7 +166,7 @@
             font-size: 15px;
         }
         .popover-content {
-            color: darkgreen;
+            color: #357ebd;
             font-size: 10px;
             text-shadow: none;
             padding: 14px;

@@ -111,10 +111,11 @@
         <a id="background"></a>
         <h2>Background</h2>
 
-        <p class="lead">The STATO project tarted in early 2012, as part of the requirement of the <strong>community-driven <a href="http://isacommons.org">ISA Commons</a></strong> to represent data matrices and their statistical values, </p>
+        <p class="lead">The STATO project started in early 2012, as part of the requirement of the <strong>community-driven <a href="http://isacommons.org">ISA Commons</a></strong> to represent the results of data analysis.</p>
         <p class="lead">STATO is a standalone project since Nov 2012. STATO is driven and funded by several ISA-based projects and their user community, but also by collaborations with <strong>data publication platforms</strong>.</p>
         <p class="lead">STATO is applicable to, but not limited, the broad life, natural and biomedical science domain with <strong>documented applications</strong> for factorial design, association studies, differential expression, hit selection and meta-analysis.</p>
         <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies, hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/page/Main_Page">OBI</a>) as mid-level ontology.</p>
+        <p class="lead">The ontology is made available under </p>
 
         </div>
 
