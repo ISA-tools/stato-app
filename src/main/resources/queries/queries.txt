@@ -8,11 +8,11 @@ Which <span class='highlight'>statistical tests</span> may be used to test <span
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>group difference</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'between group comparison objective'
 
-Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
-'statistical hypothesis test' and achieves_planned_objective some 'equal variance testing objective'
-
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>goodness of fit</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'goodness of fit testing objective'
+
+What are the <span class='highlight'>statistical tests</span> which can be used to test <span class='highlight'>within subject variation</span>?
+'statistical hypothesis test' and achieves_planned_objective some 'within subject comparison objective'
 
 Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>homogeneity hypothesis</span>?
 'statistical hypothesis test' and achieves_planned_objective some 'homogeneity test objective'
@@ -20,8 +20,8 @@ Which <span class='highlight'>statistical tests</span> evaluate <span class='hig
 Which <span class='highlight'>statistical tests</span> evaluate if <span class='highlight'>sphericity hypothesis</span> holds?
 'statistical hypothesis test' and achieves_planned_objective some 'sphericity testing objective'
 
-What are the <span class='highlight'>statistical tests</span> which can be used to test <span class='highlight'>within subject variation</span>?
-'statistical hypothesis test' and achieves_planned_objective some 'within subject comparison objective'
+Which <span class='highlight'>statistical tests</span> evaluate <span class='highlight'>variance equality</span>?
+'statistical hypothesis test' and achieves_planned_objective some 'equal variance testing objective'
 
 Which <span class='highlight'>statistical tests</span> require the <span class='highlight'>variance equality hypothesis</span> to be true?
 'statistical hypothesis test' and 'has part' some ('homoskedasticity hypothesis' and 'has value' value true)
@@ -32,7 +32,7 @@ Which <span class='highlight'>statistical tests</span> may be applied for group 
 Which <span class='highlight'>statistical tests</span> use a <span class='highlight'>contingency table</span>?
 'statistical hypothesis test' and has_specified_input some 'contingency table'
 
-Which <span class='highlight'>statistical tests</span> require <span class='highlight'>ranking of a variable</span>?
+Which <span class='highlight'>statistical tests</span> make use of <span class='highlight'>variable ranking</span>?
 'statistical hypothesis test' and 'has part' some ranking
 
 Which <span class='highlight'>statistical tests</span> relies on an <span class='highlight'>F-distribution</span>?
