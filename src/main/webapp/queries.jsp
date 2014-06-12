@@ -66,7 +66,7 @@
 
         <p class="lead">STATO is a representation of the statistical domain. We present multiple questions on that domain and demonstrate how the ontology answers them. The query answering process relies on description logics expressions.</p>
 
-        <p>Please, select 'carousel' or 'grid' view as well as a specific type of query or all of them below by pressing the 'Ask STATO' button.</p>
+        <p>Please, select below 'carousel' or 'grid' view as well as a specific type of query (or all of them) by pressing the 'Ask STATO' buttons.</p>
     </div>
 
     <hr>
