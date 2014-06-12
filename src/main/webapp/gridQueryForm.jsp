@@ -86,9 +86,9 @@
     <div class="container marketing jumbotron">
         <h2 align="center">Query Cases</h2>
 
-        <p class="lead">STATO is a representation of the statistical domain. We present multiple questions on that domain and demonstrate how the ontology them. This query answering process relies on description logics expressions.</p>
+        <p class="lead">STATO is a representation of the statistical domain. We present multiple questions on that domain and demonstrate how the ontology can answer them. The query answering process relies on description logics expressions.</p>
 
-        <p>Select a query and press the 'Ask STATO' button to see the results returned by the ontology.</p>
+        <p>Please, select a query and press the 'Ask STATO' button to see the results returned by the ontology.</p>
     </div>
 
     <hr>
