@@ -61,6 +61,16 @@
 
     <form method=post name="selectQueryViewForm">
 
+    <div class="jumbotron">
+        <h2 align="center">Query Cases</h2>
+
+        <p class="lead">STATO is a representation of the statistical domain. We present multiple questions on that domain and demonstrate how the ontology them. This query answering process relies on description logics expressions.</p>
+
+        <p>Please, select 'carousel' or 'grid' view as well as a specific type of query or all of them below by pressing the 'Ask STATO' button.</p>
+    </div>
+
+    <hr>
+
     <div class="container marketing">
 
         <div class="btn-group-wrap">

@@ -108,7 +108,7 @@
 
     <div class="jumbotron">
             <a id="content"></a>
-            <h2 class="bs-docs-featurette-title" algin="center">Content</h2>
+            <h2>Content</h2>
 
             <p class="lead">STATO has been developed to interoperate with other <a href="http://www.obofoundry.org/">OBO Foundry</a> ontologies (e.g. the Ontology for Biomedical Investigations or <a href="http://obi-ontology.org/page/Main_Page">OBI</a>), hence relies on the Basics Formal Ontology (<a href="https://code.google.com/p/bfo/">BFO</a>) as a top level ontology and uses OBI as mid-level ontology.</p>
 
@@ -138,7 +138,7 @@
 <div class="bs-docs-featurette">
     <div class="container">
         <a id="background"></a>
-        <h2 class="bs-docs-featurette-title" algin="center">Background</h2>
+        <h2>Background</h2>
 
         <p class="lead">The STATO project tarted in early 2012, as part of the requirement of the <strong>community-driven <a href="http://isacommons.org">ISA Commons</a></strong> to represent data matrices and their statistical values, </p>
         <p class="lead">STATO is a standalone projects since Nov 2012. STATO is driven and funded by several ISA-based projects and their user community, but also by collaborations with <strong>data publication platforms</strong>.</p>
@@ -160,7 +160,7 @@
 
     <div class="jumbotron">
         <a id="objectives"></a>
-<h2 class="bs-docs-featurette-title" algin="center">Objectives</h2>
+    <h2>Objectives</h2>
 
 <p class="lead">The demand-driven nature of STATO ensures its objectives fit the requirements of the communities it has build with and for. STATO is set to provide:</p>
 
