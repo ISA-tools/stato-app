@@ -1,33 +1,8 @@
-<%@include file="header.jsp" %>
-
-<%@page info="stato-app"%>
-
-<%@ page import="java.io.File"%>
 <%@ page import="java.util.List" %>
-<%@ page import="org.isatools.stato.STATOQueryDemo"%>
-<%@ page import="org.isatools.stato.STATOResult"%>
+<%@include file="header.jsp"%>
 
 
-<%
-    String queryType = request.getParameter("queryType");
-
-    int start =0 , end=0;
-
-
-    if (queryType==null){
-        queryType = QueryInfo.QUERY_TYPE_ALL;
-    }
-
-    int index = queryInfo.getIndexForQueryType(queryType);
-    String queryTypeString = queryInfo.getQueryTypeString(index).toLowerCase();
-    start = queryInfo.getStart(index);
-    end = queryInfo.getEnd(index);
-
-
-%>
-
-<form method=post action="gridQueryForm.jsp?queryType=queryType%>" name=gridQueryForm>
-
+<div class="container">
 
     <div class="navbar-wrapper">
         <div class="container">
@@ -84,97 +59,83 @@
         </div>
     </div>
 
-    <div class="container marketing jumbotron">
-        <h2 align="center">Query Cases</h2>
 
-        <p class="lead">STATO is a representation of the statistical domain. We present multiple questions on that domain and demonstrate how the ontology can answer them. The query answering process relies on description logics expressions.</p>
+    <div class="jumbotron">
+        <h2 align="center">Use Cases</h2>
 
-        <p>Please, select a query and press the 'Ask STATO' button to see the results returned by the ontology.</p>
+        <p class="lead">STATO is being used in a variety of projects.</p>
+
+        <p class="lead">We list below some of the STATO use cases we are aware of. If you are using STATO, please <a href="contact.jsp">let us know</a>.</p>
     </div>
 
     <hr>
 
 
-
     <div class="container marketing">
+    <h2>Term Enrichment Protocol</h2>
 
+    <p class="lead">The Term Enrichment Protocol project involves the definition of a REST API and JSON payload for term enrichment services. These services rely on STATO for the statistical annotations.</p>
 
-        <%
+        <div class="row">
+            <div class="inner">
 
-
-         if (queryTypeString.equals("all")) {
-        %>
-        <h2 align="center">All queries</h2>
-        <%
-            } else {
-        %>
-        <h2 align="center">Queries about <%=queryTypeString%></h2>
-
-        <%
-            }
-        %>
-
-        <ul class="list">
-
-<%
-
-            for(int j = start; j <= end; j++){
-                String queryString= queryInfo.getQueryString(j);
-%>
-
-        <div class="query-item" align="center">
-
-
-            <div class="query-item-info">
-
-                <span class="counter counter-orange"><%=j-start+1%></span>
-                <div class="query-name">
-                    <span style="font-size: 1.0em"><%=queryString%></span><!--<br/>-->
-
+                <div class="col-md-8" >
+                    <a id="github_banner" href="https://github.com/cmungall/term-enrichment-protocol">View the Term Enrichment Protocol on GitHub</a>
                 </div>
-
-            </div>
-
-
-            <div class="query-item-block" style="margin-top: 15px; margin-bottom: 10px">
-
-                <div class="query-item-details" >
-
-                    <button type="button" id="askButton_<%=j%>" class="btn btn-default has-spinner :hover" style="width:150px" data-toggle="modal" data-target="#myModal_<%=j%>">
-                        Ask STATO
-                        <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
-                    </button>
-
-                    <div class="modal fade" id="myModal_<%=j%>" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-remote='results.jsp?j=<%=j%>'>
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
 
             </div>
 
         </div>
 
-            <%
-                }
-            %>
+
+    </div>
+
+    <hr>
+
+    <div class="container marketing">
+        <h2>NeuroImaging Data Sharing Data Model (NI-DM)</h2>
+
+        <p class="lead">The NeuroImaging Data Model is being developed by the ICNF Neuroimaging Data Sharing (NIDASH) Task Force to describe neuroimaging data and provenance.</p>
+
+        <p class="lead">NIDASH is using STATO for statistical terms.</p>
+
+        <div class="row">
+            <div class="inner">
+
+                <div class="col-md-8" >
+                    <a id="banner" href="http://nidm.nidash.org">View the NIDASH Data Model website</a>
+                </div>
+
+            </div>
+
+        </div>
 
 
-        </ul>
+    </div>
+
+    <hr>
+
+    <div class="container marketing">
+        <h2>SOAPdenovo2 use case</h2>
+
+        <p class="lead">The SOAPdenovo2 case study is a reproducibility study aimed at exploring how existing data models and workflow enactment engines can help assess, record and preserve scientific workflows and associated findings related to the SOAPdenovo2 de novo genome assembler.</p>
+
+        <p class="lead">STATO was used in the SOAPdenovo2 case study to annotate nanopublications with terms such as 'fold change', indicating also its numerator and denominator.</p>
+
+        <div class="row">
+            <div class="inner">
+
+                <div class="col-md-8" >
+                    <a id="github_banner" href="http://isa-tools.github.io/soapdenovo2/">View the SOAPdenovo2 case study on GitHub</a>
+                </div>
+
+            </div>
+
+        </div>
 
 
-    </div> <!--container -->
+    </div>
 
-
-
-
-</form>
 
 
 <%@include file="footer.jsp" %>
-
-

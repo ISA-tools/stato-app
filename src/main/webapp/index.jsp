@@ -44,6 +44,7 @@
                                        %>
                                    </ul>
                                </li>
+                                <li><a href="useCases.jsp">Use Cases</a></li>
                                 <li><a href="contact.jsp">Contact and Support</a></li>
                                 <li><a href="about.jsp">Acknowledgements</a></li>
                             </ul>
@@ -122,8 +123,8 @@
 
 <hr>
 
-<div class="bs-docs-featurette">
-    <div class="container">
+
+    <div class="container marketing">
         <a id="content"></a>
         <h2>Content</h2>
 
@@ -155,7 +156,7 @@
         </div>
 
     </div>
-</div>
+
 
 <hr>
 
