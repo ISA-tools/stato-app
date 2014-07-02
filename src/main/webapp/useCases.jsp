@@ -48,7 +48,7 @@
                                     %>
                                 </ul>
                             </li>
-                            <li><a href="useCases.jsp">Use Cases</a></li>
+                            <li><a href="useCases.jsp">Users and Use Cases</a></li>
                             <li><a href="contact.jsp">Contact and Support</a></li>
                             <li><a href="about.jsp">Acknowledgements</a></li>
                         </ul>
@@ -61,11 +61,11 @@
 
 
     <div class="jumbotron">
-        <h2 align="center">Use Cases</h2>
+        <h2 align="center">Users and Use Cases</h2>
 
         <p class="lead">STATO is being used in a variety of projects.</p>
 
-        <p class="lead">We list below some of the STATO use cases we are aware of. If you are using STATO, please <a href="contact.jsp">let us know</a>.</p>
+        <p class="lead">We list below some of the STATO users and use cases we are aware of. If you are using STATO, please <a href="contact.jsp">let us know</a>.</p>
     </div>
 
     <hr>

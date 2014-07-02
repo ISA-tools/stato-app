@@ -44,7 +44,7 @@
                                        %>
                                    </ul>
                                </li>
-                                <li><a href="useCases.jsp">Use Cases</a></li>
+                                <li><a href="useCases.jsp">Users and Use Cases</a></li>
                                 <li><a href="contact.jsp">Contact and Support</a></li>
                                 <li><a href="about.jsp">Acknowledgements</a></li>
                             </ul>
@@ -164,7 +164,7 @@
         <a id="objectives"></a>
     <h2>Objectives</h2>
 
-<p class="lead">STATO development is informed by use cases, some of which we referred to in the Background section. STATO is set to provide:</p>
+<p class="lead">STATO development is informed by use cases, some of which we referred to in the Background section. For more information about users and use cases, see <a href="useCases.jsp">the specific page</a>. STATO is set to provide:</p>
 
 <ol>
 

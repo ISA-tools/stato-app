@@ -48,7 +48,7 @@
                                     %>
                                 </ul>
                             </li>
-                            <li><a href="useCases.jsp">Use Cases</a></li>
+                            <li><a href="useCases.jsp">Users and Use Cases</a></li>
                             <li><a href="contact.jsp">Contact and Support</a></li>
                             <li><a href="about.jsp">Acknowledgements</a></li>
                         </ul>
