@@ -1,5 +1,5 @@
 <%@include file="header.jsp"%>
-<%@ page import="java.util.List" %>
+<%@page import="java.util.List" %>
 
 <div class="navbar-wrapper">
             <div class="container">
@@ -145,7 +145,7 @@
             <div class="inner">
 
                 <div class="col-md-4" >
-                    <a id="github_banner" href="https://github.com/ISA-tools/stato">View STATO on GitHub</a>
+                    <a id="banner" href="https://github.com/ISA-tools/stato">View STATO on GitHub</a>
                 </div>
 
                 <div class="col-md-4">

@@ -81,7 +81,7 @@
   <build>
          <finalName>stato-app</finalName>
           <plugins>
-               <!--
+
               <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
                   <artifactId>maven-compiler-plugin</artifactId>
@@ -91,7 +91,7 @@
                       <target>1.6</target>
                   </configuration>
               </plugin>
-                -->
+
 
               <plugin>
                   <groupId>org.apache.maven.plugins</groupId>

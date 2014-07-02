@@ -74,13 +74,13 @@
     <div class="container marketing">
     <h2>Term Enrichment Protocol</h2>
 
-    <p class="lead">The Term Enrichment Protocol project involves the definition of a REST API and JSON payload for term enrichment services. These services rely on STATO for the statistical annotations.</p>
+    <p class="lead">The Term Enrichment Protocol project has been proposed by the Gene Ontology Consortium for gene set / term enrichment tools. It involves the definition of a REST API and JSON payload for term enrichment services. The project's documentation is maintained in a GitHub repository. The services rely on STATO for the statistical annotations.</p>
 
         <div class="row">
             <div class="inner">
 
                 <div class="col-md-8" >
-                    <a id="github_banner" href="https://github.com/cmungall/term-enrichment-protocol">View the Term Enrichment Protocol on GitHub</a>
+                    <a id="banner" href="https://github.com/cmungall/term-enrichment-protocol">View the Term Enrichment Protocol on GitHub</a>
                 </div>
 
             </div>
@@ -116,17 +116,17 @@
     <hr>
 
     <div class="container marketing">
-        <h2>SOAPdenovo2 use case</h2>
+        <h2>GigaScience reproducibility study</h2>
 
-        <p class="lead">The SOAPdenovo2 case study is a reproducibility study aimed at exploring how existing data models and workflow enactment engines can help assess, record and preserve scientific workflows and associated findings related to the SOAPdenovo2 de novo genome assembler.</p>
+        <p class="lead">In collaboration with the GigaScience journal, the SOAPdenovo2 de novo genome assembler was used in a reproducibility study aimed at exploring how existing data models (ISA, research objects and nanopublications) together with workflow enactment engines can help assess, record and preserve scientific workflows and associated findings.</p>
 
-        <p class="lead">STATO was used in the SOAPdenovo2 case study to annotate nanopublications with terms such as 'fold change', indicating also its numerator and denominator.</p>
+        <p class="lead">STATO was used in this case study to annotate nanopublications with terms such as 'fold change', indicating also its numerator and denominator.</p>
 
         <div class="row">
             <div class="inner">
 
                 <div class="col-md-8" >
-                    <a id="github_banner" href="http://isa-tools.github.io/soapdenovo2/">View the SOAPdenovo2 case study on GitHub</a>
+                    <a id="banner" href="http://isa-tools.github.io/soapdenovo2/">View the SOAPdenovo2 case study on GitHub</a>
                 </div>
 
             </div>
