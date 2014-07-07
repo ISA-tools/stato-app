@@ -145,11 +145,11 @@
             <div class="inner">
 
                 <div class="col-md-4" >
-                    <a id="banner" href="https://github.com/ISA-tools/stato">View STATO on GitHub</a>
+                    <a class="github_banner" href="https://github.com/ISA-tools/stato" target="_blank">View STATO on GitHub</a>
                 </div>
 
                 <div class="col-md-4">
-                    <a id="banner" href="http://bioportal.bioontology.org/ontologies/STATO">View STATO on BioPortal</a>
+                    <a class="banner" href="http://bioportal.bioontology.org/ontologies/STATO">View STATO on BioPortal</a>
                 </div>
             </div>
 

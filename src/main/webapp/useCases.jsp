@@ -20,7 +20,7 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active" class="dropdown">
+                            <li class="dropdown">
                                 <a href="queryCases.jsp" class="dropdown-toggle" data-toggle="dropdown">Query cases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="queryCases.jsp">Query cases by type</a></li>
@@ -48,7 +48,7 @@
                                     %>
                                 </ul>
                             </li>
-                            <li><a href="useCases.jsp">Users and Use Cases</a></li>
+                            <li class="active"><a href="useCases.jsp">Users and Use Cases</a></li>
                             <li><a href="contact.jsp">Contact and Support</a></li>
                             <li><a href="about.jsp">Acknowledgements</a></li>
                         </ul>
@@ -80,7 +80,7 @@
             <div class="inner">
 
                 <div class="col-md-8" >
-                    <a id="banner" href="https://github.com/cmungall/term-enrichment-protocol">View the Term Enrichment Protocol on GitHub</a>
+                    <a class="github_banner" href="https://github.com/cmungall/term-enrichment-protocol" target="_blank">View the Term Enrichment Protocol on GitHub</a>
                 </div>
 
             </div>
@@ -103,7 +103,7 @@
             <div class="inner">
 
                 <div class="col-md-8" >
-                    <a id="banner" href="http://nidm.nidash.org">View the NIDASH Data Model website</a>
+                    <a class="banner" href="http://nidm.nidash.org">View the NIDASH Data Model website</a>
                 </div>
 
             </div>
@@ -126,7 +126,7 @@
             <div class="inner">
 
                 <div class="col-md-8" >
-                    <a id="banner" href="http://isa-tools.github.io/soapdenovo2/">View the SOAPdenovo2 case study on GitHub</a>
+                    <a class="banner" href="http://isa-tools.github.io/soapdenovo2/">View the SOAPdenovo2 case study website</a>
                 </div>
 
             </div>

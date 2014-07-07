@@ -273,7 +273,7 @@
          .modal .modal-dialog  {width:900px;}
         }
 
-        #github_banner {
+        .github_banner {
             display: block;
             z-index: 10;
             padding: 10px 50px 10px 10px;
@@ -285,7 +285,7 @@
             border-bottom-right-radius: 2px;
         }
 
-        #banner {
+        .banner {
             display: block;
             z-index: 10;
             padding: 10px 50px 10px 10px;
