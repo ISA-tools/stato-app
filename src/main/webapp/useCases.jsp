@@ -72,9 +72,9 @@
 
 
     <div class="container marketing">
-    <h2>Term Enrichment Protocol</h2>
+    <h2>Gene Ontology Consortium</h2>
 
-    <p class="lead">The Term Enrichment Protocol project has been proposed by the Gene Ontology Consortium for gene set / term enrichment tools. It involves the definition of a REST API and JSON payload for term enrichment services. The project's documentation is maintained in a GitHub repository. The services rely on STATO for the statistical annotations.</p>
+    <p class="lead">The Term Enrichment Protocol project has been proposed by the Gene Ontology (GO) Consortium for gene set / term enrichment tools. It involves the definition of a REST API and JSON payload for term enrichment services. The project's documentation is maintained in a GitHub repository. The services rely on STATO for the statistical annotations.</p>
 
         <div class="row">
             <div class="inner">
@@ -93,9 +93,9 @@
     <hr>
 
     <div class="container marketing">
-        <h2>NeuroImaging Data Sharing Data Model (NI-DM)</h2>
+        <h2>International Neuroinformatics Coordinating Facility - Neuroimaging Data Sharing</h2>
 
-        <p class="lead">The NeuroImaging Data Model is being developed by the ICNF Neuroimaging Data Sharing (NIDASH) Task Force to describe neuroimaging data and provenance.</p>
+        <p class="lead">The NeuroImaging Data Sharing Data Model (NI-DM) is being developed by the International Neuroinformatics Coordinating Facility (ICNF) Neuroimaging Data Sharing (NIDASH) Task Force to describe neuroimaging data and provenance.</p>
 
         <p class="lead">NIDASH is using STATO for statistical terms.</p>
 
@@ -116,9 +116,9 @@
     <hr>
 
     <div class="container marketing">
-        <h2>GigaScience reproducibility study</h2>
+        <h2>GigaScience, ISA Commons, Research Objects and Nanopublications</h2>
 
-        <p class="lead">In collaboration with the GigaScience journal, the SOAPdenovo2 de novo genome assembler was used in a reproducibility study aimed at exploring how existing data models (ISA, research objects and nanopublications) together with workflow enactment engines can help assess, record and preserve scientific workflows and associated findings.</p>
+        <p class="lead">In collaboration with the <a href="http://www.gigasciencejournal.com/">GigaScience journal</a>, the SOAPdenovo2 de novo genome assembler was used in a reproducibility study aimed at exploring how existing data models (<a href="http://isacommons.org/">ISA</a>, <a href="http://www.researchobject.org/">research objects</a> and <a href="http://nanopub.org">nanopublications</a>) together with workflow enactment engines can help assess, record and preserve scientific workflows and associated findings.</p>
 
         <p class="lead">STATO was used in this case study to annotate nanopublications with terms such as 'fold change', indicating also its numerator and denominator.</p>
 
