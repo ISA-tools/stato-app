@@ -1,29 +1,35 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is the initial STATO web application. 
 
-### What is this repository for? ###
+### Implementation details ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This STATO-app was developed to demonstrate the capabilities of the STATO ontology.
 
-### How do I get set up? ###
+* Java Server Pages (JSP) to create dynamically generated pages
+* Java classes that deal with classifying the STATO ontology and running description logic queries over it.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Setup ###
+
+The STATO-app is a Maven project.
+
+You can compile the project with 
+
+mvn compile
+
+To produce the war file:
+
+mvn war:war
+
+Then, you can deploy the war file into a web application container such as Tomcat.
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+If you are interested in contributing to the STATO-app, you can:
+* contact me
+* report bugs or feature requests in the issue tracker
+* send a pull request
+ 
 
-### Who do I talk to? ###
+### License ###
 
-* Repo owner or admin
-* Other community or team contact
