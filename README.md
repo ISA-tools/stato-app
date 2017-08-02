@@ -33,3 +33,5 @@ If you are interested in contributing to the STATO-app, you can:
 
 ### License ###
 
+https://github.com/agbeltran/stato-app/blob/master/LICENSE.md
+
