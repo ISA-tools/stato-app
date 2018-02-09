@@ -4,6 +4,10 @@ This is the source code for the web application demonstrating the STATO ontology
 
 The live version of this website is available at: http://stato-ontology.org/
 
+Version 1.0: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1169894.svg)](https://doi.org/10.5281/zenodo.1169894) 
+
+
+
 ### Implementation details ###
 
 This STATO-app was developed to demonstrate the capabilities of the STATO ontology.
