@@ -17,18 +17,18 @@ The STATO-app is a Maven project.
 
 You can compile the project with 
 
-mvn compile
+```mvn compile```
 
 To produce the war file:
 
-mvn war:war
+```mvn war:war```
 
 Then, you can deploy the war file into a web application container such as Tomcat.
 
 ### Contribution guidelines ###
 
 If you are interested in contributing to the STATO-app, you can:
-* contact me
+* contact [me](https://github.com/agbeltran)
 * report bugs or feature requests in the issue tracker
 * send a pull request
  
