@@ -1,6 +1,8 @@
-# README #
+# Web Application for the STATO ontology #
 
-This is the initial STATO web application. 
+This is the source code for the web application demonstrating the STATO ontology. It includes details about the ontology, its purpose, use cases and development team, as well as a set of queries that demonstrate the content of the ontology.
+
+The live version of this website is available at: http://stato-ontology.org/
 
 ### Implementation details ###
 
